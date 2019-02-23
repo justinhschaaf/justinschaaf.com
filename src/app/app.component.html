@@ -1,56 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="header">
 
-  <div class="header_content">
+<div> <!--class="theme_dark"-->
 
-    <img src="https://content.justinschaaf.com/common/logos/js-fullname512.png" class="header_logo">
+  <jhs-header></jhs-header>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 
-    <div class="header_item">
-      <a routerLink="/home"><h3>Home</h3></a>
-    </div>
-
-    <!--<div class="header_item">
-      <a routerLink="/projects"><h3>Projects</h3></a>
-    </div>-->
-
-    <div class="header_item">
-      <a target="_blank" rel="noopener noreferrer" href="https://yamltobot.com"><h3>YamlToBot</h3></a>
-    </div>
-
-    <div class="header_item">
-      <a target="_blank" rel="noopener noreferrer" href="https://liberapay.com/justinhschaaf/"><h3>Donate</h3></a>
-    </div>
-
-  </div>
-
-</div>
-
-<router-outlet></router-outlet>
-
-<div class="footer">
-
-  <div class="footer_content">
-
-    <div class="footer_column">
-
-      <h1>Projects</h1>
-
-      <p><a target="_blank" rel="noopener noreferrer" href="https://yamltobot.com">YamlToBot</a></p>
-
-      <p><a target="_blank" rel="noopener noreferrer" href="https://colors.justinschaaf.com">Stylesheet</a></p>
-
-    </div>
-
-    <div class="footer_column">
-
-      <h1>Et Cetera</h1>
-
-      <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/justinhschaaf/justinschaaf.com">Website Source</a></p>
-
-      <p><a target="_blank" rel="noopener noreferrer" href="https://liberapay.com/justinhschaaf/">Liberapay</a></p>
-
-    </div>
-
-  </div>
+  <footer>
+    <jhs-footer></jhs-footer>
+  </footer>
 
 </div>

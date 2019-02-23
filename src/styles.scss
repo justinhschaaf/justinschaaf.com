@@ -3,6 +3,64 @@
 // Import fonts
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Overpass');
 
+.theme_dark {
+
+    $color-bg: #111111;
+    $color-fg: #ffffff;
+    $shadow-light: 0pt 3pt 8pt rgba(255, 255, 255, 0.2);
+    $shadow-dark: 0pt 5pt 8pt rgba(255, 255, 255, 0.4);
+
+    a {
+        text-decoration: underline;
+        color: #888888;
+    }
+
+    background-color: $color-bg;
+
+    p, h1, h2, h3, h4, h5, h6 {
+        color: $color-fg;
+    }
+
+    body {
+        background-color: $color-bg;
+    }
+
+    .header {
+
+        box-shadow: $shadow-light;
+
+        .header_content {
+            background-color: $color-bg;
+        }
+
+        .header_item {
+
+            a:hover {
+                text-shadow: $shadow-light;
+            }
+
+        }
+
+    }
+
+    .footer {
+
+        box-shadow: 0pt -3pt 8pt rgba(255, 255, 255, 0.2);
+
+    }
+
+    .card {
+        background-color: $color-bg;
+        color: $color-fg;
+        box-shadow: $shadow-light;
+    }
+
+    .card:hover {
+        box-shadow: $shadow-dark;
+    }
+
+}
+
 * {
     margin: 0;
     font-family: 'Overpass', 'Segoe UI Emoji', sans-serif;
@@ -18,73 +76,6 @@ a {
     color: #888888;
 }
 
-.header {
-
-    min-height: 50pt;
-    width: 100%;
-    position: fixed;
-    flex-wrap: nowrap;
-
-    background-color: #ffffff;
-    box-shadow: 0pt 3pt 8pt rgba(0, 0, 0, 0.2);
-
-    .header_content {
-
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-
-        img {
-            max-height: 100%;
-        }
-
-        .header_item {
-
-            margin: auto;
-
-            a {
-                text-decoration: none;
-                color: inherit;
-                transition: 0.3s;
-            }
-
-            a:hover {
-                text-shadow: 0pt 3pt 8pt rgba(0, 0, 0, 0.2);
-            }
-
-        }
-
-    }
-
-    .header_logo {
-        height: 50pt;
-    }
-
-}
-
-.footer {
-
-    margin: 48pt 0 0 0;
-    padding: 10pt;
-    background-color: #111111;
-    color: #ffffff;
-
-    .footer_content {
-
-        max-width: 720pt;
-        margin: auto;
-        display: flex;
-
-        .footer_column {
-            min-width: 240pt;
-            width: 30%;
-        }
-
-    }
-
-}
-
 .banner {
 
     width: 100%;
@@ -92,6 +83,7 @@ a {
     text-align: center;
     display: flex; 
     justify-content: center;
+    overflow: hidden;
 
     background-repeat: no-repeat;
     background-position: center;
@@ -100,6 +92,7 @@ a {
     background-attachment: local;
 
     color: #FFFFFF;
+    transition: 0.3s;
 
     .banner_content {
 
@@ -110,9 +103,26 @@ a {
 
 }
 
+// Frosted Glass when hover -- maybe for another day... =,(
+/*
+.banner:hover::before {
+    width: 2000pt;
+    height: 460pt;
+    content: "";
+    //position: absolute;
+    top: -100pt;
+    left: 100pt;
+    bottom: 0;
+    right: 0;
+    background: inherit;
+    box-shadow: inset 0 0 0 2000pt rgba(255,255,255,0.2);
+    filter: blur(25px);
+}
+*/
+
 .content {
     max-width: 720pt;
-    margin: auto;
+    margin: 24pt auto 48pt auto;
     padding: 24pt;
 }
 

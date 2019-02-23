@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 const routes: Routes = [
   
@@ -24,8 +25,18 @@ const routes: Routes = [
 
   {
     path: 'project',
-    redirectTo: '',
+    redirectTo: '/projects',
     pathMatch: 'full'
+  },
+
+  {
+    path: '404',
+    component: ErrorComponent
+  },
+
+  {
+    path: '**',
+    component: ErrorComponent
   },
 
 ];
