@@ -68,11 +68,17 @@
                 flex-direction: column;
                 text-align: center;
 
+                transition: 0.3s;
+
                 img {
                     margin: 0 auto;
                     width: 24pt;
                 }
 
+            }
+
+            .header_socialicon:hover {
+                background-color: rgba(255, 255, 255, 0.2);
             }
 
         }
