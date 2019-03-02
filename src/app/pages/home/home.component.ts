@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit {
         "Java", 
         "Ionic",
         "Angular",
-        "Welcome to justinschaaf.com^295000",
-        "What, you were expecting something after that?",
+        "Welcome to justinschaaf.com^5000",
+        "⬢^60000"
+        /*"What, you were expecting something after that?",
         "What else do you want me to put here‽",
         "Oh, also, did you know that this is called the Interrobang? -> ‽",
         "It's a very interesting symbol...",
@@ -65,15 +66,14 @@ export class HomeComponent implements OnInit {
         "Why am I still doing this at 10 PM?",
         "The next string will literally be a space.",
         " ",
-        "I didn't lie to you about that...",
         "I'm impressed that you sat through all those messages. Congratulations.",
         "If you read through the source code to see these instead of waiting the 10+ minutes it would have actually taken you to see all the messages, you know who you are...",
         "When I tested this, it took 10 minutes. It'll probably be 20 by the time I'm done.",
-        "Back to the beginning now, bye!"
+        "Back to the beginning now, bye!"*/
       ],
       typeSpeed: 50, // 100
       backSpeed: 50, // 100
-      backDelay: 5000,
+      backDelay: 1000,
       showCursor: true,
       cursorChar: "|",
       loop:true
