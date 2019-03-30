@@ -1,3 +1,4 @@
+@import "../../../vars.scss";
 
 .prefooter {
     height: 48pt;
@@ -5,21 +6,21 @@
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0pt -1pt 8pt rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    box-shadow: $shadow;
+    transition: $transition-time;
     z-index: 1;
 }
 
 .prefooter:hover {
-    box-shadow: 0pt -3pt 8pt rgba(0, 0, 0, 0.4);
+    box-shadow: $shadow-hover;
 }
 
 .footer {
 
     //margin: 48pt 0 0 0;
-    padding: 10pt;
-    background-color: #111111;
-    color: #ffffff;
+    padding: 16pt;
+    background-color: $color-dark;
+    color: $color-light;
 
     .footer_content {
 

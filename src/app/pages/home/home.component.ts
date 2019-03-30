@@ -16,11 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     let typed = new Typed(".banner_home_typed", {
       strings: [
-        "Java", 
-        "Ionic",
-        "Angular",
-        "Welcome to justinschaaf.com^5000",
-        "⬢^60000"
+        "Java ⬢ Ionic ⬢ Angular <br/> Welcome to justinschaaf.com"
         /*"What, you were expecting something after that?",
         "What else do you want me to put here‽",
         "Oh, also, did you know that this is called the Interrobang? -> ‽",
@@ -76,7 +72,7 @@ export class HomeComponent implements OnInit {
       backDelay: 1000,
       showCursor: true,
       cursorChar: "|",
-      loop:true
+      loop: false
     });
   }
 

@@ -1,3 +1,4 @@
+@import "../../../vars.scss";
 
 .header {
 
@@ -6,9 +7,9 @@
     position: fixed;
     flex-wrap: nowrap;
 
-    background-color: #ffffff;
-    box-shadow: 0pt 3pt 8pt rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    background-color: $color-light;
+    box-shadow: $shadow;
+    transition: $transition-time;
 
     .header_content {
 
@@ -38,11 +39,11 @@
             a {
                 text-decoration: none;
                 color: inherit;
-                transition: 0.3s;
+                transition: $transition-time;
             }
 
             a:hover {
-                text-shadow: 0pt 3pt 8pt rgba(0, 0, 0, 0.2);
+                text-shadow: $shadow;
             }
 
         }
@@ -56,7 +57,7 @@
             display: flex;
             flex-direction: row;
 
-            background-color: #111111;
+            background-color: $color-dark;
 
             .header_socialicon {
 
@@ -68,7 +69,7 @@
                 flex-direction: column;
                 text-align: center;
 
-                transition: 0.3s;
+                transition: $transition-time;
 
                 img {
                     margin: 0 auto;
@@ -88,5 +89,5 @@
 }
 
 .header:hover {
-    box-shadow: 0pt 5pt 8pt rgba(0, 0, 0, 0.4);
+    box-shadow: $shadow-hover;
 }
