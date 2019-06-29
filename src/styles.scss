@@ -65,6 +65,40 @@
 }
 */
 
+.hoverable {
+    transition: $transition-time;
+}
+
+.hoverable:hover {
+
+    animation-name: hover;
+    animation-duration: $transition-time;
+
+    transform: translateY(-20pt);
+    padding: 25pt;
+    box-shadow: $shadow-hover;
+
+}
+
+// References used to learn how to do these animations:
+// http://www.inwebson.com/css3/nifty-hover-effects-with-css3-animations/
+// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations 
+@keyframes hover {
+
+    from {
+        transform: translateY(0pt);
+        padding: 20pt;
+        box-shadow: $shadow;
+    }
+  
+    to {
+        transform: translateY(-20pt);
+        padding: 25pt;
+        box-shadow: $shadow-hover;
+    }
+
+}
+
 * {
     margin: 0;
     font-family: 'Overpass', 'Segoe UI Emoji', sans-serif;
@@ -147,8 +181,6 @@ a {
     justify-content: center;
     flex-wrap: nowrap;
 
-    transition: $transition-time;
-
     h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
@@ -169,8 +201,4 @@ a {
         margin: auto auto 0 auto;
     }
 
-}
-
-.card:hover {
-    box-shadow: $shadow-hover;
 }

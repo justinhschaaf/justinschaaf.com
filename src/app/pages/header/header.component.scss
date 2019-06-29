@@ -1,5 +1,9 @@
 @import "../../../vars.scss";
 
+
+// TODO Make the header have a frosted glass background when it is available in Firefox
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter 
+// and https://bugzilla.mozilla.org/show_bug.cgi?id=1178765
 .header {
 
     min-height: 48pt;
@@ -30,22 +34,29 @@
 
             margin: auto;
             height: 48pt;
+            width: 23.486%; // Magic number for having 3 items in the header and filling the space
 
             display: flex;
             justify-content: center;
             flex-direction: column;
             text-align: center;
 
+            background-color: $color-light;
+            outline: none;
+            border: none;
+
+            transition: $transition-time;
+
             a {
                 text-decoration: none;
                 color: inherit;
-                transition: $transition-time;
             }
 
-            a:hover {
-                text-shadow: $shadow;
-            }
+        }
 
+        .header_item:hover {
+            background-color: $hover-color-dark;
+            color: $color-light;
         }
 
         .header_socialicons {
