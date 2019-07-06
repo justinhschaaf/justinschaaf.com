@@ -9,7 +9,8 @@
     min-height: 48pt;
     width: 100%;
     position: fixed;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-direction: row;
 
     background-color: $color-light;
     box-shadow: $shadow;
@@ -30,33 +31,45 @@
             height: 48pt;
         }
 
-        .header_item {
-
-            margin: auto;
-            height: 48pt;
-            width: 23.486%; // Magic number for having 3 items in the header and filling the space
+        .header_items {
 
             display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: calc(100% - 192pt - 120pt);
+            //min-width: 360pt;
 
-            background-color: $color-light;
-            outline: none;
-            border: none;
-
-            transition: $transition-time;
-
-            a {
-                text-decoration: none;
-                color: inherit;
+            .header_item {
+    
+                margin: auto;
+                height: 48pt;
+                width: 33%; // 23.486%; // Magic number for having 3 items in the header and filling the space
+                min-width: 120pt;
+    
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+                text-align: center;
+    
+                background-color: $color-light;
+                outline: none;
+                border: none;
+    
+                transition: $transition-time;
+    
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+    
             }
 
-        }
+            .header_item:hover {
+                background-color: $hover-color-dark;
+                color: $color-light;
+            }
 
-        .header_item:hover {
-            background-color: $hover-color-dark;
-            color: $color-light;
         }
 
         .header_socialicons {
