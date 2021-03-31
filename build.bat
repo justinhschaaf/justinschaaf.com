@@ -7,4 +7,13 @@
 
 @echo off
 
-npx sapper export --legacy && xcopy /s /E /y .\__sapper__\export\ .\docs\ && copy .\docs\index.html .\docs\404.html && copy .\CNAME_STORAGE .\docs\CNAME
+:: Delete old content
+if exist .\docs\ del /Q .\docs\
+
+:: Build Website
+call npx sapper export --legacy
+
+:: Transfer Files
+xcopy /s /E /y .\__sapper__\export\ .\docs\
+copy .\docs\index.html .\docs\404.html
+copy .\CNAME_STORAGE .\docs\CNAME

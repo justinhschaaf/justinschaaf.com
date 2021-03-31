@@ -7,7 +7,11 @@
 
 		%sapper.base%
 
-		<style lang="scss" global> @import "global.scss"; </style>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+
+		<!-- Metadata -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -35,9 +39,9 @@
 
 	</head>
 
-	<body>
+	<body style="margin: 0;">
 		<!-- The application will be rendered inside this element,
-			because `src/client.js` references it -->
+			because `src/client.ts` references it -->
 		<div id="sapper">%sapper.html%</div>
 	</body>
 

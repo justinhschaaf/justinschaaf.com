@@ -40,7 +40,6 @@ If you want to make a website in Svelte using Sapper yourself, here are some of 
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
 - [Sapper Docs](https://sapper.svelte.dev/docs)
 - [Svelte Preprocessors](https://github.com/sveltejs/language-tools/tree/master/docs/preprocessors)
-- [Using SCSS with Svelte](https://medium.com/@sean_27490/svelte-sapper-with-sass-271fff662da9)
 - [Svelte/Sapper with Sass!](https://codepilotsf.medium.com/svelte-sapper-with-sass-271fff662da9)
 
 ## License
