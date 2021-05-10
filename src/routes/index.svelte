@@ -1,14 +1,12 @@
 <script context="module" lang="ts">
 
-	import { ContentLoader } from "../content";
+	// Process the splashes and entries later because the server only renders the page once, caches it, and uses that forever
 
 	export async function preload(page, session) {
 
 		var content = await ContentLoader.load("https://content.justinschaaf.com/common/config/website.json");
-		var splash: string = ContentLoader.selectSplash(content.splashes);
-		var entries = ContentLoader.castEntries(content.entries);
 
-		return { splash, entries };
+		return { content };
 
 	}
 
@@ -20,9 +18,22 @@
 	import Banner from "../components/Banner.svelte";
 	import Entries from "../components/Entries.svelte";
 	import Typed from "../components/Typed.svelte";
+
+	import { ContentLoader } from "../content";
 	
+	export let content: Content;
 	export let splash: string;
 	export let entries: {};
+
+	// Load Splashes and entries
+	loadContent();
+
+	function loadContent() {
+
+		splash = ContentLoader.selectSplash(content.splashes);
+		entries = ContentLoader.castEntries(content.entries);
+
+	}
 
 </script>
 
