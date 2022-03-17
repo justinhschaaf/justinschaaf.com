@@ -1,17 +1,3 @@
-<script context="module" lang="ts">
-
-	// Process the splashes and entries later because the server only renders the page once, caches it, and uses that forever
-
-	export async function preload(page, session) {
-
-		var content = await ContentLoader.load("https://content.justinschaaf.com/common/config/website.json");
-
-		return { content };
-
-	}
-
-</script>
-
 <script lang="ts">
 
 	// Components
@@ -21,19 +7,9 @@
 
 	import { ContentLoader } from "../content";
 	
-	export let content: Content;
-	export let splash: string;
-	export let entries: {};
-
-	// Load Splashes and entries
-	loadContent();
-
-	function loadContent() {
-
-		splash = ContentLoader.selectSplash(content.splashes);
-		entries = ContentLoader.castEntries(content.entries);
-
-	}
+	// Everything is loaded later because Svelte wants it loaded like that for some reason
+	// Promise is created here for clarity's sake
+	export let cp : Promise<Content> = ContentLoader.load("https://content.justinschaaf.com/common/config/website.json");
 
 </script>
 
@@ -143,45 +119,62 @@
 	<title>Justin Schaaf // justinschaaf.com</title>
 </svelte:head>
 
-<Banner background="assets/images/home_banner.jpg">
+<!-- 
+	Stupid problems require stupid solutions. 
+	Why isn't there a smarter way to do this? 
+	Before, it would fail to update whenever I updated the JSON.
+	Without this, it constantly returns Error 500 because the server 
+	wants to render the page without having the JSON file preloaded.
+-->
+{#await cp}
 
-	<div class="title">
+	<!-- TODO have blurred background image here while website is loading instead of white page -->
+	<!-- nevermind the difference sticking something here is negligible, don't bother -->
 
-		<img class="logo" src="assets/logos/js-fullname-light.svg" alt="Justin Schaaf">
-		<span class="splash"><Typed string={splash}></Typed></span>
+
+{:then c}
+
+	<Banner background="assets/images/home_banner.jpg">
+
+		<div class="title">
+
+			<img class="logo" src="assets/logos/js-fullname-light.svg" alt="Justin Schaaf">
+			<span class="splash"><Typed string={ContentLoader.selectSplash(c.splashes)}></Typed></span>
+
+		</div>
+
+		<div class="socialicons">
+
+			{#each Object.keys(c.entries["social"]) as socialKey}
+
+				{#if c.entries["social"][socialKey].featured && !c.entries["social"][socialKey].hidden}
+
+					<a class="social" target="_blank" href={c.entries["social"][socialKey].url}>
+						<img src={c.entries["social"][socialKey].icon} alt={c.entries["social"][socialKey].name}>
+					</a>
+
+				{/if}
+
+			{/each}
+
+		</div>
+
+	</Banner>
+
+	<div class="entries">
+
+		<div class="entries-inner">
+
+			{#each Object.keys(c.entries) as key}
+
+				<section class="entry-section">
+					<Entries name={key} entries={c.entries[key]}></Entries>
+				</section>
+
+			{/each}
+
+		</div>
 
 	</div>
 
-	<div class="socialicons">
-
-		{#each Object.keys(entries["social"]) as socialKey}
-
-			{#if entries["social"][socialKey].featured && !entries["social"][socialKey].hidden}
-
-				<a class="social" target="_blank" href={entries["social"][socialKey].url}>
-					<img src={entries["social"][socialKey].icon} alt={entries["social"][socialKey].name}>
-				</a>
-
-			{/if}
-
-		{/each}
-
-	</div>
-
-</Banner>
-
-<div class="entries">
-
-	<div class="entries-inner">
-
-		{#each Object.keys(entries) as key}
-
-			<section class="entry-section">
-				<Entries name={key} entries={entries[key]}></Entries>
-			</section>
-
-		{/each}
-
-	</div>
-
-</div>
+{/await}

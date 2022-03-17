@@ -8,7 +8,12 @@
 @echo off
 
 :: Delete old content
-if exist .\docs\ del /Q .\docs\
+if exist .\docs\ del .\docs /s /q
+
+:: Delete folders
+:: https://stackoverflow.com/a/13800688
+:: this doesn't work--too bad! I don't feel like fixing it right now
+:: if exist .\docs\ for /r /d .\docs\ %%a in (*) do rd %a /s /q
 
 :: Build Website
 call npx sapper export --legacy

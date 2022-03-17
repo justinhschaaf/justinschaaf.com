@@ -6,7 +6,7 @@ export class ContentLoader {
         
         var r = await fetch(src);
         var c: Content = await r.json() as Content;
-        
+
         return c;
 
     }
