@@ -17,9 +17,9 @@ This website is developed in TypeScript and SCSS, using the SvelteKit framework,
 ### File Structure
 
 - All website code is in `src`
-    - Components used in the pages are under `src/components`
+    - Components and shared scripts used in the pages are under `src/lib`
+        - `content.ts` provides assistance in loading content from a JSON file
     - Pages are under `src/routes` (which also serves to define the routes to access them)
-    - `content.ts` provides assistance in loading content from a JSON file
 - All static images are in `static/assets`
     - `static/assets/images` contains the background banner images used in the website
     - `static/assets/logos` contains special logo versions not available on `content.justinschaaf.com`

@@ -1,10 +1,7 @@
-
 <script lang="ts">
 
     import Banner from "$lib/components/Banner.svelte";
-    import Typed from "$lib/components/Typed.svelte";
-
-    let h1TypedOverride: object = { showCursor: false };
+    import Title from "$lib/components/Title.svelte";
 
 </script>
 
@@ -20,7 +17,7 @@
         align-items: center;
         justify-items: center;
 
-        color: #ffffff;
+        color: var(--color-light);
         background-color: #11111177;
         backdrop-filter: blur(4px);
 
@@ -37,17 +34,15 @@
             align-items: center;
             justify-items: center;
 
-            .title {
+            .titlebox {
 
                 height: 50%;
-                padding: 48px;
+                padding: 0 var(--padding-large);
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
 
-                h1 {
-                    text-align: left;
-                    font-size: 3em;
+                * {
                     margin: 0;
                 }
 
@@ -55,13 +50,13 @@
 
             button {
                 margin: 8px auto auto auto;
-                color: #111111;
-                background-color: #ffffff;
+                color: var(--color-dark);
+                background-color: var(--color-light);
             }
 
             button:hover {
-                color: #ffffff;
-                background-color: #111111;
+                color: var(--color-light);
+                background-color: var(--color-dark);
             }
 
         }
@@ -76,8 +71,8 @@
 
         <div class="content">
 
-            <div class="title">
-                <Typed overrides={ h1TypedOverride }><h1>Sorry, all we found here was a barren desert...</h1></Typed>
+            <div class="titlebox">
+                <Title>Sorry, all we found here was a barren desert...</Title>
             </div>
 
             <a href="/"><button>Go home?</button></a>

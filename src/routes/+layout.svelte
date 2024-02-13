@@ -19,16 +19,32 @@
     * but it still applies and I don't feel like rewriting it...
     */
 
-    :global(*) {
-        font-family: "IBM Plex Mono", 'Segoe UI Emoji', monospace;
+    :global(:root) {
+
+        --padding-large: 48px;
+
+        --color-dark: #111111;
+        --color-light: #ffffff;
+        --color-accent: #80aabd;
+
+        --shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.4);
+        --shadow-hover: 0 2px 16px 1px rgba(0, 0, 0, 0.4);
+        --transition: .2s ease-in-out;
+
+        --font-head: 'Major Mono Display', 'Courier New', monospace;
+        --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+
+        font-family: var(--font-body);
+        color: var(--color-dark);
+
     }
 
     :global(h1, h2, h3, h4, h5, h6) {
-        font-family: 'Major Mono Display', 'Segoe UI Emoji', monospace;
+        font-family: var(--font-head) !important;
     }
 
     :global(a) {
-        color: #80aabd;
+        color: var(--color-accent);
     }
 
     :global(img) {
@@ -37,29 +53,35 @@
 
     :global(button) {
 
-        text-transform: uppercase;
-        font-size: 1em;
         padding: 16px;
         min-width: 160px;
 
-        color: #ffffff;
-        background-color: #80aabd;
+        text-transform: uppercase;
+        font-size: 1em;
+        font-family: var(--font-body);
+
+        color: var(--color-light);
+        background-color: var(--color-accent);
         border: none;
 
-        transition: .25s ease-out;
-        box-shadow: 0 0px 8px rgba(0, 0, 0, 0.8);
+        transition: var(--transition);
+        box-shadow: var(--shadow);
 
     }
 
     :global(button:hover) {
 
         cursor: pointer;
-        transform: translateY(-2pt);
+        transform: translateY(-2px);
 
-        color: #000000;
-        background-color: #ffffff;
-        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
+        color: var(--color-dark);
+        background-color: var(--color-light);
+        box-shadow: var(--shadow-hover);
 
+    }
+
+    :global(p) {
+        text-align: justify;
     }
 
 </style>

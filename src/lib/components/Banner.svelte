@@ -14,7 +14,7 @@
 
         display: flex;
 
-        .content {
+        .banner-content {
 
             margin: auto;
             position: relative;
@@ -34,11 +34,9 @@
 
 <section class="banner" style="background-image: url({background});">
 
-    <div class="content">
-
+    <div class="banner-content">
         <slot></slot>
-
     </div>
-
+    
 </section>
 
