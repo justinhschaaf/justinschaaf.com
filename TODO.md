@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] SEO
+- [ ] SEO (use svelte:head element)
 - [ ] Mobile optimization
 - [ ] Light/Dark theme
 - [ ] Split website.json into smaller parts
@@ -12,8 +12,8 @@
 
 - [x] Banner
 - [x] Typed
-- [ ] Ascii/Image swapper
-- [ ] Markdown
+- [x] Ascii/Image swapper
+- [x] Markdown
 - [x] Content Section
 
 ### Nav Bar

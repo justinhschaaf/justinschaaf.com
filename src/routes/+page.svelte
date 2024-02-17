@@ -3,6 +3,7 @@
     import type { PageData } from "./$types";
     import { ContentLoader } from '$lib/content';
 
+    import AsciiStack from "$lib/components/AsciiStack.svelte";
     import Banner from "$lib/components/Banner.svelte";
     import Nav from "$lib/components/Nav.svelte";
     import Section from "$lib/components/Section.svelte";
@@ -58,6 +59,31 @@
 
     }
 
+    .projects {
+
+        width: 100vw;
+        display: grid;
+
+        // https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+
+        .project {
+            
+            width: 100%;
+            color: var(--color-light);
+
+            font-size: 2em;
+            text-align: center;
+            transition: var(--transition);
+
+        }
+
+        .project:hover {
+            color: var(--color-dark);
+        }
+
+    }
+
 </style>
 
 <Banner background="assets/images/home_banner.webp">
@@ -108,3 +134,45 @@
     </p>
 
 </Section>
+
+<Section anchor="projects" padding={ false }>
+
+    <Title>Projects</Title>
+
+</Section>
+
+<section class="projects">
+
+    <div class="project">
+
+        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
+            <h1>Llama Steeds</h1>
+        </AsciiStack>
+
+    </div>
+
+    <div class="project">
+
+        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
+            <h1>Llama Steeds</h1>
+        </AsciiStack>
+
+    </div>
+
+    <div class="project">
+
+        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
+            <h1>Llama Steeds</h1>
+        </AsciiStack>
+
+    </div>
+
+    <div class="project">
+
+        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
+            <h1>Llama Steeds</h1>
+        </AsciiStack>
+
+    </div>
+
+</section>

@@ -1,27 +1,29 @@
 <script lang="ts">
 
-    // Imports
     import { onMount } from "svelte";
     import Typed  from "typed.js";
 
     export let overrides: object = {};
 
-    let id: string = "typed" + Math.trunc(Math.random() * 100000);
-
-    // Typed Settings
-    let options: object = {
-        stringsElement: "#typed-input-" + id,
-        typeSpeed: 50,
-        backSpeed: 50,
-        backDelay: 1000,
-        showCursor: true,
-        cursorChar: "_",
-        loop: false,
-        ...overrides // https://stackoverflow.com/a/171256
-    };
+    let typedInput: HTMLDivElement;
+    let typedOutput: HTMLSpanElement;
 
     onMount(() => {
-        let typed: Typed = new Typed("#typed-" + id, options);
+
+        // Typed Settings
+        let options: object = {
+            stringsElement: typedInput,
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000,
+            showCursor: true,
+            cursorChar: "_",
+            loop: false,
+            ...overrides // https://stackoverflow.com/a/171256
+        };
+
+        let typed: Typed = new Typed(typedOutput, options);
+
     });
 
 </script>
@@ -59,8 +61,8 @@
 
 </style>
 
-<div class="typed-input" id="typed-input-{id}">
+<div bind:this={ typedInput } class="typed-input">
     <span><slot></slot></span>
 </div>
 
-<span id="typed-{id}"></span>
+<span bind:this={ typedOutput } class="typed"></span>

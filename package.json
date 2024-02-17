@@ -28,7 +28,13 @@
         "vite": "^5.0.3"
     },
     "dependencies": {
-        "ansi_up": "^6.0.2",
+        "fitty": "^2.4.2",
+        "gray-matter": "^4.0.3",
+        "highlight.js": "^11.9.0",
+        "marked": "^12.0.0",
+        "marked-alert": "^2.0.1",
+        "marked-footnote": "^1.2.2",
+        "marked-highlight": "^2.1.1",
         "sass": "^1.70.0",
         "typed.js": "^2.1.0"
     }
