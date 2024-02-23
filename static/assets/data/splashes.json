@@ -1,0 +1,181 @@
+{
+    "splashes": [
+        {
+            "name": "Happy Birthday!",
+            "prerequisites": {
+                "month": 1,
+                "day": 19
+            }
+        },
+        {
+            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=0TfodFaBLAI'>Happy Land Line Telephone Day!</a>",
+            "prerequisites": {
+                "month": 3,
+                "day": 10
+            }
+        },
+        {
+            "name": "Stuck in quarantine...",
+            "prerequisites" : {
+                "month": 3,
+                "day": 16
+            }
+        },
+        {
+            "name": "Online since 2011",
+            "prerequisites": {
+                "month": 5
+            }
+        },
+        {
+            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=e91M0XLX7Jw'>Plays Chess Poorly</a>",
+            "prerequisites": {
+                "month": 6,
+                "day": 9
+            }
+        },
+        {
+            "name": "Seasoned YouTube Veteran",
+            "prerequisites": {
+                "month": 8,
+                "day": 19
+            }
+        },
+        {
+            "name": "Tried to order a burrito at a bank drive-thru...",
+            "prerequisites": {
+                "month": 1,
+                "day": 19
+            }
+        },
+        {
+            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=4DB1e4M_Q5I'>Not on time</a>",
+            "prerequisites": {
+                "month": 12,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pay your taxes.",
+            "prerequisites": {
+                "month": 4
+            }
+        },
+        {
+            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=X8TAmhSLO0o'>On time</a>",
+            "prerequisites": {
+                "hour": 21
+            }
+        },
+        "Sponsored by Freedom",
+        "Birds are majestic creatures.",
+        "Why <italic>should</italic> I care?",
+        "You call that clean?",
+        "Sticking to The Plan",
+        "You could stop at 5 or 6 websites, or just 1",
+        "No rest for the weary",
+        "Overthinking Simple Solutions",
+        "Contemplating Context",
+        "Humanely Humorous",
+        "Flying with Pheasants",
+        "Forming a Fan Club",
+        "Have a great day!",
+        "Prolonging Past Projects",
+        "Uniquely Unsorted",
+        "Includes Interesting Splashes",
+        "Safer than School Lunch",
+        "Designed with 𝓢𝓽𝔂𝓵𝓮",
+        "I used to eat apps... Now I make Apps too.",
+        "Noteworthy Night Owl",
+        "More Corect than Autocorrect",
+        "No Proof Necessary",
+        "Selling YOU on ME",
+        "Powered by Doughnuts",
+        "High-Quality Semi-Original Ideas",
+        "Making Websites Great Again",
+        "Explaining History",
+        "Making History",
+        "HoI4 Grand Strategist",
+        "Making fun of the world so you don't have to",
+        "YouTube Media Mogul",
+        "Modern Philosopher",
+        "A Literal ⬢",
+        "Shamelessly Self Promoting",
+        "Likes <italic>Smooth</italic> Jazz",
+        "Prefers HOCON Configuration",
+        "Hello.",
+        "The World's Best Website",
+        "Criticizing the 1%",
+        "Sponsored by... Myself...",
+        "Don't let the food melt your mouth before the food melts in your mouth",
+        "Please install drivers.",
+        "Lived to see the day Sherwin Williams ran out of paint",
+        "Planning the future of the Fax Machine",
+        "1 . . . 2 . . . ? Sorry, I don't know",
+        "\"Because nobody could *ever* possible attempt to parse bad data.\"",
+        "Has Negative Social Credit",
+        "A Wonderful Idiot",
+        "Sending 52 Volts straight to the CPU",
+        "<span style='color: #369;'>Stay Hydrated!</span>",
+        "we start somewhete",
+        "Eats bread EVERY SINGLE DAY!",
+        "Got Ultrakilled in P-2",
+        "Why aren't Projectile Boosts helping my YouTube subscriber growth?",
+        "Searching for the Size 2 fish",
+        "おやすみ",
+        "Waiting for something to happen?",
+        "Played Half-Life as a cat",
+        "Needs to get around to playing Victoria 3",
+        "Immediately maxes out the Steam seasonal badge...",
+        "The soup is cold and the salad is hot",
+        "Owns a Davy Crockett for home defense",
+        "Meant to order a tomatonator",
+        "What kind of tree would you be?",
+        "You're going to Brazil",
+        "Won the battle of Techno House",
+        "Desperately needs to perform software updates",
+        " ",
+        "Wants to use Source 2",
+        "Ordered same-day shipping at 11:59 PM",
+        "Staying Alive",
+        "\"There will never be a house in New Orleans\"",
+        "Your verification code is 154928",
+        "A large boulder the size of a small boulder",
+        "The best candy is Plutonium",
+        "Didn't eat a whole pound of spaghetti at once",
+        "Casually invests $4,788 in a lamp",
+        "<a target='_blank' style='color: #fff;' href='https://colors.justinschaaf.com'><span style='color: #d34;'>C</span><span style='color: #e72;'>O</span><span style='color: #f6ce3d;'>L</span><span style='color: #5b5;'>O</span><span style='color: #3cc;'>R</span><span style='color: #16d;'>I</span><span style='color: #90c;'>Z</span><span style='color: #c3c;'>E</span><span style='color: #f9c;'>D</span></a>",
+        "<a target='_blank' style='color: #ff5; text-decoration: none;' href='https://www.youtube.com/@justinhs/'>Hiding Hyperlinks</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/@justinhs/'>You should subscribe on YouTube!</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=VlbatQ_SYa8'>Cooking Baby Back Ribs</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=iI6ASaCYKuc'>Mutually Assured Destruction</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=-g0H3mlE5LY'>Fixed the Garage Door Opener</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=uQPN1s8eq0E'>Mowing Grass</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=Qzi1G3SxX-w'>Definitely Has Friends</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=NBIO7ABBiJ0'>Strategizing in 5D</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=BdybKGLIqL0'>Asking Existential Questions</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=ecCe-b-5QHo'>Running on Empty</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=gS7jJG11Wq0'>Dropping Chaos</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.curseforge.com/minecraft/mc-mods/llama-steeds'>Riding into the sunset</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://liberapay.com/justinhschaaf'>Wants your money</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.fedoraproject.org/spins/budgie/'>Switching to Linux</a> <a target='_blank' style='color: #ff5;' href='https://getsol.us'>from a different Linux</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://cartercaudio.bandcamp.com/album/star-cluster-remix'>Still nobody</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=6aAb_movOXk'>Creating Communal Showers</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=li0lv4Igyto'>Has a Shield</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=IJiIz1Xu8_8'>Drives a Land Boat</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=pJSuGmYqX18'>Ardent Catpitalist</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=f6a5qXrPaoM'>Needs help with the city budget</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=FeIZtzmUq0k'>Invests $7 trillion in removing all elevation in the US</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=eXylAwmVGZ4'>Maxwell Enjoyer</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=mu8MdQgqtzQ'>Reporting a cat to the government</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=ChOSm5r4mSY'>Needs some minor autobody repair</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=ynY2begPzoM'>You're going to Detroit</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=DmcEfJzDoFs'>Won't give the printer a gun</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=LkrEHCFAYSo'>Took away the bread, cheese, lettuce, tomatoes, and mayonnaise</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.reddit.com/r/nextfuckinglevel/comments/l8uugv/this_shower_head_fixed_can_completely_cut_a/'>Bathroom renovation in progress</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=55fmNwCgf1M'>\"Cannons are instruments, and I'm going to use 21 of them\"</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=fTFxE32onKs'>Drives an electric car</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://keygenchurch.bandcamp.com/'>P R A I S E   T H E   C O D E</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://soundcloud.com/laurensgoedhart/claude-debussys-clair-de-lune'>Likes Debussy</a>"
+    ]
+}

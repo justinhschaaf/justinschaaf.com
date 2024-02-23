@@ -1,6 +1,10 @@
 <script lang="ts">
 
-    import Banner from "$lib/components/Banner.svelte";
+    //import { dev } from "$app/environment";
+    //import { page } from "$app/stores";
+    //import Section from "$lib/layouts/Section.svelte";
+
+    import Banner from "$lib/layouts/Banner.svelte";
     import Title from "$lib/components/Title.svelte";
 
 </script>
@@ -83,4 +87,13 @@
 
 </Banner>
 
-<!-- TODO bring back stack trace in dev env -->
+<!-- Stack Traces are no longer added to errors https://kit.svelte.dev/docs/errors#unexpected-errors -->
+
+<!--{#if dev}
+
+    <Section>
+        <h1>{$page.status}</h1>
+        <pre>{$page.error?.message}</pre>
+    </Section>
+
+{/if}-->

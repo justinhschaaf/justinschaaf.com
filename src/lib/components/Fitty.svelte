@@ -9,17 +9,22 @@
     import { afterUpdate } from "svelte";
     import fitty from "fitty";
 
+    export let minSize: number = 16;
+    export let maxSize: number = 512;
+    export let multiLine: boolean = true;
+
     let fittyDiv: HTMLDivElement;
 
     afterUpdate(() => {
         fitty(fittyDiv, { 
-            minSize: 1, 
-            multiLine: false 
+            minSize: minSize, 
+            maxSize: maxSize,
+            multiLine: multiLine 
         });
     });
 
 </script>
 
-<div bind:this={ fittyDiv }>
+<div bind:this={fittyDiv}>
     <slot></slot>
 </div>

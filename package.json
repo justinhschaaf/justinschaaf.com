@@ -36,6 +36,7 @@
         "marked-footnote": "^1.2.2",
         "marked-highlight": "^2.1.1",
         "sass": "^1.70.0",
+        "svelte-persisted-store": "^0.9.1",
         "typed.js": "^2.1.0"
     }
 }

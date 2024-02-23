@@ -40,10 +40,8 @@
         if (src != null) {
 
             fetch(src).then(res => {
-                console.log("a");
                 if (res.ok) return res.text();
             }).then (res => {
-                console.log("b");
                 content = res + "";
             });
 
@@ -68,8 +66,8 @@
 
 </style>
 
-<div bind:this={ inputDiv } class="md-input">
-    <slot>{ content }</slot>
+<div bind:this={inputDiv} class="md-input">
+    <slot>{content}</slot>
 </div>
 
-<div bind:this={ mdDiv }></div>
+<div bind:this={mdDiv}></div>

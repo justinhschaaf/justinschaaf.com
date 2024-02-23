@@ -1,3 +1,13 @@
+<script lang="ts">
+
+    import type { PageData } from "./$types";
+    import { darkTheme } from "$lib/theme"
+    import Footer from "$lib/components/Footer.svelte";
+
+    export let data: PageData;
+    
+</script>
+
 <style lang="scss">
 
     /*
@@ -86,6 +96,13 @@
 
 </style>
 
-<main>
-    <slot></slot>
-</main>
+<div class:dark={$darkTheme} class:light={!$darkTheme}>
+
+    <main>
+        <slot></slot>
+    </main>
+    
+    <Footer socials={data.socials}></Footer>
+
+</div>
+

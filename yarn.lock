@@ -2002,6 +2002,7 @@ __metadata:
     sass: "npm:^1.70.0"
     svelte: "npm:^4.2.7"
     svelte-check: "npm:^3.6.0"
+    svelte-persisted-store: "npm:^0.9.1"
     tslib: "npm:^2.4.1"
     typed.js: "npm:^2.1.0"
     typescript: "npm:^5.0.0"
@@ -3055,6 +3056,15 @@ __metadata:
   peerDependencies:
     svelte: ^3.19.0 || ^4.0.0
   checksum: 80b6df78e4bc1dd8d1beb4cfc5c341a7839a444b41320cb1ff56c19741346ecc07ee7cc989d7083b02c40bad80d989d52b0defac4126cd0013eaac378f626d63
+  languageName: node
+  linkType: hard
+
+"svelte-persisted-store@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "svelte-persisted-store@npm:0.9.1"
+  peerDependencies:
+    svelte: ^3.48.0 || ^4.0.0 || ^5.0.0-next.0
+  checksum: 2e1d458aac1119fdc7d4b45f704e98c2db24c5028d3138168102470121302b1a3f08ce08caebadb1ccb6e2789d93ad5c60b2990ed3e4cdaac7e5a9d348192aff
   languageName: node
   linkType: hard
 

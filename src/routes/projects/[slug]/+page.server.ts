@@ -3,9 +3,8 @@ import * as content from '$lib/content';
 
 // Yes, we have to use Svelte's fetch or it complains
 // https://kit.svelte.dev/docs/load#making-fetch-requests
-export const load: PageServerLoad = async ({ fetch }) => {
+export const load: PageServerLoad = async ({ fetch, params }) => {
     return {
-        projects: await content.fetchProjects(fetch, "/assets/data/projects.json"),
-        splash: await content.fetchSplash(fetch, "/assets/data/splashes.json")
+        project: await content.fetchProject(fetch, "/assets/data/projects.json", params.slug)
     };
 };

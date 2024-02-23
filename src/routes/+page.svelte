@@ -1,19 +1,21 @@
 <script lang="ts">
 
     import type { PageData } from "./$types";
-    import { ContentLoader } from '$lib/content';
+
+    import Banner from "$lib/layouts/Banner.svelte";
+    import Section from "$lib/layouts/Section.svelte";
 
     import AsciiStack from "$lib/components/AsciiStack.svelte";
-    import Banner from "$lib/components/Banner.svelte";
+    import Fitty from "$lib/components/Fitty.svelte";
     import Nav from "$lib/components/Nav.svelte";
-    import Section from "$lib/components/Section.svelte";
     import Title from "$lib/components/Title.svelte";
     import Typed from "$lib/components/Typed.svelte";
 
     // This variable has to be named data, apparently because it's a property
     // https://kit.svelte.dev/docs/load#page-data
-    // TODO move to layout? everything needs it...
     export let data: PageData;
+
+    let projectKeys: string[] = Object.keys(data.projects);
 
 </script>
 
@@ -96,9 +98,9 @@
         </div>
         
         <!-- @html makes sure the HTML applies instead of showing in plaintext -->
-        <span class="splash">
-            <Typed>{@html ContentLoader.selectSplash(data.splashes)}</Typed>
-        </span>
+        <em class="splash">
+            <Typed>{@html data.splash}</Typed>
+        </em>
 
     </div>
 
@@ -135,7 +137,7 @@
 
 </Section>
 
-<Section anchor="projects" padding={ false }>
+<Section anchor="projects" padding={false}>
 
     <Title>Projects</Title>
 
@@ -143,36 +145,20 @@
 
 <section class="projects">
 
-    <div class="project">
+    {#each projectKeys as key}
 
-        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
-            <h1>Llama Steeds</h1>
-        </AsciiStack>
+        {@const project = data.projects[key]}
 
-    </div>
+        {#if !project.disabled}
 
-    <div class="project">
+            <a class="project" href="/projects/{key}" target="_self">
+                <AsciiStack ascii={project.art.ascii_light} image={project.art.img}>
+                    <Fitty minSize={24} maxSize={40}><h1>{@html project.name }</h1></Fitty>
+                </AsciiStack>
+            </a>
 
-        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
-            <h1>Llama Steeds</h1>
-        </AsciiStack>
+        {/if}
 
-    </div>
-
-    <div class="project">
-
-        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
-            <h1>Llama Steeds</h1>
-        </AsciiStack>
-
-    </div>
-
-    <div class="project">
-
-        <AsciiStack ascii="/assets/images/projects_llamasteeds_light.html" image="/assets/images/projects_llamasteeds.png">
-            <h1>Llama Steeds</h1>
-        </AsciiStack>
-
-    </div>
+    {/each}
 
 </section>

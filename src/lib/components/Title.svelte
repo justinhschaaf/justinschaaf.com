@@ -2,8 +2,6 @@
 
     import Typed from "$lib/components/Typed.svelte";
 
-    let titleTypedOverride: object = { showCursor: false };
-
 </script>
 
 <style lang="scss">
@@ -26,12 +24,10 @@
 
 <div class="title-wrap">
 
-    <Typed overrides={ titleTypedOverride }>
-
-        <h1 class="title">
+    <h1 class="title">
+        <Typed>
             <slot></slot>
-        </h1>
-        
-    </Typed>
+        </Typed>
+    </h1>
 
 </div>

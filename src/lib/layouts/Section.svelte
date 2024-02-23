@@ -25,6 +25,6 @@
 
 </style>
 
-<section id={ anchor } class:padded={ padding }>
+<section id={anchor} class:padded={padding}>
     <slot></slot>
 </section>

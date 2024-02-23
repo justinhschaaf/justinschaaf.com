@@ -61,8 +61,8 @@
 
 </style>
 
-<div bind:this={ typedInput } class="typed-input">
+<div bind:this={typedInput} class="typed-input">
     <span><slot></slot></span>
 </div>
 
-<span bind:this={ typedOutput } class="typed"></span>
+<span bind:this={typedOutput} class="typed"></span>

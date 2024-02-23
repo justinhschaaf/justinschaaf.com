@@ -51,21 +51,21 @@ Run a preview server with `yarn run preview`.
 
 ### Additional Resources
 
-> ***TODO** outdated*
+If you want to make a website in Svelte using SvelteKit yourself, here are some of the sources I used:
 
-If you want to make a website in Svelte using Sapper yourself, here are some of the sources I used to learn:
+- [Svelte Docs](https://svelte.dev/docs)
+- [SvelteKit Docs](https://kit.svelte.dev/docs)
 
-- [Svelte Tutorial](https://svelte.dev/tutorial/basics)
-- [Sapper Docs](https://sapper.svelte.dev/docs)
-- [Svelte Preprocessors](https://github.com/sveltejs/language-tools/tree/master/docs/preprocessors)
-- [Svelte/Sapper with Sass!](https://codepilotsf.medium.com/svelte-sapper-with-sass-271fff662da9)
+I've also scatterd references here and there for specific bits of code.
 
 ## License
 
-The source code for the website itself is licensed under the [MIT License](https://github.com/justinhschaaf/justinschaaf.com/blob/master/LICENSE.md). 
+The source code for the website itself is licensed under the [zlib license](LICENSE.md). 
 
 I'm still not certain what I want to specifically license the banner images under at this time, so assume that they're All Rights Reserved with exceptions when used for reference or educational purposes with proper attribution provided. 
 
-Third-party social icons are copyrighted trademarks of their resepctive owners (See [`README.md`](https://github.com/justinhschaaf/justinschaaf.com/blob/master/static/assets/socialicons/README.md) in the `static/assets/socialicons` folder of the project)
+Most icons are made by other artists and used under Creative Commons licenses (See [`README.md`](static/assets/icons/README.md) in the `static/assets/icons` folder of the project)
+
+Third-party social icons are copyrighted trademarks of their resepctive owners (See [`README.md`](static/assets/socialicons/README.md) in the `static/assets/socialicons` folder of the project)
 
 [Major Mono Display](https://github.com/googlefonts/majormono) is licensed under the [SIL Open Font License](https://github.com/googlefonts/majormono/blob/master/OFL.txt), and [Overpass Mono](https://overpassfont.org) is licensed under the [SIL Open Font License](https://github.com/RedHatOfficial/Overpass/blob/master/LICENSE.md).

@@ -84,10 +84,10 @@
 
 </style>
 
-<div class="ascii-sandwich" style="background-image: url({ image });">
+<div class="ascii-sandwich" style="background-image: url({image});">
 
     <div class="stack-ansi">
-        <Fitty>{@html ansi }</Fitty>
+        <Fitty minSize={1} multiLine={false}>{@html ansi}</Fitty>
     </div>
 
     <div class="stack-content">

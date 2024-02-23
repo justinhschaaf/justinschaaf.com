@@ -1,98 +1,112 @@
-export class ContentLoader {
+export async function fetchProject(fetcher: Function, src: string, key: string) {
 
-    public static async load(src: string): Promise<Content> {
-        
-        let r = await fetch(src);
-        let c: Content = await r.json() as Content;
+    let projects = await fetchProjects(fetcher, src);
+    let project = projects[key];
 
-        return c;
+    let contentPromise = await fetcher(project.desc); 
+    project.desc_content = await contentPromise.text();
 
-    }
+    return project;
 
-    public static selectSplash(splashes: any[]): string {
+}
 
-        let splash: string = "";
+export async function fetchProjects(fetcher: Function, src: string): Promise<{[index: string]: Project}> {
+    return castObjects(await fetchJson(fetcher, src));
+}
 
-        // am I the only person that finds Java's null more useful than this?
-        while (splash == "" && splashes.length > 0) {
+export async function fetchSocials(fetcher: Function, src: string): Promise<{[index: string]: SocialIcon}> {
+    return castObjects(await fetchJson(fetcher, src));
+}
 
-            let index = Math.floor(Math.random() * splashes.length);
-            let selection = splashes[index];
+export async function fetchSplash(fetcher: Function, src: string): Promise<string> {
 
-            if (typeof selection == typeof "string") splash = selection;
-            // I love Java because I don't have to do crap like this to check if a variable is of a certain interface >=(
-            else if ("name" in selection) {
+    let json = await fetchJson(fetcher, src);
+    let splashes: [] = json["splashes"];
 
-                let special: Splash = selection as Splash;
-                let valid = true;
+    let splash: string = "";
 
-                // Check prerequisites
-                if (special.prerequisites != undefined) {
+    // am I the only person that finds Java's null more useful than a blank string?
+    while (splash == "" && splashes.length > 0) {
 
-                    if (special.prerequisites.month != undefined && special.prerequisites.month > 0) {
-                        if (new Date().getMonth() != special.prerequisites.month) valid = false;
-                    }
+        let index = Math.floor(Math.random() * splashes.length);
+        let selection = splashes[index];
 
-                    if (special.prerequisites.day != undefined && special.prerequisites.day > 0) {
-                        if (new Date().getDate() != special.prerequisites.month) valid = false;
-                    }
+        if (typeof selection == typeof "string") splash = selection;
+        // I love Java because I don't have to do crap like this to check if a variable is of a certain interface >=(
+        else if ("name" in selection) {
 
-                    if (special.prerequisites.hour != undefined && special.prerequisites.hour > 0) {
-                        if (new Date().getHours() != special.prerequisites.hour) valid = false;
-                    }
+            let special: Splash = selection as Splash;
 
+            // Skip disabled
+            if (special.disabled) continue;
+
+            // Check prerequisites
+            let valid = true;
+            if (special.prerequisites != undefined) {
+
+                if (special.prerequisites.month != undefined && special.prerequisites.month > 0) {
+                    if (new Date().getMonth() != special.prerequisites.month) valid = false;
                 }
 
-                if (valid) {
-                    splash = special.name;
+                if (special.prerequisites.day != undefined && special.prerequisites.day > 0) {
+                    if (new Date().getDate() != special.prerequisites.month) valid = false;
+                }
+
+                if (special.prerequisites.hour != undefined && special.prerequisites.hour > 0) {
+                    if (new Date().getHours() != special.prerequisites.hour) valid = false;
                 }
 
             }
 
-            splashes.splice(index, 1);
+            if (valid) {
+                splash = special.name;
+            }
 
         }
 
-        return splash;
+        splashes.splice(index, 1);
 
     }
 
-    // TS7053 solution https://stackoverflow.com/a/56833507
-    public static castEntries(rawEntries: {[index: string]: any}): {} {
-
-        let entries: {[index: string]: any} = {};
-
-        // Convert entries to actual entries
-        Object.keys(rawEntries).forEach((category) => {
-
-            Object.keys(rawEntries[category]).forEach((key) => {
-
-                if (entries[category] == undefined) entries[category] = {};
-
-                // Convert it to an entry and add it to the new object
-                let e: Entry = rawEntries[category][key] as Entry;
-                entries[category][key] = e;
-
-            });
-
-        });
-
-        return entries;
-
-    }
+    return splash;
 
 }
 
-export interface Content {
+export async function fetchJson(fetcher: Function, src: string): Promise<any> {
     
-    splashes: any[];
-    entries: {};
+    let r = await fetcher(src);
+    return await r.json();
+
+}
+
+export function castObjects<T>(raw: {[index: string]: any}): {[index: string]: T} {
+
+    let out: {[index: string]: T} = {};
+
+    Object.keys(raw).forEach((key) => {
+
+        let p: T = raw[key] as T;
+        out[key] = p;
+
+    });
+
+    return out;
+
+}
+
+export interface SocialIcon {
+
+    name: string;
+    url: string;
+    icon: string;
+    disabled?: boolean;
 
 }
 
 export interface Splash {
 
     name: string;
+    disabled?: boolean;
     prerequisites?: {
         month?: number;
         day?: number;
@@ -101,17 +115,20 @@ export interface Splash {
 
 }
 
-export interface Entry {
+export interface Project {
 
     name: string;
-    url: string;
-    hidden?: boolean;
+    title: string;
+    tagline: string;
+    desc: string;
+    desc_content?: string;
+    disabled?: boolean;
 
-    // Social Icons
-    featured?: boolean;
-    icon?: string;
-
-    // Projects
-    desc?: string;
+    art: {
+        img: string;
+        ascii_dark: string;
+        ascii_light: string;
+        cover: string;
+    }
 
 }

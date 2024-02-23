@@ -3,10 +3,11 @@
 - [ ] SEO (use svelte:head element)
 - [ ] Mobile optimization
 - [ ] Light/Dark theme
-- [ ] Split website.json into smaller parts
+- [x] Split website.json into smaller parts
 - [ ] Documentation
 - [ ] Analytics
 - [x] Remove AI scrapers
+- [ ] Mastodon website verification
 
 ## Components
 
@@ -25,17 +26,17 @@
 
 ### Footer
 
-- [ ] Social icons
-- [ ] Theme switcher
-- [ ] Source and commit version
+- [x] Social icons
+- [x] Theme switcher
+- [x] Source and commit version
 
 ## Homepage
 
 - [x] Hero image
 - [x] Splash text
 - [x] About
-- [ ] Projects
-- [ ] Individual Project Pages
+- [x] Projects
+- [x] Individual Project Pages
 
 ## Blog
 
@@ -48,4 +49,4 @@
 
 - [x] Barren Desert
 - [x] Go Home
-- [ ] Error in dev environments
+- [x] Error in dev environments
