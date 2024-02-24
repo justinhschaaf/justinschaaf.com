@@ -1,14 +1,14 @@
 <script lang="ts">
 
-    import type { PageData } from "./$types";
+    import { page } from "$app/stores";
 
     import TwoPane from "$lib/layouts/TwoPane.svelte"
     import Section from "$lib/layouts/Section.svelte";
 
+    import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
+    import Fitty from "$lib/components/Fitty.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
     import Title from "$lib/components/Title.svelte";
-
-    export let data: PageData;
 
 </script>
 
@@ -39,23 +39,21 @@
 
 </style>
 
-<TwoPane background={data.project.art.cover}>
+<TwoPane background={$page.data.project.art.cover}>
 
     <div class="content">
 
         <Section>
 
-            <!-- TODO breadcrumbs -->
+            <Breadcrumbs></Breadcrumbs>
 
-            <span>Home / bread / crumbs</span>
+            <Title>{$page.data.project.title}</Title>
 
-            <Title>{data.project.title}</Title>
-
-            <em class="tagline">{data.project.tagline}</em>
+            <em class="tagline">{$page.data.project.tagline}</em>
 
             <br>
     
-            <Markdown>{data.project.desc_content}</Markdown>
+            <Markdown>{$page.data.project.desc_content}</Markdown>
     
         </Section>
 

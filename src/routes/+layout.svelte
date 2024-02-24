@@ -94,6 +94,11 @@
         text-align: justify;
     }
 
+    main {
+        // Make sure there's nothing under the footer
+        min-height: 100vh;
+    }
+
 </style>
 
 <div class:dark={$darkTheme} class:light={!$darkTheme}>

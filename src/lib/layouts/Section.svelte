@@ -13,9 +13,10 @@
         // As an example these two lines are 80 characters long including indent
         
         // https://www.w3.org/WAI/tutorials/page-structure/styling/#line-length
-        min-width: 320px;
+        min-width: 300px;
         max-width: 800px;
         margin: auto;
+        padding: 0 var(--padding-large);
 
     }
 

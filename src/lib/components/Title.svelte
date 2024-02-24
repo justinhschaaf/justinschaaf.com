@@ -15,9 +15,13 @@
     }
 
     .title {
+
         text-align: left;
-        font-size: 3em;
         margin: 0;
+
+        // https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+        font-size: clamp(2em, 5vw, 3em);
+        
     }
     
 </style>

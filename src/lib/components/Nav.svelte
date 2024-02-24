@@ -1,7 +1,40 @@
 <script lang="ts">
-    // TODO https://kit.svelte.dev/docs/types#public-types-page
+
     // The only thing I miss from Angular is the router
     // https://github.com/justinhschaaf/yamltobot.com/blob/master/src/app/app.component.html#L17-L39
+    
+    // I'll be honest the routerLinkActive behavior wasn't too hard to replicate
+    // just inconvenient that I had to implement it myself at all
+
+    import { page } from "$app/stores";
+
+    // So we don't have to declare it every time, but can if we want to
+    export let currentRoute: string = $page.url.pathname;
+
+    // The order is inverted as to how it appears to the website to improve
+    // style, see comment below
+    let routes = [
+        {
+            name: "Blog",
+            url: "/blog",
+            active: false
+        },
+        {
+            name: "Home",
+            url: "/",
+            active: false
+        }
+    ];
+
+    for (let i = 0; i < routes.length; i++) {
+
+        if (currentRoute.startsWith(routes[i].url)) {
+            routes[i].active = true;
+            break;
+        }
+
+    }
+
 </script>
 
 <style lang="scss">
@@ -10,7 +43,6 @@
 
         // Overlay the banner
         transform: translateY(-96px);
-        padding: 0 var(--padding-large);
         margin: 0 0 -96px 0;
         height: 96px;
 
@@ -88,15 +120,14 @@
 
 </style>
 
-<!-- The order is deliberately inverted, see note above -->
 <nav class="tabs">
 
-    <div class="tab"><h2>Tools</h2></div>
+    {#each routes as route}
 
-    <div class="tab"><h2>Blog</h2></div>
-
-    <a class="tab active" href="/">
-        <h2>Home</h2>
-    </a>
+        <a class="tab" class:active={route.active} href="{route.url}">
+            <h2>{route.name}</h2>
+        </a>
+        
+    {/each}
 
 </nav>

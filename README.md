@@ -29,10 +29,12 @@ This website is developed in TypeScript and SCSS, using the SvelteKit framework,
 
 To make sure the Yarn version doesn't change, the version is locked by the Nix package manager. If you're not on NixOS, install the Nix package manager for your system using the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer).
 
+> [!NOTE]
 > *I recommend the Determinate installer over the default provided on the NixOS website since the default doesn't work on SELinux systems (e.g. Fedora) while the Determinate installer does.*
 
 Once Nix is installed, enter the dev shell by running `nix develop` in the project directory. **Assume ALL commands hereafter are in this shell unless otherwise stated.**
 
+> [!TIP]
 > *For reference, a new Svelte project can be created here with `yarn create svelte`.*
 
 At this point, you can install the project's dependencies with `yarn install`. 
@@ -43,6 +45,7 @@ Run `yarn run dev` to open a development server on [localhost:5173](http://local
 
 ### Building
 
+> [!IMPORTANT]
 > ***TODO** I still need to figure out the exact details for gh-pages deployment.*
 
 Basic instructions are to use `yarn run build`; however, 

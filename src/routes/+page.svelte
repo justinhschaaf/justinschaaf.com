@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import type { PageData } from "./$types";
+    import { page } from "$app/stores";
 
     import Banner from "$lib/layouts/Banner.svelte";
     import Section from "$lib/layouts/Section.svelte";
@@ -11,11 +11,7 @@
     import Title from "$lib/components/Title.svelte";
     import Typed from "$lib/components/Typed.svelte";
 
-    // This variable has to be named data, apparently because it's a property
-    // https://kit.svelte.dev/docs/load#page-data
-    export let data: PageData;
-
-    let projectKeys: string[] = Object.keys(data.projects);
+    let projectKeys: string[] = Object.keys($page.data.projects);
 
 </script>
 
@@ -67,7 +63,7 @@
         display: grid;
 
         // https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
-        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 
         .project {
             
@@ -88,18 +84,18 @@
 
 </style>
 
-<Banner background="assets/images/home_banner.webp">
+<Banner background="/assets/images/home_banner.webp" backgroundPosition="top">
 
     <div class="titlebox">
 
         <!-- logo-holder is needed so the logo doesn't shift for multiline splashes -->
         <div class="logo-holder">
-            <img class="logo" src="assets/logos/js-fullname-light.svg" alt="Justin Schaaf">
+            <img class="logo" src="/assets/logos/js-fullname-light.svg" alt="Justin Schaaf">
         </div>
         
         <!-- @html makes sure the HTML applies instead of showing in plaintext -->
         <em class="splash">
-            <Typed>{@html data.splash}</Typed>
+            <Typed>{@html $page.data.splash}</Typed>
         </em>
 
     </div>
@@ -110,7 +106,7 @@
 
 <Section anchor="about">
 
-    <Title>Hello, and welcome...</Title>
+    <Title>Hello, and welcome</Title>
 
     <p>
         This website has been around since 2011; my mom and I first set it up to
@@ -147,7 +143,7 @@
 
     {#each projectKeys as key}
 
-        {@const project = data.projects[key]}
+        {@const project = $page.data.projects[key]}
 
         {#if !project.disabled}
 

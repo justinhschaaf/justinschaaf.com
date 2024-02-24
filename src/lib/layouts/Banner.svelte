@@ -1,6 +1,8 @@
 <script lang="ts">
 
     export let background: string;
+    export let backgroundPosition: string = "center";
+    export let tinted: boolean = false;
 
 </script>
 
@@ -29,9 +31,24 @@
 
     }
 
+    .tinted {
+        // Necessary to make overflow work
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tinted::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #11111177;
+        backdrop-filter: blur(4px);
+    }
+
 </style>
 
-<section class="banner" style="background-image: url({background});">
+<section class="banner" class:tinted style="background-image: url({background}); background-position: {backgroundPosition};">
 
     <div class="banner-content">
         <slot></slot>

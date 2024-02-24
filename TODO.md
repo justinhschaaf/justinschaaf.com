@@ -22,7 +22,7 @@
 - [x] Overlay atop banner
 - [x] Tab theme
 - [x] Shadows
-- [ ] Active tab indicates current route
+- [x] Active tab indicates current route
 
 ### Footer
 
