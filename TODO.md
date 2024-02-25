@@ -41,7 +41,7 @@
 ## Blog
 
 - [ ] List blog posts
-- [ ] Post pages
+- [x] Post pages
 - [ ] Post metadata, e.g. upload date, bg image, localized title
 - [ ] RSS? Is it even possible with GH pages hosting?
 

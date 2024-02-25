@@ -12,6 +12,6 @@ import * as content from '$lib/content';
 */
 export const load: LayoutServerLoad = async ({ fetch }) => {
     return {
-        socials: await content.fetchSocials(fetch, "/assets/data/socials.json")
+        socials: await content.fetchSocials(fetch)
     };
 };

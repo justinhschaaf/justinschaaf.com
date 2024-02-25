@@ -6,7 +6,6 @@
     import Section from "$lib/layouts/Section.svelte";
 
     import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
-    import Fitty from "$lib/components/Fitty.svelte";
     import Markdown from "$lib/components/Markdown.svelte";
     import Title from "$lib/components/Title.svelte";
 

@@ -1,32 +1,72 @@
-export async function fetchProject(fetcher: Function, src: string, key: string) {
+import { error } from "@sveltejs/kit";
+import matter, { type GrayMatterFile } from "gray-matter";
 
-    let projects = await fetchProjects(fetcher, src);
+// Where my stash is hidden
+export const blogstore: string = "/assets/text/blog";
+export const blogcfg: string = "/assets/data/blog.json";
+export const projectscfg: string = "/assets/data/projects.json";
+export const socialcfg: string = "/assets/data/socials.json";
+export const splashescfg: string = "/assets/data/splashes.json";
+
+export async function fetchBlogPosts(fetcher: Function) {
+
+    let postsRes = await fetchJson(fetcher, blogcfg);
+
+    let posts: string[] = postsRes["posts"];
+    let postPromises: Promise<GrayMatterFile<any>>[] = [];
+
+    // This is written like this for speed. Since we need to fetch each post
+    // file to get the metadata in it, might as well get all of them at once
+    for (let i in posts) {
+        postPromises.push(fetchBlogPost(fetcher, posts[i]));
+    }
+
+    let fetchedResults = await Promise.allSettled(postPromises);
+    let fetchedPosts: GrayMatterFile<any>[] = [];
+
+    fetchedResults.forEach((res) => {
+        if (res.status == 'fulfilled') {
+            fetchedPosts.push(res.value);
+        }
+    });
+
+    return fetchedPosts;
+
+}
+
+export function fetchBlogPost(fetcher: Function, postSlug: string) {
+    return fetchMarkdown(fetcher, blogstore.concat(postSlug, ".md"));
+}
+
+export async function fetchProject(fetcher: Function, key: string) {
+
+    let projects = await fetchProjects(fetcher);
     let project = projects[key];
 
-    let contentPromise = await fetcher(project.desc); 
-    project.desc_content = await contentPromise.text();
+    let md = await fetchMarkdown(fetcher, project.desc); 
+    project.desc_content = md.content;
 
     return project;
 
 }
 
-export async function fetchProjects(fetcher: Function, src: string): Promise<{[index: string]: Project}> {
-    return castObjects(await fetchJson(fetcher, src));
+export async function fetchProjects(fetcher: Function): Promise<{[index: string]: Project}> {
+    return castObjects(await fetchJson(fetcher, projectscfg));
 }
 
-export async function fetchSocials(fetcher: Function, src: string): Promise<{[index: string]: SocialIcon}> {
-    return castObjects(await fetchJson(fetcher, src));
+export async function fetchSocials(fetcher: Function): Promise<{[index: string]: SocialIcon}> {
+    return castObjects(await fetchJson(fetcher, socialcfg));
 }
 
-export async function fetchSplash(fetcher: Function, src: string): Promise<string> {
+export async function fetchSplash(fetcher: Function): Promise<string> {
 
-    let json = await fetchJson(fetcher, src);
+    let json = await fetchJson(fetcher, splashescfg);
     let splashes: [] = json["splashes"];
 
-    let splash: string = "";
+    // WHY is undefined a type?
+    let splash: string | undefined;
 
-    // am I the only person that finds Java's null more useful than a blank string?
-    while (splash == "" && splashes.length > 0) {
+    while (splash == undefined && splashes.length > 0) {
 
         let index = Math.floor(Math.random() * splashes.length);
         let selection = splashes[index];
@@ -68,7 +108,21 @@ export async function fetchSplash(fetcher: Function, src: string): Promise<strin
 
     }
 
-    return splash;
+    return (splash != undefined) ? splash : "";
+
+}
+
+export async function fetchMarkdown(fetcher: Function, src: string): Promise<GrayMatterFile<any>> {
+
+    let rawPromise = await fetcher(src);
+
+    // It's necessary to manually throw an error here or else the markdown 
+    // component just displays the website html as text
+    if (!rawPromise.ok) {
+        error(rawPromise.status);
+    }
+
+    return matter(await rawPromise.text());
 
 }
 

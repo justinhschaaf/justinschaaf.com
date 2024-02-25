@@ -5,7 +5,7 @@ import * as content from '$lib/content';
 // https://kit.svelte.dev/docs/load#making-fetch-requests
 export const load: PageServerLoad = async ({ fetch }) => {
     return {
-        projects: await content.fetchProjects(fetch, "/assets/data/projects.json"),
-        splash: await content.fetchSplash(fetch, "/assets/data/splashes.json")
+        projects: await content.fetchProjects(fetch),
+        splash: await content.fetchSplash(fetch)
     };
 };

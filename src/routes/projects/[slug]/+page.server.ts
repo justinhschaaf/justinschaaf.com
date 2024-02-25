@@ -5,6 +5,6 @@ import * as content from '$lib/content';
 // https://kit.svelte.dev/docs/load#making-fetch-requests
 export const load: PageServerLoad = async ({ fetch, params }) => {
     return {
-        project: await content.fetchProject(fetch, "/assets/data/projects.json", params.slug)
+        project: await content.fetchProject(fetch, params.slug)
     };
 };
