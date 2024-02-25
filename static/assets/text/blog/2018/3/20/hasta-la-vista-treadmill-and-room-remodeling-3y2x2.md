@@ -4,6 +4,7 @@ desc: "If you have been to my house sometime in the past 4-5 or so years, you wo
 created: 1521607620
 cover: "/assets/text/blog/2018/3/20/20180321_040032927_iOS.webp"
 ---
+
 If you have been to my house sometime in the past 4-5 or so years, you would know that I have a treadmill in my office, and I despise it. My office is my main room, and after 6 months of having the treadmill, I viewed it as a waste of space. Without it, so many configuration options would be available with my room.
 
 At the beginning of 2018, my mom said something that I fully supported; she finally said that it was time for the treadmill to go. After 4 years of wishing for my treadmill to disappear, I finally had a supporter for my cause. After some conversation with my dad, he finally agreed to give me the 28 square feet that the treadmill occupied back to me.
