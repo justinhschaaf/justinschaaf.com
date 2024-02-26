@@ -1,7 +1,7 @@
 # TODO
 
 - [ ] SEO (use svelte:head element)
-- [ ] Mobile optimization
+- [x] Mobile optimization
 - [ ] Light/Dark theme
 - [x] Split website.json into smaller parts
 - [ ] Documentation
@@ -40,9 +40,10 @@
 
 ## Blog
 
-- [ ] List blog posts
+- [x] List blog posts
 - [x] Post pages
 - [ ] Post metadata, e.g. upload date, bg image, localized title
+- [ ] Display image alt text as a subtitle
 - [ ] RSS? Is it even possible with GH pages hosting?
 
 ## 404

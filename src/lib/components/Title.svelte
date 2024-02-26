@@ -2,6 +2,8 @@
 
     import Typed from "$lib/components/Typed.svelte";
 
+    export let text: string;
+
 </script>
 
 <style lang="scss">
@@ -29,9 +31,7 @@
 <div class="title-wrap">
 
     <h1 class="title">
-        <Typed>
-            <slot></slot>
-        </Typed>
+        <Typed {text}/>
     </h1>
 
 </div>

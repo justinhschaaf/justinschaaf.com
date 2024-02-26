@@ -1,18 +1,22 @@
 <script lang="ts">
 
-    import { onMount } from "svelte";
+    import { afterUpdate } from "svelte";
     import Typed  from "typed.js";
 
     export let overrides: object = {};
+    export let text: string; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
 
-    let typedInput: HTMLDivElement;
-    let typedOutput: HTMLSpanElement;
+    let typedElement: HTMLSpanElement;
+    let typed: Typed | undefined = undefined;
+    let options: object;
 
-    onMount(() => {
+    afterUpdate(() => {
+        
+        if (typed != undefined) typed.destroy();
 
         // Typed Settings
-        let options: object = {
-            stringsElement: typedInput,
+        options = {
+            strings: [text],
             typeSpeed: 50,
             backSpeed: 50,
             backDelay: 1000,
@@ -22,20 +26,15 @@
             ...overrides // https://stackoverflow.com/a/171256
         };
 
-        let typed: Typed = new Typed(typedOutput, options);
+        typed = new Typed(typedElement, options);
 
     });
+    
+    // TODO only start upon being seen
 
 </script>
 
-
 <style lang="scss">
-
-    // Fixes the full text momentarily flashing 
-    // on the screen before being processed
-    .typed-input {
-        opacity: 0;
-    }
 
     // Customize the cursor to be more terminal-like
     // https://github.com/mattboldt/typed.js/blob/7f3b24705d6cce4df6537bc3e94539c4a70f85b3/src/initializer.js#L171-L188
@@ -61,8 +60,4 @@
 
 </style>
 
-<div bind:this={typedInput} class="typed-input">
-    <span><slot></slot></span>
-</div>
-
-<span bind:this={typedOutput} class="typed"></span>
+<span bind:this={typedElement} class="typed"></span>

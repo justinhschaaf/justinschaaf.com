@@ -3,7 +3,8 @@ import * as content from '$lib/content';
 
 export const load: PageServerLoad = async ({ fetch }) => {
 
-    let posts = await content.fetchBlogPosts(fetch);
+    let postJson = await content.fetchBlogCfg(fetch);
+    let posts = await content.fetchBlogPosts(fetch, postJson);
     let postPojos = [];
 
     // If we don't convert the GrayMatterFiles into POJOs SvelteKit gets really pissed
@@ -16,7 +17,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
     return {
         // Gotta list them all
-        posts: postPojos
+        posts: postPojos,
+        postLinkPrompts: postJson["postLinkPrompts"]
     }
 
 };

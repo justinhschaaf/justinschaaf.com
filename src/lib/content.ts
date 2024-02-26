@@ -8,11 +8,17 @@ export const projectscfg: string = "/assets/data/projects.json";
 export const socialcfg: string = "/assets/data/socials.json";
 export const splashescfg: string = "/assets/data/splashes.json";
 
-export async function fetchBlogPosts(fetcher: Function) {
+export function fetchBlogCfg(fetcher: Function): Promise<any> {
+    return fetchJson(fetcher, blogcfg);
+}
 
-    let postsRes = await fetchJson(fetcher, blogcfg);
+export async function fetchBlogPosts(fetcher: Function, postJson?: any | undefined): Promise<matter.GrayMatterFile<any>[]> {
 
-    let posts: string[] = postsRes["posts"];
+    if (postJson == undefined) {
+        postJson = await fetchBlogCfg(fetcher);
+    }
+
+    let posts: string[] = postJson["posts"];
     let postPromises: Promise<GrayMatterFile<any>>[] = [];
 
     // This is written like this for speed. Since we need to fetch each post
@@ -34,11 +40,49 @@ export async function fetchBlogPosts(fetcher: Function) {
 
 }
 
-export function fetchBlogPost(fetcher: Function, postSlug: string) {
-    return fetchMarkdown(fetcher, blogstore.concat(postSlug, ".md"));
+/*
+Post Front-Matter Options:
+
+title: string - The formatted title of the post.
+desc?: string - A brief introduction to the post. A hook to get your
+    attention. Used as a preview when listing all posts and for SEO.
+created: number - The timestamp the post was first uploaded (roughly), in
+    Unix epoch seconds.
+updated?: number - The last time the post was updated (roughly), in Unix
+    epoch seconds.
+cover?: string - A link to the cover image for this post. Also to be used in
+    webpage previews
+hidden?: boolean - If true, this blog post will still be accessible, but
+    won't be listed on the blogs page
+disabled?: boolean - If true, this blog post will be inaccessible, returning
+    error 403
+slug: string - The slug as defined in the blog cfg file. This is added
+    automatically
+*/
+export function fetchBlogPost(fetcher: Function, postSlug: string): Promise<GrayMatterFile<any>> {
+    return fetchMarkdown(fetcher, blogstore.concat(postSlug, ".md")).then((res) => {
+
+        res.data.slug = postSlug;
+
+        if (!("desc" in res.data)) {
+
+            let desc = res.content;
+            let end = desc.indexOf("\n\n");
+
+            // Cut off from the end of the first paragraph
+            if (end > -1) {
+                desc = desc.substring(0, end);
+            }
+
+            res.data.desc = desc;
+
+        }
+
+        return res;
+    });
 }
 
-export async function fetchProject(fetcher: Function, key: string) {
+export async function fetchProject(fetcher: Function, key: string): Promise<Project> {
 
     let projects = await fetchProjects(fetcher);
     let project = projects[key];

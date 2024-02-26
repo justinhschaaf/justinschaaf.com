@@ -1,6 +1,5 @@
 ---
 title: "Merry Christmas and Happy Holidays!"
-desc: "To everyone who visits my website, I would like to wish you to have a Merry Christmas, Happy Hanukkah, Happy Kwanzaa, and have a Happy Holidays in general. Also, have a Happy New Year!"
 created: 1482688320
 cover: "/assets/text/blog/2016/12/25/Fireplace.gif"
 ---

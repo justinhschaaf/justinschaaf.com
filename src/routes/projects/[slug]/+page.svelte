@@ -46,7 +46,7 @@
 
             <Breadcrumbs></Breadcrumbs>
 
-            <Title>{$page.data.project.title}</Title>
+            <Title text={$page.data.project.title}/>
 
             <em class="tagline">{$page.data.project.tagline}</em>
 

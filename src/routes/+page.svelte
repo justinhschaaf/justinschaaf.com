@@ -95,7 +95,7 @@
         
         <!-- @html makes sure the HTML applies instead of showing in plaintext -->
         <em class="splash">
-            <Typed>{@html $page.data.splash}</Typed>
+            <Typed text={$page.data.splash}/>
         </em>
 
     </div>
@@ -106,7 +106,7 @@
 
 <Section anchor="about">
 
-    <Title>Hello, and welcome</Title>
+    <Title text="Hello, and welcome"/>
 
     <p>
         This website has been around since 2011; my mom and I first set it up to
@@ -135,7 +135,7 @@
 
 <Section anchor="projects" padding={false}>
 
-    <Title>Projects</Title>
+    <Title text="Projects"/>
 
 </Section>
 

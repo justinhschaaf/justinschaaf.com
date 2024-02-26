@@ -8,17 +8,27 @@
     import Nav from "$lib/components/Nav.svelte";
     import Title from "$lib/components/Title.svelte";
 
-    let background: string = "/assets/images/blog_banner.webp";
-    let title: string = "Ramblings";
-    let post = $page.data.post;
+    let background: string;
+    let title: string;
+    let post = undefined;
+
+    // All of this needs to be reactive because the layout usually doesn't
+    // update when the page changes
+    $: {
+
+        post = $page.data.post;
+        background = "/assets/images/blog_banner.webp";
+        title = "Ramblings";
     
-    // Set the post title and cover
-    if (post != undefined) {
+        // Set the post title and cover
+        if (post != undefined) {
 
-        title = post.data.title;
+            title = post.data.title;
 
-        if ("cover" in post.data) {
-            background = post.data.cover;
+            if ("cover" in post.data) {
+                background = post.data.cover;
+            }
+
         }
 
     }
@@ -56,7 +66,7 @@
     <div class="bannerbox">
 
         <div class="titlebox">
-            <Title>{title}</Title>
+            <Title text={title}/>
         </div>
 
     </div>
