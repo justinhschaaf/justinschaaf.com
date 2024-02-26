@@ -45,6 +45,7 @@
         --font-body: 'IBM Plex Mono', 'Courier New', monospace;
 
         font-family: var(--font-body);
+        font-size: 17px; // juuuuuuuust right
         color: var(--color-dark);
 
     }
