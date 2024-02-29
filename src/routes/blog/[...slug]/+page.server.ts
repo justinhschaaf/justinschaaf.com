@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
     let post: GrayMatterFile<any> = await content.fetchBlogPost(fetch, "/" + params.slug);
 
     // Make sure users can't access disabled posts
-    if ("disabled" in post.data && post.data.disabled) {
+    if (post.data.disabled) {
         error(403);
     }
 

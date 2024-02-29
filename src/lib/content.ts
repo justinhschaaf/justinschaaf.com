@@ -78,7 +78,16 @@ export function fetchBlogPost(fetcher: Function, postSlug: string): Promise<Gray
 
         }
 
+        if (!("hidden" in res.data)) {
+            res.data.hidden = false;
+        }
+
+        if (!("disabled" in res.data)) {
+            res.data.disabled = false;
+        }
+
         return res;
+        
     });
 }
 

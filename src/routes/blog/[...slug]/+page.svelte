@@ -9,6 +9,24 @@
     
 </script>
 
+<style lang="scss">
+
+    .hidden-text {
+        color: var(--color-grey);
+    }
+
+</style>
+
+{#if $page.data.post.data.hidden}
+
+    <em class="hidden-text">
+        Note: this post is hidden and difficult to reach. You're special though, so you can still read it.
+    </em>
+
+    <hr><br>
+
+{/if}
+
 <Markdown>{$page.data.post.content}</Markdown>
 
 <br><hr>

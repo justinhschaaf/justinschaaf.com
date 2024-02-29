@@ -4,6 +4,11 @@
         "url": "/redirect/mailto",
         "icon": "/assets/socialicons/email.svg"
     },
+    "rss": {
+        "name": "RSS",
+        "url": "/rss/all",
+        "icon": "/assets/socialicons/rss.svg"
+    },
     "liberapay": {
         "name": "Liberapay",
         "url": "https://liberapay.com/justinhschaaf",

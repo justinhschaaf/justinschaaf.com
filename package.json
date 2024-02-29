@@ -28,6 +28,7 @@
         "vite": "^5.0.3"
     },
     "dependencies": {
+        "feed": "^4.2.2",
         "fitty": "^2.4.2",
         "gray-matter": "^4.0.3",
         "highlight.js": "^11.9.0",

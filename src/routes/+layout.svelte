@@ -36,6 +36,7 @@
         --color-dark: #111111;
         --color-light: #ffffff;
         --color-accent: #80aabd;
+        --color-grey: #777777;
 
         --shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.4);
         --shadow-hover: 0 2px 16px 1px rgba(0, 0, 0, 0.4);

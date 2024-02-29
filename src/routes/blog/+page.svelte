@@ -33,23 +33,28 @@
     {@const created = post.data.created}
     {@const updated = ("updated" in post.data) ? post.data.updated : -1}
 
-    <div class="post">
+    <!-- Make sure this post is allowed to exist -->
+    {#if !post.data.hidden && !post.data.disabled}
 
-        <!-- 
-            I initially planned to have an image on the right side of each post, 
-            but I like how it looks without it better 
-        -->
+        <div class="post">
 
-        <PubDate {created} {updated} includePublishedText={false}/>
+            <!-- 
+                I initially planned to have an image on the right side of each post, 
+                but I like how it looks without it better 
+            -->
 
-        <h1>{post.data.title}</h1>
+            <PubDate {created} {updated} includePublishedText={false}/>
 
-        <Markdown>{post.data.desc}</Markdown>
+            <h1>{post.data.title}</h1>
 
-        <a href={"blog".concat(post.data.slug)}>
-            {$page.data.postLinkPrompts[Math.floor(Math.random() * $page.data.postLinkPrompts.length)]}
-        </a>
+            <Markdown>{post.data.desc}</Markdown>
 
-    </div>
+            <a href={"blog".concat(post.data.slug)}>
+                {$page.data.postLinkPrompts[Math.floor(Math.random() * $page.data.postLinkPrompts.length)]}
+            </a>
+
+        </div>
+
+    {/if}
 
 {/each}

@@ -12,4 +12,6 @@ The assets in this folder were created by their respective owners and have been 
 
 - `modrinth.svg` by [Modrinth](https://github.com/modrinth/knossos/blob/master/assets/images/logo.svg)
 
+- `rss.svg` modified from `Feed-icon.svg` by the [Mozilla Foundation](https://commons.wikimedia.org/wiki/File:Feed-icon.svg) (MPL 1.1/GPL 2.0/LGPL 2.1)
+
 - `youtube.svg` by [YouTube](https://www.youtube.com/yt/about/brand-resources/)

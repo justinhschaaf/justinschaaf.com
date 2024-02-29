@@ -43,8 +43,7 @@
 - [x] List blog posts
 - [x] Post pages
 - [ ] Post metadata, e.g. upload date, bg image, localized title
-- [ ] Display image alt text as a subtitle
-- [ ] RSS? Is it even possible with GH pages hosting?
+- [x] RSS? Is it even possible with GH pages hosting?
 
 ## 404
 

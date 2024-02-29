@@ -1,35 +1,9 @@
-<script lang="ts" context="module">
-
-    // marked.js -- it's not the best, but it actually fucking works
-    // I tried 2 different parsers before this that didn't even import
-    import { Marked } from "marked";
-    import markedAlert from "marked-alert";
-    import markedFootnote from "marked-footnote";
-    import { markedHighlight } from "marked-highlight";
-
-    // Helpers
-    import hljs from "highlight.js";
-
-    const marked: Marked = new Marked(
-        markedAlert(), 
-        markedFootnote(), 
-        markedHighlight({
-            // Taken from https://github.com/markedjs/marked-highlight?tab=readme-ov-file#usage
-            langPrefix: 'hljs language-',
-            highlight(code, lang, info) {
-                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-                return hljs.highlight(code, { language }).value;
-            }
-        })
-    );
-
-</script>
-
 <script lang="ts">
 
     import { onMount, afterUpdate } from "svelte";
+    import { marked } from "$lib/marked";
 
-    export let src: string = "";
+    export let src: string | undefined = undefined;
     export let content: string = "";
 
     let inputDiv: HTMLDivElement;
@@ -37,7 +11,7 @@
 
     onMount(() => {
 
-        if (src != null) {
+        if (src != undefined) {
 
             fetch(src).then(res => {
                 if (res.ok) return res.text();
