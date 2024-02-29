@@ -7,7 +7,7 @@
 - [ ] Documentation
 - [ ] Analytics
 - [x] Remove AI scrapers
-- [ ] Mastodon website verification
+- [x] Mastodon website verification
 
 ## Components
 
