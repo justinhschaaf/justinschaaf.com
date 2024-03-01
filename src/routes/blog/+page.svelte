@@ -28,6 +28,17 @@
 
 </style>
 
+<svelte:head>
+
+    <title>Blog // justinschaaf.com</title>
+    <meta name="description" 
+        property="og:description"
+        content="The latest ramblings, opinions, and updates from Justin Schaaf's blog—featuring life, technology, and more.">
+
+    <meta property="og:type" content="website">
+
+</svelte:head>
+
 {#each posts as post}
 
     {@const created = post.data.created}

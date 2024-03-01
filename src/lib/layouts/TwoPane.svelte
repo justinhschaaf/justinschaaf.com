@@ -69,6 +69,7 @@
 <div class="twopane">
 
     <div class="pane imgpane">
+        <!-- This img doesn't have alt text because it's effectively a background -->
         <img src={background}>
     </div>
 

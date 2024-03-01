@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] SEO (use svelte:head element)
+- [x] SEO (use svelte:head element)
 - [x] Mobile optimization
 - [ ] Light/Dark theme
 - [x] Split website.json into smaller parts
@@ -42,7 +42,7 @@
 
 - [x] List blog posts
 - [x] Post pages
-- [ ] Post metadata, e.g. upload date, bg image, localized title
+- [x] Post metadata, e.g. upload date, bg image, localized title
 - [x] RSS? Is it even possible with GH pages hosting?
 
 ## 404

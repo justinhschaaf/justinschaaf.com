@@ -2,7 +2,6 @@ import { error, type RequestHandler } from "@sveltejs/kit";
 import { Feed, type Item } from "feed";
 
 import * as content from "$lib/content";
-import { marked } from "$lib/marked";
 
 export const fallback: RequestHandler = async ({ fetch, params, url }) => {
 
@@ -69,7 +68,7 @@ export const fallback: RequestHandler = async ({ fetch, params, url }) => {
                 title: post.title,
                 link: url.origin.concat("/blog", post.slug),
                 date: new Date(post.created * 1000),
-                description: marked.parseInline(post.desc).toString(),
+                description: post.desc,
                 id: post.slug
             });
 
@@ -110,7 +109,7 @@ export const fallback: RequestHandler = async ({ fetch, params, url }) => {
 
     // XML response options
     let xmlResOptions = {
-        headers: { "Content-Type": "text/xml" }
+        headers: { "Content-Type": "application/xml" }
     };
 
     // Atom feed

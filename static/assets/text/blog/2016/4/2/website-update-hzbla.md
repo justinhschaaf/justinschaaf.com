@@ -1,6 +1,6 @@
 ---
 title: "Website Update"
-desc: "\\*I know that I have done about a million of these, but I hope one will not be needed for the near future...\\*"
+desc: "I know that I have done about a million of these, but I hope one will not be needed for the near future..."
 created: 1459638420
 ---
 

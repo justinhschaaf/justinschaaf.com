@@ -61,7 +61,14 @@
 
 </style>
 
-<Banner background={background} backgroundPosition="bottom" tinted>
+<svelte:head>
+
+    <meta property="og:title" content={title}>
+    <meta property="og:image" content={background}>
+
+</svelte:head>
+
+<Banner {background} backgroundPosition="bottom" tinted>
 
     <div class="bannerbox">
 

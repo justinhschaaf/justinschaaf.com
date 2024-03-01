@@ -1,10 +1,11 @@
 <script lang="ts">
 
-    import type { PageData } from "./$types";
+    import { page } from "$app/stores";
     import { darkTheme } from "$lib/theme"
     import Footer from "$lib/components/Footer.svelte";
 
-    export let data: PageData;
+    let canonicalUrl: string;
+    $: canonicalUrl = "https://".concat($page.url.host, $page.url.pathname)
     
 </script>
 
@@ -103,13 +104,24 @@
 
 </style>
 
+<!-- Global head options -->
+<svelte:head>
+
+    <link rel="canonical" href={canonicalUrl}>
+
+    <!-- OpenGraph data https://ogp.me/ -->
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:site_name" content="Justin Schaaf // justinschaaf.com">
+
+</svelte:head>
+
 <div class:dark={$darkTheme} class:light={!$darkTheme}>
 
     <main>
         <slot></slot>
     </main>
     
-    <Footer socials={data.socials}></Footer>
+    <Footer socials={$page.data.socials}></Footer>
 
 </div>
 

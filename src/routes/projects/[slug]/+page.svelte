@@ -38,6 +38,17 @@
 
 </style>
 
+<svelte:head>
+
+    <title>{$page.data.project.title} // justinschaaf.com</title>
+    <meta name="description" property="og:description" content={$page.data.project.tagline}>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={$page.data.project.title}>
+    <meta property="og:image" content={$page.data.project.art.img}>
+
+</svelte:head>
+
 <TwoPane background={$page.data.project.art.cover}>
 
     <div class="content">

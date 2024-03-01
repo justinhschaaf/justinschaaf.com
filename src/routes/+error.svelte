@@ -1,5 +1,7 @@
 <script lang="ts">
 
+    import { page } from "$app/stores";
+
     import Banner from "$lib/layouts/Banner.svelte";
     import Title from "$lib/components/Title.svelte";
 
@@ -50,6 +52,17 @@
     }
 
 </style>
+
+<svelte:head>
+
+    <title>{$page.status} // justinschaaf.com</title>
+    <meta name="description" property="og:description" content="A barren desert.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={$page.status + ""}>
+    <meta property="og:image" content="/assets/images/404_banner.webp">
+
+</svelte:head>
 
 <Banner background="/assets/images/404_banner.webp" backgroundPosition="top" tinted>
 

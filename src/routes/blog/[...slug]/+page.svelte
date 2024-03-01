@@ -17,6 +17,20 @@
 
 </style>
 
+<svelte:head>
+
+    <title>{$page.data.post.data.title} // justinschaaf.com</title>
+    <meta name="description" property="og:description" content={$page.data.post.data.desc}>
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content={new Date(created * 1000).toISOString()}>
+
+    {#if updated > -1}
+        <meta property="article:modified_time" content={new Date(updated * 1000).toISOString()}>
+    {/if}
+
+</svelte:head>
+
 {#if $page.data.post.data.hidden}
 
     <em class="hidden-text">
