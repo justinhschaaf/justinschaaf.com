@@ -22,7 +22,7 @@
             position: absolute;
             transform: translateY(-32px);
             animation: fadeTagline 1.25s ease-out 1.25s 1 forwards;
-            color: var(--color-accent);
+            color: var(--color-fjord);
         }
 
         @keyframes fadeTagline {

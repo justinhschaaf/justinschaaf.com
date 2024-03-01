@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { onMount, afterUpdate } from "svelte";
+    import { afterUpdate } from "svelte";
 
     import Fitty from "./Fitty.svelte";
 
@@ -9,13 +9,12 @@
 
     let ansi: string;
 
-    onMount(() => {
+    afterUpdate(() => {
 
         fetch(ascii).then(res => {
             if (res.ok) return res.text();
         }).then (res => {
             ansi = res + "";
-            console.log("loaded");
         });
 
     });
@@ -64,7 +63,7 @@
 
         .stack-ansi {
             opacity: 1;
-            background-color: #fff;
+            background-color: var(--color-bg);
         }
 
     }

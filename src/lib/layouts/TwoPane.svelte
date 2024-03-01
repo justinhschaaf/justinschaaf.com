@@ -24,10 +24,7 @@
             flex: 3 1 300px;
 
             img {
-
                 position: fixed;
-                z-index: -1;
-
             }
 
             @media screen and (min-width: 500px) and (max-width: 799px) {
@@ -59,7 +56,8 @@
         }
 
         .contentpane {
-            background-color: var(--color-light);
+            background-color: var(--color-bg);
+            color: var(--color-fg);
         }
 
     }

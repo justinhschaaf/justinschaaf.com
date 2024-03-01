@@ -33,11 +33,19 @@
     :global(:root) {
 
         --padding-large: 48px;
+        --padding-small: 8px;
 
+        --color-darkish: #151515;
         --color-dark: #111111;
+        --color-darker: #0C0C0C;
+        --color-dark-filter: invert(0%) sepia(23%) saturate(6326%) hue-rotate(13deg) brightness(92%) contrast(87%);
+
         --color-light: #ffffff;
-        --color-accent: #80aabd;
-        --color-grey: #777777;
+        --color-light-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(76deg) brightness(103%) contrast(100%);
+
+        --color-fjord: #80aabd;
+        --color-lucky: #777777;
+        --color-splash: #ffff55;
 
         --shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.4);
         --shadow-hover: 0 2px 16px 1px rgba(0, 0, 0, 0.4);
@@ -48,7 +56,30 @@
 
         font-family: var(--font-body);
         font-size: 17px; // juuuuuuuust right
-        color: var(--color-dark);
+
+    }
+
+    :global(.light) {
+
+        --color-fg: var(--color-dark);
+        --color-fg-filter: var(--color-dark-filter);
+        --color-bg: var(--color-light);
+        --color-bg-accent-dark: var(--color-light);
+
+        color: var(--color-fg);
+        background-color: var(--color-bg);
+
+    }
+
+    :global(.dark) {
+
+        --color-fg: var(--color-light);
+        --color-fg-filter: var(--color-light-filter);
+        --color-bg: var(--color-dark);
+        --color-bg-accent-dark: var(--color-darker);
+
+        color: var(--color-fg);
+        background-color: var(--color-bg);
 
     }
 
@@ -57,11 +88,21 @@
     }
 
     :global(a) {
-        color: var(--color-accent);
+        color: var(--color-fjord);
+        text-decoration: none;
+    }
+
+    :global(a:hover) {
+        text-decoration: underline;
     }
 
     :global(img) {
         width: 100%;
+    }
+
+    // Recolor inline SVGs, specifically for marked-alert
+    :global(svg) {
+        fill: var(--color-fg);
     }
 
     :global(button) {
@@ -74,7 +115,7 @@
         font-family: var(--font-body);
 
         color: var(--color-light);
-        background-color: var(--color-accent);
+        background-color: var(--color-fjord);
         border: none;
 
         transition: var(--transition);

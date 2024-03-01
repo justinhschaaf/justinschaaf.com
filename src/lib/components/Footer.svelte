@@ -31,7 +31,7 @@
 
     .foot {
 
-        background-color: var(--color-dark);
+        background-color: var(--color-darker);
         color: var(--color-light);
         box-shadow: var(--shadow);
 
@@ -39,6 +39,10 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+
+        // Makes sure it's on top of any fixed elements (*cough cough* two-pane image on project pages)
+        position: sticky;
+        z-index: 690 !important;
 
         .footcontent {
 
@@ -56,7 +60,7 @@
             flex: 1 1 240px;
 
             h2 {
-                margin: 0 0 8px 0;
+                margin: 0 0 var(--padding-small) 0;
             }
 
             .socialbox {
@@ -67,16 +71,16 @@
 
                 .social {
 
-                    width: 48px;
-                    height: 48px;
-                    margin: 0 8px 0 0;
+                    width: var(--padding-large);
+                    height: var(--padding-large);;
+                    margin: 0 var(--padding-small) 0 0;
 
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
 
                     img {
-                        width: 24px;
+                        width: calc(var(--padding-large) / 2);
                         color: #ffffff !important;
                     }
 

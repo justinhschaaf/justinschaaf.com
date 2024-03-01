@@ -2,12 +2,19 @@
 
 - [x] SEO (use svelte:head element)
 - [x] Mobile optimization
-- [ ] Light/Dark theme
+- [x] Light/Dark theme
 - [x] Split website.json into smaller parts
 - [ ] Documentation
 - [ ] Analytics
 - [x] Remove AI scrapers
 - [x] Mastodon website verification
+
+## Polishing
+
+- [ ] Add text to button hover BG
+- [ ] Make typed components only start once they're visible
+- [ ] If a typed component's text.length = 0, hide the cursor
+- [ ] Add more format to MD alerts https://github.com/bent10/marked-extensions/tree/main/packages/alert#options
 
 ## Components
 

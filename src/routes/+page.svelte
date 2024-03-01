@@ -1,6 +1,7 @@
 <script lang="ts">
 
     import { page } from "$app/stores";
+    import { darkTheme } from "$lib/theme"
 
     import Banner from "$lib/layouts/Banner.svelte";
     import Section from "$lib/layouts/Section.svelte";
@@ -50,7 +51,7 @@
             margin: 8px auto auto auto;
 
             text-align: center;
-            color: #ffff55;
+            color: var(--color-splash);
             font-size: 1.5em;
 
         }
@@ -77,7 +78,7 @@
         }
 
         .project:hover {
-            color: var(--color-dark);
+            color: var(--color-fg);
         }
 
     }
@@ -155,11 +156,12 @@
     {#each projectKeys as key}
 
         {@const project = $page.data.projects[key]}
+        {@const ascii = $darkTheme ? project.art.ascii_dark : project.art.ascii_light}
 
         {#if !project.disabled}
 
             <a class="project" href="/projects/{key}" target="_self">
-                <AsciiStack ascii={project.art.ascii_light} image={project.art.img}>
+                <AsciiStack ascii={ascii} image={project.art.img}>
                     <Fitty minSize={24} maxSize={40}><h1>{@html project.name }</h1></Fitty>
                 </AsciiStack>
             </a>

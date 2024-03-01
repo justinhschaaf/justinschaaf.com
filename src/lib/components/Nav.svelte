@@ -56,13 +56,13 @@
 
         .tab {
 
-            height: 42px;
+            height: calc(var(--padding-large) - 6px);
             width: 30%;
             max-width: 240px;
-            padding: 8px;
+            padding: var(--padding-small);
 
-            color: var(--color-dark);
-            background-color: #eeeeee;
+            color: var(--color-fg);
+            background-color: var(--color-bg-accent-dark);
             text-decoration: none;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -79,11 +79,11 @@
 
         .tab:hover {
             box-shadow: var(--shadow-hover);
-            height: 48px;
+            height: var(--padding-large);
         }
 
         .active {
-            background-color: #ffffff;
+            background-color: var(--color-bg);
             height: var(--padding-large);
             z-index: 1;
         }

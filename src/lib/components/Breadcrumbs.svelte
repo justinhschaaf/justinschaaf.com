@@ -37,6 +37,9 @@
             // https://coduber.com/in-css-aling-images-and-text-in-same-line/
             float: left;
 
+            // Necessary to recolor non-inline SVGs https://stackoverflow.com/a/53336754
+            filter: var(--color-fg-filter);
+
         }
 
         // Leading spaces are trimmed in HTML so we can't put it there
