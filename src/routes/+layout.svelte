@@ -47,6 +47,13 @@
         --color-lucky: #777777;
         --color-splash: #ffff55;
 
+        // colors.justinschaaf.com, used for alerts
+        --color-ocean: #336699;
+        --color-jalapeno: #669933;
+        --color-eggplant: #993399;
+        --color-sunflower: #ff9933;
+        --color-cinnabar: #bb2233;
+
         --shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.4);
         --shadow-hover: 0 2px 16px 1px rgba(0, 0, 0, 0.4);
         --transition: .2s ease-in-out;

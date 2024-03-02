@@ -15,7 +15,7 @@
 - [x] Make typed components only start once they're visible
 - [x] If a typed component's text.length = 0, hide the cursor
 - [x] Allow splash names to be a list so you can have multiple or use smart backspacing
-- [ ] Add more format to MD alerts https://github.com/bent10/marked-extensions/tree/main/packages/alert#options
+- [x] Add more format to MD alerts https://github.com/bent10/marked-extensions/tree/main/packages/alert#options
 
 ## Components
 

@@ -9,14 +9,6 @@
     
 </script>
 
-<style lang="scss">
-
-    .hidden-text {
-        color: var(--color-grey);
-    }
-
-</style>
-
 <svelte:head>
 
     <title>{$page.data.post.data.title} // justinschaaf.com</title>
@@ -31,17 +23,26 @@
 
 </svelte:head>
 
-{#if $page.data.post.data.hidden}
 
-    <em class="hidden-text">
-        Note: this post is hidden and difficult to reach. You're special though, so you can still read it.
-    </em>
+<Markdown>
+    
+    {#if $page.data.post.data.hidden}
 
-    <hr><br>
+    {"> [!IMPORTANT]\n"}
+    {"> This post is hidden and difficult to reach. You're special though, so you can still read it.\n\n"}
 
-{/if}
+    {/if}
 
-<Markdown>{$page.data.post.content}</Markdown>
+    {#if $page.data.post.data.disabled}
+
+    {"> [!CAUTION]\n"}
+    {"> This post has been disabled. How the fuck did you get here?\n\n"}
+
+    {/if}
+
+    {$page.data.post.content}
+
+</Markdown>
 
 <br><hr>
 
