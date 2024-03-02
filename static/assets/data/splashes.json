@@ -1,90 +1,160 @@
 {
     "splashes": [
         {
-            "name": "Happy Birthday!",
+            "value": "Happy Birthday!",
             "prerequisites": {
                 "month": 1,
                 "day": 19
             }
         },
         {
-            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=0TfodFaBLAI'>Happy Land Line Telephone Day!</a>",
+            "value": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=0TfodFaBLAI'>Happy Land Line Telephone Day!</a>",
             "prerequisites": {
                 "month": 3,
                 "day": 10
             }
         },
         {
-            "name": "Stuck in quarantine...",
+            "value": "Stuck in quarantine...",
             "prerequisites" : {
                 "month": 3,
                 "day": 16
             }
         },
         {
-            "name": "Online since 2011",
+            "value": "Online since 2011",
             "prerequisites": {
                 "month": 5
             }
         },
         {
-            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=e91M0XLX7Jw'>Plays Chess Poorly</a>",
+            "value": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=e91M0XLX7Jw'>Plays Chess Poorly</a>",
             "prerequisites": {
                 "month": 6,
                 "day": 9
             }
         },
         {
-            "name": "Seasoned YouTube Veteran",
+            "value": "Seasoned YouTube Veteran",
             "prerequisites": {
                 "month": 8,
                 "day": 19
             }
         },
         {
-            "name": "Tried to order a burrito at a bank drive-thru...",
+            "value": "Tried to order a burrito at a bank drive-thru...",
             "prerequisites": {
                 "month": 1,
                 "day": 19
             }
         },
         {
-            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=4DB1e4M_Q5I'>Not on time</a>",
+            "value": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=4DB1e4M_Q5I'>Not on time</a>",
             "prerequisites": {
                 "month": 12,
                 "day": 25
             }
         },
         {
-            "name": "Pay your taxes.",
+            "value": "Pay your taxes.",
             "prerequisites": {
                 "month": 4
             }
         },
         {
-            "name": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=X8TAmhSLO0o'>On time</a>",
+            "value": "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=X8TAmhSLO0o'>On time</a>",
             "prerequisites": {
                 "hour": 21
             }
         },
         {
-            "name": "pro <span style='color: #d34;'>g</span><span style='color: #e72;'>a</span><span style='color: #f6ce3d;'>y</span><span style='color: #5b5;'>m</span><span style='color: #16d;'>e</span><span style='color: #90c;'>r</span>",
+            "value": "pro <span style='color: #d34;'>g</span><span style='color: #e72;'>a</span><span style='color: #f6ce3d;'>y</span><span style='color: #5b5;'>m</span><span style='color: #16d;'>e</span><span style='color: #90c;'>r</span>",
             "prerequisites": {
                 "month": 6
             }
         },
         {
-            "name": "Wishing all the homophobes a super uncomfortable month",
+            "value": "Wishing all the homophobes a super uncomfortable month",
             "prerequisites": {
                 "month": 6
             }
         },
         {
-            "name": "<a target='_blank' style='color: #ff5;' href='https://anilist.co/user/justinhs/'>BL manga addict</a>",
+            "value": "<a target='_blank' style='color: #ff5;' href='https://anilist.co/user/justinhs/'>BL manga addict</a>",
             "prerequisites": {
                 "month": 6
             }
         },
+        [
+            "Morre correkt then autocorrect^4000",
+            "Mroe correct than autocorect^4000",
+            "Moar correct than autocorrect^4000",
+            "Mure correct than autocorrect^4000",
+            "More corect than autocorrect^4000",
+            "More correkt then autocorrect^4000",
+            "More correct then autocorrect^4000",
+            "More correct than auto-correct^4000",
+            "More correct than autocorret^4000",
+            "More correct than autocorrect"
+        ],
+        ["we start somewhete", "we start somewhere"],
+        [],
+        [
+            "Welcome!^3600000",
+            "What, you were expecting something after that?",
+            "What else do you want me to put here‽",
+            "Oh, also, did you know that this is called the Interrobang? -> ‽",
+            "It's a very interesting symbol...",
+            "<a href='https://en.wikipedia.org/wiki/Interrobang'>Here's the Wikipedia page for it</a>",
+            "Well, while you're here, how was your day?",
+            "Good, good, glad to hear! My day is alright...",
+            "Mind if I ask: why are you sitting around and reading this?^5000",
+            "Yeah, it's fine... I often get distracted and end up reading stuff like this all the time.",
+            "It's one way my brain likes to procrastinate.",
+            "I have a ton of projects and ideas I could be working on, but I get distracted easily, and when I have the motivation to work, I have no energy...",
+            "For example, a book on Python has been sitting on my desk for the past month.",
+            "I could be reading that book and learning Python, but my brain perfers to write this instead.",
+            "...^5000",
+            "How much time have I spent writing these strings and setting up typed.js here?",
+            "What is the true meaning of life, the universe, and everything?",
+            "How much wood could a wood chuck really chuck if a wood chuck could chuck wood?",
+            "If the Big Bang created the universe, then what created the Big Bang?",
+            "If the Big Bang created the Big Bang, then what created the Big Bang?",
+            "Why does Apple like stealing money from their customers by overpricing their products?",
+            "Why would any person, in their right mind, buy <a target='_blank' style='color: #fff;' href='https://web.archive.org/web/20191130183933/https://www.samsung.com/global/galaxy/galaxy-fold/'>a phone for $1,980</a>?",
+            "What does Microsoft have against Thunderbolt 3?",
+            "What does Apple have against USB-A?",
+            "Why can't macOS, the first OS with windows, properly manage windows?",
+            "When will we get slim Cherry MX Blue switches?",
+            "Who approved the Magic Mouse's charging solution?",
+            "Did you know that some people still use wired headphones?",
+            "Did you know I still use wired headphones?",
+            "Did you know that you can give me money by pressing the \"Liberapay\" icon in the footer?",
+            "Why aren't we taught creative writing in school?",
+            "Why does standardized testing exist? ^5000In short: it shouldn't...",
+            "Why is it snowing... ^5000in Las Vegas... ^5000in February?",
+            "Why is February spelled \"February\"?",
+            "How does Siri never get anything I say right?",
+            "Why do I stumble on my words so often?",
+            "Why don't I have time for anything anymore?",
+            "Why don't I have energy for anything anymore?",
+            "Why am I <a target='_blank' style='color: #fff;' href='https://www.youtube.com/watch?v=mukQYm-O-AY&pp=ygUNanVzdCBhIGdpZ29sbw%3D%3D'>so sad and lonely</a> sometimes?",
+            "Why does my mood swing between \"fine\" and \"not fine\" at random?",
+            "Will I be stuck working a dead-end job for a corporation that doesn't care about me for the rest of time?",
+            "Why do I have 53 items in this array very few people are going to see?",
+            "Why haven't I committed this and gone to bed yet?",
+            "Why am I still doing this at 5 AM?",
+            "Why did you have my website open for an hour to get here?",
+            "The next string will literally be a space.",
+            " ",
+            "I'm impressed that you sat through all those messages. Congratulations.",
+            "I wrote most of this for the v3 version of the website back in 2019, but updated it a tad when bringing it back now.",
+            "If you read through the source code to see these instead of waiting the 10+ minutes it would have actually taken you to see all the messages, you know who you are...",
+            "When I tested this, it took 10 minutes. It'll probably be 20 by the time I'm done.",
+            "Back to the beginning now, bye!",
+            "Welcome!^3600000",
+            "fuck this i'm not writing another one right now."
+        ],
         "Sponsored by Freedom",
         "Birds are majestic creatures.",
         "Why <italic>should</italic> I care?",
@@ -104,7 +174,6 @@
         "Safer than School Lunch",
         "Designed with 𝓢𝓽𝔂𝓵𝓮",
         "Noteworthy Night Owl",
-        "More Corect than Autocorrect",
         "No Proof Necessary",
         "Selling YOU on ME",
         "Powered by Doughnuts",
@@ -115,7 +184,7 @@
         "HoI4 Grand Strategist",
         "Making fun of the world so you don't have to",
         "YouTube Media Mogul",
-        "Modern Philosopher",
+        "Modern Polymath",
         "A Literal ⬢",
         "Shamelessly Self Promoting",
         "Likes <italic>Smooth</italic> Jazz",
@@ -123,21 +192,20 @@
         "Hello.",
         "The World's Best Website",
         "Criticizing the 1%",
-        "Sponsored by... Myself...",
+        "Sponsored by...^1000 Myself...",
         "Don't let the food melt your mouth before the food melts in your mouth",
         "Please install drivers.",
         "Lived to see the day Sherwin Williams ran out of paint",
         "Planning the future of the Fax Machine",
-        "1 . . . 2 . . . ? Sorry, I don't know",
+        "1 . . .^1000 2 . . .^3000 ?^1000 Sorry, I don't know",
         "\"Because nobody could *ever* possible attempt to parse bad data.\"",
         "Has Negative Social Credit",
         "A Wonderful Idiot",
         "Sending 52 Volts straight to the CPU",
         "<span style='color: #369;'>Stay Hydrated!</span>",
-        "we start somewhete",
         "Eats bread EVERY SINGLE DAY!",
         "Got Ultrakilled in P-2",
-        "Why aren't Projectile Boosts helping my YouTube subscriber growth?",
+        "`+ Projectile Boost`^1200 <br>`+ Projectile Boost`^1200 <br>`+ Projectile Boost`^1200 <br>`+ Projectile Boost`",
         "Searching for the Size 2 fish",
         "おやすみ",
         "Waiting for something to happen?",
@@ -148,11 +216,10 @@
         "Owns a Davy Crockett for home defense",
         "Meant to order a tomatonator",
         "What kind of tree would you be?",
-        "You're going to Brazil",
+        "You're going to Brazil.",
         "Won the battle of Techno House",
         "Desperately needs to perform software updates",
         " ",
-        "Wants to use Source 2",
         "Ordered same-day shipping at 11:59 PM",
         "Staying Alive",
         "\"There will never be a house in New Orleans\"",
@@ -171,6 +238,11 @@
         "Pressed Alt+Tab in a Source game",
         "Font Enthusiast",
         "Dumb problems, dumber solutions.",
+        "Overly opinionated",
+        "Exception in thread \"main\" java.lang.NullPointerException",
+        "Craving Kinder Eggs",
+        "^60000 Your patience will be rewarded.",
+        "`Always` `Antsy`",
         "<a target='_blank' style='color: #fff;' href='https://colors.justinschaaf.com'><span style='color: #d34;'>C</span><span style='color: #e72;'>O</span><span style='color: #f6ce3d;'>L</span><span style='color: #5b5;'>O</span><span style='color: #3cc;'>R</span><span style='color: #16d;'>I</span><span style='color: #90c;'>Z</span><span style='color: #c3c;'>E</span><span style='color: #f9c;'>D</span></a>",
         "<a target='_blank' style='color: #ff5; text-decoration: none;' href='https://www.youtube.com/@justinhs/'>Hiding Hyperlinks</a>",
         "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/@justinhs/'>You should subscribe on YouTube!</a>",
@@ -185,7 +257,7 @@
         "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=gS7jJG11Wq0'>Dropping Chaos</a>",
         "<a target='_blank' style='color: #ff5;' href='https://www.curseforge.com/minecraft/mc-mods/llama-steeds'>Riding into the sunset</a>",
         "<a target='_blank' style='color: #ff5;' href='https://liberapay.com/justinhschaaf'>Wants your money</a>",
-        "<a target='_blank' style='color: #ff5;' href='https://www.fedoraproject.org/spins/budgie/'>Switching to Linux</a> <a target='_blank' style='color: #ff5;' href='https://getsol.us'>from a different Linux</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://nixos.org/'>Switched to Linux</a>",
         "<a target='_blank' style='color: #ff5;' href='https://cartercaudio.bandcamp.com/album/star-cluster-remix'>Still nobody</a>",
         "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=6aAb_movOXk'>Creating Communal Showers</a>",
         "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=li0lv4Igyto'>Has a Shield</a>",
@@ -204,6 +276,7 @@
         "<a target='_blank' style='color: #ff5;' href='https://www.youtube.com/watch?v=fTFxE32onKs'>Drives an electric car</a>",
         "<a target='_blank' style='color: #ff5;' href='https://keygenchurch.bandcamp.com/'>P R A I S E   T H E   C O D E</a>",
         "<a target='_blank' style='color: #ff5;' href='https://soundcloud.com/laurensgoedhart/claude-debussys-clair-de-lune'>Likes Debussy</a>",
-        "<a target='_blank' style='color: #ff5;' href='https://what.thedailywtf.com/topic/15001/enlightened'>Unenlightened</a>"
+        "<a target='_blank' style='color: #ff5;' href='https://what.thedailywtf.com/topic/15001/enlightened'>Unenlightened</a>",
+        "<a target='_blank' style='color: #ff5;' href='https://bevyengine.org/'>Building with Bevy</a>"
     ]
 }

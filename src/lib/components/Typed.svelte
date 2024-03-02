@@ -4,19 +4,33 @@
     import Typed  from "typed.js";
 
     export let overrides: object = {};
-    export let text: string; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
+    export let text: string = ""; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
+    export let strings: string[] = [text];
+
+    let oldText = text;
 
     let typedElement: HTMLSpanElement;
     let typed: Typed | undefined = undefined;
     let options: object;
+    let observer: IntersectionObserver;
 
     afterUpdate(() => {
+
+        // check if the text input was changed and update [strings] accordingly
+        // oldText gets set at creation, not every update, so that's why this works
+        // we don't care if strings is updated because that works as intended
+        if (oldText != text) {
+            strings = [text];
+            oldText = text;
+        }
         
         if (typed != undefined) typed.destroy();
+        if (observer != undefined) observer.disconnect();
+        if (strings.length == 0) return; // having an empty array throws errors
 
         // Typed Settings
         options = {
-            strings: [text],
+            strings: strings,
             typeSpeed: 50,
             backSpeed: 50,
             backDelay: 1000,
@@ -25,12 +39,22 @@
             loop: false,
             ...overrides // https://stackoverflow.com/a/171256
         };
+    
+        // Only start typing when on screen
+        // https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
+        // https://stackoverflow.com/a/45618188
+        observer = new IntersectionObserver((entries) => {
+            if (entries[0].intersectionRatio == 1) {
+                // If we don't create the typed element here and try to 
+                // stop/start it instead, it spazzes out when it needs to delete
+                typed = new Typed(typedElement, options);
+                observer.disconnect();
+            }
+        });
 
-        typed = new Typed(typedElement, options);
+        observer.observe(typedElement);
 
     });
-    
-    // TODO only start upon being seen
 
 </script>
 

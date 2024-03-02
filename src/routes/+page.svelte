@@ -107,7 +107,7 @@
         </div>
         
         <em class="splash">
-            <Typed text={$page.data.splash}/>
+            <Typed strings={$page.data.splash}/>
         </em>
 
     </div>

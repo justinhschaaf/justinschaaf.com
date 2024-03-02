@@ -12,7 +12,7 @@
     .bannerbox {
 
         min-width: 240px;
-        max-width: 720px;
+        max-width: 760px; // magic value
         height: 100vh;
 
         color: var(--color-light);

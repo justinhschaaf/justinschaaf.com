@@ -111,22 +111,26 @@ export async function fetchSocials(fetcher: Function): Promise<{[index: string]:
     return castObjects(await fetchJson(fetcher, socialcfg));
 }
 
-export async function fetchSplash(fetcher: Function): Promise<string> {
+export async function fetchSplash(fetcher: Function): Promise<string[]> {
 
     let json = await fetchJson(fetcher, splashescfg);
     let splashes: [] = json["splashes"];
 
     // WHY is undefined a type?
-    let splash: string | undefined;
+    let splash: string[] | undefined;
 
     while (splash == undefined && splashes.length > 0) {
 
         let index = Math.floor(Math.random() * splashes.length);
-        let selection = splashes[index];
+        let selection: any = splashes[index];
 
-        if (typeof selection == typeof "string") splash = selection;
-        // I love Java because I don't have to do crap like this to check if a variable is of a certain interface >=(
-        else if ("name" in selection) {
+        if (typeof selection == typeof "string") {
+            splash = [selection];
+            // https://stackoverflow.com/a/26633883
+        } else if (selection.constructor === Array) {
+            splash = selection;
+            // I love Java because I don't have to do crap like this to check if a variable is of a certain interface
+        } else if ("value" in selection) {
 
             let special: Splash = selection as Splash;
 
@@ -152,7 +156,13 @@ export async function fetchSplash(fetcher: Function): Promise<string> {
             }
 
             if (valid) {
-                splash = special.name;
+
+                if (special.value.constructor === Array) {
+                    splash = special.value;
+                } else {
+                    splash = [special.value as string];
+                }
+
             }
 
         }
@@ -161,7 +171,7 @@ export async function fetchSplash(fetcher: Function): Promise<string> {
 
     }
 
-    return (splash != undefined) ? splash : "";
+    return (splash != undefined) ? splash : [];
 
 }
 
@@ -212,7 +222,7 @@ export interface SocialIcon {
 
 export interface Splash {
 
-    name: string;
+    value: string[] | string;
     disabled?: boolean;
     prerequisites?: {
         month?: number;
