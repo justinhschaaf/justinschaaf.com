@@ -60,7 +60,7 @@
 
     .projects {
 
-        width: 100vw;
+        //width: 100vw;
         display: grid;
 
         // https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/

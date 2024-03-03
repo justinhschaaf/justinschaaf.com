@@ -5,7 +5,6 @@
 - [x] Light/Dark theme
 - [x] Split website.json into smaller parts
 - [x] Documentation
-- [ ] Testing
 - [ ] Analytics
 - [x] Remove AI scrapers
 - [x] Mastodon website verification

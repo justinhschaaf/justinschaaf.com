@@ -8,41 +8,23 @@
     description = "justinschaaf.com built with Yarn and Svelte";
 
     inputs.nixpkgs.url = "github:nixos/nixpkgs";
+    inputs.flake-utils.url = "github:numtide/flake-utils";
 
-    outputs = { self, nixpkgs }: 
-    let
-
-        # Every architecture
-        allSystems = [
-            "x86_64-linux"
-            "aarch64-linux"
-            "x86_64-darwin"
-            "aarch64-darwin"
-        ];
-
-        # Setup the correct nixpkgs version for each architecture
-        forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-            pkgs = import nixpkgs { inherit system; };
-        });
-
-    in
-    {
-
-        # Setup dev shell correctly for each environment
-        devShells = forAllSystems({ pkgs }: {
-
-            default = pkgs.mkShell {
+    outputs = { self, nixpkgs, flake-utils }: 
+    flake-utils.lib.eachDefaultSystem(system:
+        let pkgs = import nixpkgs { inherit system; }; in {
+            devShells.default = pkgs.mkShell {
 
                 packages = with pkgs; [
-
                     yarn-berry
-
                 ];
 
+                # Playwright is fucked
+                # https://nixos.wiki/wiki/Playwright
+                # https://www.giacomodebidda.com/posts/playwright-on-nixos/
+
             };
-
-        });
-
-    };
+        }
+    );
 
 }
