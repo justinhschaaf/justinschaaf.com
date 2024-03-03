@@ -2,13 +2,17 @@
 
     import { page } from "$app/stores";
 
+    /** The path to display. Defaults to the current one */
     export let pathname: string = $page.url.pathname;
     
+    // A matrix mapping a segment in a path to the parts before it
+    // e.g. ["llama-steeds", "/projects"]
     let routes: string[][] = [];
 
     let lastStr = pathname;
     let i;
 
+    // Disects the path by splitting it at the last forward slash
     while (true) {
 
         i = lastStr.lastIndexOf("/");
@@ -51,6 +55,16 @@
 
 </style>
 
+<!--
+    @component
+    A basic breadcrumbs element, showing the user where they are on the website
+    by having each part of the path as a clickable link to return to.
+
+    **Example**
+    ```tsx
+    <Breadcrumbs pathname={"/foo/bar/bat"}/>
+    ```
+-->
 <span class="breadcrumbs">
 
     <a href="/">

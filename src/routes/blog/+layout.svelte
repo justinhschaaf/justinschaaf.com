@@ -8,6 +8,9 @@
     import Nav from "$lib/components/Nav.svelte";
     import Title from "$lib/components/Title.svelte";
 
+    // The banner and nav to use. We're using a layout for this to avoid
+    // repeating the same components and styles since banner and nav would be
+    // on all blog pages
     let background: string;
     let title: string;
     let post = undefined;
@@ -20,7 +23,7 @@
         background = "/assets/images/blog_banner.webp";
         title = "Ramblings";
     
-        // Set the post title and cover
+        // If we have a post, use its title and cover
         if (post != undefined) {
 
             title = post.data.title;
@@ -80,7 +83,7 @@
 
 </Banner>
 
-<Nav></Nav>
+<Nav/>
 
 <Section>
     <slot></slot>

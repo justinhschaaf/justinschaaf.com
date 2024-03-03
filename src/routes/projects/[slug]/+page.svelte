@@ -55,7 +55,7 @@
 
         <Section>
 
-            <Breadcrumbs></Breadcrumbs>
+            <Breadcrumbs/>
 
             <Title text={$page.data.project.title}/>
 

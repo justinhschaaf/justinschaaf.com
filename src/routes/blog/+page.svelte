@@ -3,9 +3,9 @@
     import { page } from "$app/stores";
     import type { GrayMatterFile } from "gray-matter";
 
-    import Markdown from "$lib/components/Markdown.svelte";
     import PubDate from "$lib/components/PubDate.svelte";
     
+    // Sort posts newest first
     let posts: GrayMatterFile<any>[] = $page.data.posts;
     posts.sort((a, b) => {
         return b.data.created - a.data.created;
@@ -58,7 +58,8 @@
 
             <h1>{post.data.title}</h1>
 
-            <Markdown>{post.data.desc}</Markdown>
+            <!-- This used to be a Markdown renderer, but that's unnecessary nowadays -->
+            <p>{post.data.desc}</p>
 
             <a href={"blog".concat(post.data.slug)}>
                 {$page.data.postLinkPrompts[Math.floor(Math.random() * $page.data.postLinkPrompts.length)]}

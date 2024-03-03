@@ -3,8 +3,13 @@
     import { afterUpdate } from "svelte";
     import Typed  from "typed.js";
 
+    /** Overrides on the default typed.js configuration */
     export let overrides: object = {};
+
+    /** A single line of text to be displayed */
     export let text: string = ""; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
+
+    /** An array of strings to be shown, one after another. */
     export let strings: string[] = [text];
 
     let oldText = text;
@@ -84,4 +89,16 @@
 
 </style>
 
-<span bind:this={typedElement} class="typed"></span>
+<!--
+    @component
+    A line of text which is typed on-screen in real time upon being shown. If an
+    array of strings is provided, typed.js will type each line and wait a second
+    before deleting it and typing the next. This continues until the last item
+    in the array is reached, as looping is disabled by default in our config.
+
+    **Example**
+    ```tsx
+    <Typed strings={["The world's best mod", "You know it.", "You love it.", "Llama Steeds"]}/>
+    ```
+-->
+<span bind:this={typedElement} class="typed"/>

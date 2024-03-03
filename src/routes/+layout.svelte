@@ -4,6 +4,7 @@
     import { darkTheme } from "$lib/theme"
     import Footer from "$lib/components/Footer.svelte";
 
+    // Determine the cannonical url by removing query params and using https
     let canonicalUrl: string;
     $: canonicalUrl = "https://".concat($page.url.host, $page.url.pathname)
     
@@ -35,14 +36,17 @@
         --padding-large: 48px;
         --padding-small: 8px;
 
+        // Dark theme colors
         --color-darkish: #151515;
         --color-dark: #111111;
         --color-darker: #0C0C0C;
         --color-dark-filter: invert(0%) sepia(23%) saturate(6326%) hue-rotate(13deg) brightness(92%) contrast(87%);
 
+        // Light theme colors
         --color-light: #ffffff;
         --color-light-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(76deg) brightness(103%) contrast(100%);
 
+        // justinschaaf.com colors
         --color-fjord: #80aabd;
         --color-lucky: #777777;
         --color-splash: #ffff55;
@@ -103,11 +107,13 @@
         text-decoration: underline;
     }
 
+    // Image formatting is fucked if we don't do this
     :global(img) {
         width: 100%;
     }
 
-    // Recolor inline SVGs, specifically for marked-alert
+    // Recolor inline SVGs
+    // was specifically for marked-alert, now a little redundant but whatever
     :global(svg) {
         fill: var(--color-fg);
     }
@@ -163,13 +169,14 @@
 
 </svelte:head>
 
+<!-- Add theme classes to everything -->
 <div class:dark={$darkTheme} class:light={!$darkTheme}>
 
     <main>
         <slot></slot>
     </main>
     
-    <Footer socials={$page.data.socials}></Footer>
+    <Footer socials={$page.data.socials}/>
 
 </div>
 

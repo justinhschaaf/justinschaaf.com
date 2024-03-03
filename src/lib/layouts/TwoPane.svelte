@@ -1,5 +1,6 @@
 <script lang="ts">
 
+    /** The background image to display in the lefthand column */
     export let background: string;
 
 </script>
@@ -64,6 +65,37 @@
 
 </style>
 
+<!--
+    @component
+    A layout with a large parallax image on the left and slot content on the
+    right. The image is supposed to be 3/8ths of the screen, while the content
+    is 5/8ths. On smaller displays, the image will wrap to appear above the
+    content.
+
+    **Example HTML**
+    ```tsx
+    <TwoPane background={$page.data.project.art.cover}>
+
+        <div class="content">
+
+            <Section>
+
+                <p>Hello!</p>
+        
+            </Section>
+
+        </div>
+
+    </TwoPane>
+    ```
+
+    **Example CSS**
+    ```scss
+    .content {
+        min-height: 100vh;
+    }
+    ```
+-->
 <div class="twopane">
 
     <div class="pane imgpane">

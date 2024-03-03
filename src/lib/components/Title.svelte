@@ -2,6 +2,7 @@
 
     import Typed from "$lib/components/Typed.svelte";
 
+    /** The text to display */
     export let text: string;
 
 </script>
@@ -28,6 +29,16 @@
     
 </style>
 
+<!--
+    @component
+    Represents a large line of text with is typed on-screen upon being shown
+    (using the Typed component internally). Useful for major section headers.
+
+    **Example**
+    ```tsx
+    <Title text="Hello, and welcome"/>
+    ```
+-->
 <div class="title-wrap">
 
     <h1 class="title">

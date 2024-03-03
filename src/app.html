@@ -8,12 +8,12 @@
 
         <!-- Favicons. Trust me this isn't overkill whatsoever -->
         <!-- My greatest secret: https://realfavicongenerator.net/ -->
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="/favicon.svg">
         <link rel="icon" type="image/png" href="/favicon-48x48.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#111111">
         <meta name="apple-mobile-web-app-title" content="justinschaaf.com">
@@ -43,6 +43,10 @@
 
     </head>
 
+    <!-- 
+        Actual website content. Remove margin around the body element because 
+        it's added by default for some reason
+    -->
     <body data-sveltekit-preload-data="hover" style="margin: 0;">
         <div style="display: contents">%sveltekit.body%</div>
     </body>

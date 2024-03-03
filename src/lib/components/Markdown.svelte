@@ -3,12 +3,16 @@
     import { afterUpdate } from "svelte";
     import { marked } from "$lib/marked";
 
+    /** A string URL to the Markdown file to fetch the content from */
     export let src: string | undefined = undefined;
+
+    /** The Markdown content to parse, as a string */
     export let content: string = "";
 
     let inputDiv: HTMLDivElement;
     let mdDiv: HTMLDivElement;
 
+    // This *was* in an onMount handler, not sure if it *has* to be
     if (src != undefined) {
 
         fetch(src).then(res => {
@@ -75,6 +79,23 @@
 
 </style>
 
+<!--
+    @component
+    Takes Markdown text as an input and renders it as HTML. Accepts input via
+    the slot, the **content** property, or fetched from the **src** property.
+
+    **Example**
+    ```tsx
+    <Markdown>
+
+        {"> [!IMPORTANT]\n"}
+        {"> This post is hidden and difficult to reach. You're special though, so you can still read it.\n\n"}
+
+        {$page.data.post.content}
+
+    </Markdown>
+    ```
+-->
 <div bind:this={inputDiv} class="md-input">
     <slot>{content}</slot>
 </div>

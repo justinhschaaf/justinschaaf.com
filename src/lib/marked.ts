@@ -8,6 +8,10 @@ import { markedHighlight } from "marked-highlight";
 // Helpers
 import hljs from "highlight.js";
 
+/** 
+ * A MarkedJS instance already configured with alerts, footnotes, and syntax 
+ * highlighting
+ */
 export const marked: Marked = new Marked(
     markedAlert(), 
     markedFootnote(), 

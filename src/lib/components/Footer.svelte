@@ -6,6 +6,7 @@
     import type { SocialIcon } from "$lib/content";
     import { darkTheme } from "$lib/theme";
 
+    /** An object containing the social icons to display */
     export let socials: {[index: string]: SocialIcon};
 
     let socialKeys: string[] = Object.keys(socials);
@@ -148,6 +149,18 @@
 
 </style>
 
+<!--
+    @component
+    A flex-based footer implementation, with social icons on the left and the
+    build version on the right. A light bulb to change the website theme is in
+    the center. The footer has been optimized to collapse properly on mobile
+    views.
+    
+    **Example**
+    ```tsx
+    <Footer socials={$page.data.socials}/>
+    ```
+-->
 <footer class="foot">
 
     <div class="footcontent">

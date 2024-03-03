@@ -4,11 +4,13 @@
     import Markdown from "$lib/components/Markdown.svelte";
     import PubDate from "$lib/components/PubDate.svelte";
 
+    // Determine the created and updated dates here
     let created: number = $page.data.post.data.created;
     let updated: number = ("updated" in $page.data.post.data) ? $page.data.post.data.updated : -1;
     
 </script>
 
+<!-- ***METADATAHHHH!!!!!*** -->
 <svelte:head>
 
     <title>{$page.data.post.data.title} // justinschaaf.com</title>
@@ -23,9 +25,9 @@
 
 </svelte:head>
 
-
 <Markdown>
     
+    <!-- Warnings if you're looking at a hidden or disabled post -->
     {#if $page.data.post.data.hidden}
 
     {"> [!IMPORTANT]\n"}
@@ -40,6 +42,7 @@
 
     {/if}
 
+    <!-- Actual post content -->
     {$page.data.post.content}
 
 </Markdown>

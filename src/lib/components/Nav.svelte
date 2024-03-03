@@ -9,6 +9,10 @@
     import { page } from "$app/stores";
 
     // So we don't have to declare it every time, but can if we want to
+    /** 
+     * The current route used for whicht tab is active. 
+     * Uses the current path by default. 
+     */
     export let currentRoute: string = $page.url.pathname;
 
     // The order is inverted as to how it appears to the website to improve
@@ -120,6 +124,16 @@
 
 </style>
 
+<!--
+    @component
+    A tab-style navigation bar, with the active route being represented as a tab
+    in the front and others cascading behind it.
+    
+    **Example**
+    ```tsx
+    <Nav/>
+    ```
+-->
 <nav class="tabs">
 
     {#each routes as route}

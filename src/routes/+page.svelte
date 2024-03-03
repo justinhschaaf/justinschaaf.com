@@ -114,7 +114,7 @@
 
 </Banner>
 
-<Nav></Nav>
+<Nav/>
 
 <Section anchor="about">
 
