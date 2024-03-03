@@ -3,6 +3,9 @@
     /** The background image to display in the lefthand column */
     export let background: string;
 
+    /** The alt text description of the background */
+    export let backgroundAlt: string;
+
 </script>
 
 <style lang="scss">
@@ -16,7 +19,6 @@
 
         .pane {
             width: 100%;
-            flex: 5 1 500px;
         }
 
         .imgpane {
@@ -59,6 +61,8 @@
         .contentpane {
             background-color: var(--color-bg);
             color: var(--color-fg);
+            flex: 5 1 500px;
+            z-index: 1;
         }
 
     }
@@ -74,7 +78,7 @@
 
     **Example HTML**
     ```tsx
-    <TwoPane background={$page.data.project.art.cover}>
+    <TwoPane background={$page.data.project.art.cover} backgroundAlt="A beautiful cover image!">
 
         <div class="content">
 
@@ -100,7 +104,7 @@
 
     <div class="pane imgpane">
         <!-- This img doesn't have alt text because it's effectively a background -->
-        <img src={background}>
+        <img src={background} alt={backgroundAlt}>
     </div>
 
     <div class="pane contentpane">

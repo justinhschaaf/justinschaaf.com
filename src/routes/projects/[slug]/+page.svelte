@@ -49,7 +49,8 @@
 
 </svelte:head>
 
-<TwoPane background={$page.data.project.art.cover}>
+<TwoPane background={$page.data.project.art.cover} 
+    backgroundAlt={"A showcase of ".concat($page.data.project.title, "'s best features.")}>
 
     <div class="content">
 
