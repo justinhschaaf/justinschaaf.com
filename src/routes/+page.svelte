@@ -75,6 +75,10 @@
             text-align: center;
             transition: var(--transition);
 
+            h1 {
+                text-shadow: var(--shadow-text);
+            }
+
         }
 
         .project:hover {

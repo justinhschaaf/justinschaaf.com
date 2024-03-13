@@ -60,6 +60,7 @@
 
         --shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.4);
         --shadow-hover: 0 2px 16px 1px rgba(0, 0, 0, 0.4);
+        --shadow-text: 0 0px 4px var(--color-dark);
         --transition: .2s ease-in-out;
 
         --font-head: 'Major Mono Display', 'Courier New', monospace;
