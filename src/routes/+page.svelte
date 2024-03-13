@@ -91,7 +91,7 @@
 
 <svelte:head>
 
-    <title>The Homepage of Justin Schaaf // justinschaaf.com</title>
+    <title>Justin Schaaf // justinschaaf.com</title>
     <meta name="description" property="og:description" content="A wonderful idiot raised by the internet. Online since 2011.">
     <!-- yes, the description and og:description can be the same meta tag https://stackoverflow.com/a/6204025 -->
 
