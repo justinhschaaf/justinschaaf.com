@@ -18,10 +18,10 @@
         "tagline": "Curiously colorized.",
         "desc": "/assets/text/projects_stylesheet.md",
         "art": {
-            "img": "/assets/images/projects_llamasteeds.webp",
-            "ascii_dark": "/assets/images/projects_llamasteeds_dark.html",
-            "ascii_light": "/assets/images/projects_llamasteeds_light.html",
-            "cover": "/assets/images/projects_llamasteeds.webp"
+            "img": "/assets/images/projects_stylesheet.webp",
+            "ascii_dark": "/assets/images/projects_stylesheet_dark.html",
+            "ascii_light": "/assets/images/projects_stylesheet_light.html",
+            "cover": "/assets/images/projects_stylesheet.webp"
         }
     },
     "llama_steeds": {
