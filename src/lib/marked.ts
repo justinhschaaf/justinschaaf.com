@@ -3,6 +3,7 @@
 import { Marked } from "marked";
 import markedAlert from "marked-alert";
 import markedFootnote from "marked-footnote";
+import { gfmHeadingId } from "marked-gfm-heading-id";
 import { markedHighlight } from "marked-highlight";
 
 // Helpers
@@ -13,8 +14,9 @@ import hljs from "highlight.js";
  * highlighting
  */
 export const marked: Marked = new Marked(
-    markedAlert(), 
-    markedFootnote(), 
+    markedAlert(),
+    markedFootnote(),
+    gfmHeadingId(),
     markedHighlight({
         // Taken from https://github.com/markedjs/marked-highlight?tab=readme-ov-file#usage
         langPrefix: 'hljs language-',

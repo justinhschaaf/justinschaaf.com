@@ -16,6 +16,10 @@
 - [x] If a typed component's text.length = 0, hide the cursor
 - [x] Allow splash names to be a list so you can have multiple or use smart backspacing
 - [x] Add more format to MD alerts https://github.com/bent10/marked-extensions/tree/main/packages/alert#options
+- [x] Add anchors to headers in Markdown content
+- [ ] Automatically add alt text below images in Markdown content
+- [ ] Blog post automatic word count and read time
+- [ ] RSS Feed Selector Page - If we get a tag system
 
 ## Components
 
