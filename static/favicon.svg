@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 2048">
     <defs>
         <style>
-            @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+            @import url('https://fonts.bunny.net/css?family=major-mono-display:400');
             .e3db9fcb-8e13-426d-aca6-6e9dc9518385 { 
                 fill:#111; 
             }
