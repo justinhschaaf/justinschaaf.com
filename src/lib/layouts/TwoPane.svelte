@@ -32,7 +32,7 @@
             @media screen and (min-width: 500px) and (max-width: 799px) {
                 
                 img {
-                    top: 25%;
+                    top: 12.5%;
                     transform: translateY(-50%);
                 }
 
