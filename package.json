@@ -30,6 +30,7 @@
         "fitty": "^2.4.2",
         "gray-matter": "^4.0.3",
         "highlight.js": "^11.9.0",
+        "highlightjs-svelte": "^1.0.6",
         "marked": "^12.0.0",
         "marked-alert": "^2.0.1",
         "marked-footnote": "^1.2.2",

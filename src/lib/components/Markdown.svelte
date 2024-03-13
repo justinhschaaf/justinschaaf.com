@@ -2,6 +2,7 @@
 
     import { afterUpdate } from "svelte";
     import { marked } from "$lib/marked";
+    import { darkTheme } from "$lib/theme"
 
     /** A string URL to the Markdown file to fetch the content from */
     export let src: string | undefined = undefined;
@@ -21,6 +22,16 @@
             content = res + "";
         });
 
+    }
+
+    // Code block theming
+    let hljsTheme: string;
+    $: {
+        if ($darkTheme) {
+            hljsTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css";
+        } else {
+            hljsTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow.min.css";
+        }
     }
 
     // If we try to render the Markdown in onMount after fetching from src, it
@@ -77,7 +88,15 @@
         --color-alert: var(--color-cinnabar);
     }
 
+    :global(.hljs) {
+        background: none !important;
+    }
+
 </style>
+
+<svelte:head>
+    <link rel="stylesheet" href={hljsTheme}>
+</svelte:head>
 
 <!--
     @component
