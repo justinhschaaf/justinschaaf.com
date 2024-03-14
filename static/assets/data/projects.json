@@ -21,7 +21,7 @@
             "img": "/assets/images/projects_stylesheet.webp",
             "ascii_dark": "/assets/images/projects_stylesheet_dark.html",
             "ascii_light": "/assets/images/projects_stylesheet_light.html",
-            "cover": "/assets/images/projects_stylesheet.webp"
+            "cover": "/assets/images/projects_stylesheet_demo.webp"
         }
     },
     "llama_steeds": {
@@ -33,7 +33,7 @@
             "img": "/assets/images/projects_llamasteeds.webp",
             "ascii_dark": "/assets/images/projects_llamasteeds_dark.html",
             "ascii_light": "/assets/images/projects_llamasteeds_light.html",
-            "cover": "/assets/images/projects_llamasteeds.webp"
+            "cover": "/assets/images/projects_llamasteeds_demo.webp"
         }
     },
     "infinitifall": {
@@ -45,7 +45,7 @@
             "img": "/assets/images/projects_infinitifall.webp",
             "ascii_dark": "/assets/images/projects_infinitifall_dark.html",
             "ascii_light": "/assets/images/projects_infinitifall_light.html",
-            "cover": "/assets/images/projects_infinitifall.webp"
+            "cover": "/assets/images/projects_infinitifall_demo.webp"
         }
     },
     "killer_snow": {
@@ -57,7 +57,7 @@
             "img": "/assets/images/projects_killersnow.webp",
             "ascii_dark": "/assets/images/projects_killersnow_dark.html",
             "ascii_light": "/assets/images/projects_killersnow_light.html",
-            "cover": "/assets/images/projects_killersnow.webp"
+            "cover": "/assets/images/projects_killersnow_demo.webp"
         }
     }
 }
