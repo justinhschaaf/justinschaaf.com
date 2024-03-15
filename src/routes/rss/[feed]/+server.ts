@@ -18,7 +18,7 @@ export const fallback: RequestHandler = async ({ fetch, params, url }) => {
     let items: Item[] = [];
     let addBlogPosts: boolean = false;
     let universalOptions: any = {
-        copyright: "(C) ".concat(now.getFullYear() + "", " Justin Schaaf. All Rights Reserved.")
+        copyright: "(C) 2011-".concat(now.getFullYear() + "", " Justin Schaaf. All Rights Reserved.")
     };
 
     // Determine which feed we want
