@@ -2,7 +2,7 @@
 
 # justinschaaf.com
 
-*Personal Website v4.5*
+*Personal Website v5*
 
 ## Donate
 
@@ -22,6 +22,7 @@ This website is developed in TypeScript and SCSS, using the SvelteKit framework,
     - Pages are under `src/routes` (which also serves to define the routes to access them)
 - All static images are in `static/assets`
     - `static/assets/images` contains the background banner images used in the website
+    - `static/assets/icons` contains the theme switcher lightbulbs and the home icon
     - `static/assets/logos` contains special logo versions not available on `content.justinschaaf.com`
     - `static/assets/socialicons` contains third-party logos used for social links
 
@@ -65,10 +66,10 @@ I've also scatterd references here and there for specific bits of code.
 
 The source code for the website itself is licensed under the [zlib license](LICENSE.md). 
 
-I'm still not certain what I want to specifically license the banner images under at this time, so assume that they're All Rights Reserved with exceptions when used for reference or educational purposes with proper attribution provided. 
+I'm still not certain what I want to specifically license the banner images under at this time, so assume that they're All Rights Reserved with exceptions when used for reference or educational purposes with proper attribution provided.
 
 Most icons are made by other artists and used under Creative Commons licenses (See [`README.md`](static/assets/icons/README.md) in the `static/assets/icons` folder of the project)
 
 Third-party social icons are copyrighted trademarks of their resepctive owners (See [`README.md`](static/assets/socialicons/README.md) in the `static/assets/socialicons` folder of the project)
 
-[Major Mono Display](https://github.com/googlefonts/majormono) is licensed under the [SIL Open Font License](https://github.com/googlefonts/majormono/blob/master/OFL.txt), and [Overpass Mono](https://overpassfont.org) is licensed under the [SIL Open Font License](https://github.com/RedHatOfficial/Overpass/blob/master/LICENSE.md).
+[Major Mono Display](https://github.com/googlefonts/majormono) is licensed under the [SIL Open Font License](https://github.com/googlefonts/majormono/blob/fae0bb9c728fe082097baedaf23604e290ddac16/OFL.txt), and [IBM Plex Mono](https://www.ibm.com/plex/) is licensed under the [SIL Open Font License](https://github.com/IBM/plex/blob/a4e292151ee177d98a370ae442895d10d79ccb2b/LICENSE.txt).
