@@ -6,19 +6,19 @@ import matter, { type GrayMatterFile } from "gray-matter";
  */
 
 /** Blog data will be fetched relative to this location. */
-export const blogstore: string = "/assets/text/blog";
+export const blogstore: string = "https://content.justinschaaf.com/common/blog";
 
 /** Where to find the list of blog posts, relative to the blog url and blogstore. */
-export const blogcfg: string = "/assets/data/blog.json";
+export const blogcfg: string = "https://content.justinschaaf.com/common/config/blog.json";
 
 /** Where to find project definitions. */
-export const projectscfg: string = "/assets/data/projects.json";
+export const projectscfg: string = "https://content.justinschaaf.com/common/config/projects.json";
 
 /** Where to find what social icons we list. */
-export const socialcfg: string = "/assets/data/socials.json";
+export const socialcfg: string = "https://content.justinschaaf.com/common/config/socials.json";
 
 /** Where to find the splashes for the home hero image. */
-export const splashescfg: string = "/assets/data/splashes.json";
+export const splashescfg: string = "https://content.justinschaaf.com/common/config/splashes.json";
 
 /* 
  How to access my stash
