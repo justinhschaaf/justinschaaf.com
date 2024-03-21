@@ -1,4 +1,5 @@
 import type { LayoutServerLoad } from './$types';
+import { VERCEL_GIT_COMMIT_SHA } from '$env/static/private';
 import * as content from '$lib/content';
 
 /* 
@@ -12,6 +13,7 @@ import * as content from '$lib/content';
 */
 export const load: LayoutServerLoad = async ({ fetch }) => {
     return {
-        socials: await content.fetchSocials(fetch)
+        socials: await content.fetchSocials(fetch),
+        sha: VERCEL_GIT_COMMIT_SHA
     };
 };
