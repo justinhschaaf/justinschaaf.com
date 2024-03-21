@@ -12,17 +12,14 @@
     let socialKeys: string[] = (socials != null) ? Object.keys(socials) : [];
 
     // version info
-    let repoOwner = ("VERCEL_GIT_REPO_OWNER" in env) 
-        ? env.VERCEL_GIT_REPO_OWNER
-        : "justinhschaaf";
-    let repoSlug = ("VERCEL_GIT_REPO_SLUG" in env) 
-        ? env.VERCEL_GIT_REPO_SLUG
-        : "justinschaaf.com";
-    let ref = ("VERCEL_GIT_COMMIT_REF" in env) 
-        ? env.VERCEL_GIT_COMMIT_REF
+    let repo = ("PUBLIC_GITHUB_REPOSITORY" in env) 
+        ? env.PUBLIC_GITHUB_REPOSITORY 
+        : "justinhschaaf/justinschaaf.com";
+    let ref = ("PUBLIC_GITHUB_REF_NAME" in env) 
+        ? env.PUBLIC_GITHUB_REF_NAME 
         : "main";
-    let sha = ("VERCEL_GIT_COMMIT_SHA" in env)
-        ? env.VERCEL_GIT_COMMIT_SHA
+    let sha = ("PUBLIC_GITHUB_SHA" in env)
+        ? env.PUBLIC_GITHUB_SHA
         : "8675309";
 
     function toggleTheme(event: MouseEvent) {
@@ -219,13 +216,13 @@
             https://stackoverflow.com/questions/53648652/how-to-use-environment-variables-in-github-page
         -->
 
-        <span>{repoOwner}/{repoSlug}</span>
+        <span>{repo}</span>
 
         <!-- Only show commit in production -->
         {#if dev}
             <span>Development Server</span>
         {:else}
-            <span>{ref}@<a href="https://github.com/{repoOwner}/{repoSlug}/tree/{sha}" target="_blank">{(sha + "").substring(0, 7)}</a></span>
+            <span>{ref}@<a href="https://github.com/{repo}/tree/{sha}" target="_blank">{sha?.substring(0, 7)}</a></span>
         {/if}
 
     </div>
