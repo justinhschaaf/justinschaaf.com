@@ -38,11 +38,18 @@ jobs:
             # Manually installing Yarn dependencies should be unnecessary
           - name: Pull Vercel Environment Information
             run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-            # Build with repo env variables for footer info
-            # https://forrestcli.com/context/vercel/vercel:tldr:3af98
-            # https://stackoverflow.com/a/64161861
+            # Apparently it's too hard to add an option for the environment
+            # variable's value to the "env add" command. so we have this cursed
+            # shit instead
+            # https://vercel.com/docs/cli/env#extended-usage
+          - name: Set Environment Variable Overrides
+            run: |
+                echo ${{ github.repository }} | vercel env add PUBLIC_GITHUB_REPOSITORY --token=${{ secrets.VERCEL_TOKEN }}
+                echo ${{ github.ref_name }} | vercel env add PUBLIC_GITHUB_REF_NAME --token=${{ secrets.VERCEL_TOKEN }}
+                echo ${{ github.sha }} | vercel env add PUBLIC_GITHUB_SHA --token=${{ secrets.VERCEL_TOKEN }}
           - name: Build Project Artifacts
-            run: vercel --build-env PUBLIC_GITHUB_REPOSITORY=${{ github.repository }} --build-env PUBLIC_GITHUB_REF_NAME=${{ github.ref_name }} --build-env PUBLIC_GITHUB_SHA=${{ github.sha }} --prod --token=${{ secrets.VERCEL_TOKEN }}
+            # Set repo env variables for footer info
+            run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
             # Upload artifacts for deployment
           - name: Deploy Artifacts to Vercel
             run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
