@@ -2,7 +2,7 @@
 
 # justinschaaf.com
 
-*Personal Website V4*
+*Personal Website v5*
 
 ## Donate
 
@@ -12,42 +12,64 @@ If you like what I do, please consider supporting me on Liberapay.
 
 ## How It's Made
 
-This website is developed in [TypeScript](https://www.typescriptlang.org) and [SCSS](https://sass-lang.com/) utilizing [Node Package Manager](https://www.npmjs.com), [Rollup](https://www.rollupjs.org), and [Sapper](https://sapper.svelte.dev). Much of the information in this section is for my own future reference because I know I'm likely to forget it without some assistance (as this is my first time properly using Svelte).
+This website is developed in TypeScript and SCSS, using the SvelteKit framework, all atop of the Yarn Berry and Nix package managers. Much of the information in this section is for my own future reference because I know I'm likely to forget it without some assistance.
 
 ### File Structure
 
 - All website code is in `src`
-    - Components used in the pages are under `src/components`
+    - Components and shared scripts used in the pages are under `src/lib`
+        - `content.ts` provides assistance in loading content from a JSON file
     - Pages are under `src/routes` (which also serves to define the routes to access them)
-    - `content.ts` provides assistance in loading content from a JSON file
 - All static images are in `static/assets`
     - `static/assets/images` contains the background banner images used in the website
+    - `static/assets/icons` contains the theme switcher lightbulbs and the home icon
     - `static/assets/logos` contains special logo versions not available on `content.justinschaaf.com`
     - `static/assets/socialicons` contains third-party logos used for social links
 
-### Running the Project
+### Workspace Setup
 
-In the project directory, run `npm run dev` in your preferred terminal. This will open a development server on [localhost:3000](http://localhost:3000).
+To make sure the Yarn version doesn't change, the version is locked by the Nix package manager. If you're not on NixOS, install the Nix package manager for your system using the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer).
 
-### Building the Project
+> [!NOTE]
+> *I recommend the Determinate installer over the default provided on the NixOS website since the default doesn't work on SELinux systems (e.g. Fedora) while the Determinate installer does.*
 
-To build, simply run `build.bat`. This should automatically execute the commands to build the project and copy the necessary files to `docs` for deployment on GitHub Pages.
+Once Nix is installed, enter the dev shell by running `nix develop` in the project directory. **Assume ALL commands hereafter are in this shell unless otherwise stated.**
+
+> [!TIP]
+> *For reference, a new Svelte project can be created here with `yarn create svelte`.*
+
+At this point, you can install the project's dependencies with `yarn install`. 
+
+### Developing
+
+Run `yarn run dev` to open a development server on [localhost:5173](http://localhost:5173), allowing you to preview changes in real time.
+
+### Building
+
+> [!IMPORTANT]
+> ***TODO** I still need to figure out the exact details for gh-pages deployment.*
+
+Basic instructions are to use `yarn run build`; however, 
+
+Run a preview server with `yarn run preview`.
 
 ### Additional Resources
 
-If you want to make a website in Svelte using Sapper yourself, here are some of the sources I used to learn:
+If you want to make a website in Svelte using SvelteKit yourself, here are some of the sources I used:
 
-- [Svelte Tutorial](https://svelte.dev/tutorial/basics)
-- [Sapper Docs](https://sapper.svelte.dev/docs)
-- [Svelte Preprocessors](https://github.com/sveltejs/language-tools/tree/master/docs/preprocessors)
-- [Svelte/Sapper with Sass!](https://codepilotsf.medium.com/svelte-sapper-with-sass-271fff662da9)
+- [Svelte Docs](https://svelte.dev/docs)
+- [SvelteKit Docs](https://kit.svelte.dev/docs)
+
+I've also scatterd references here and there for specific bits of code.
 
 ## License
 
-The source code for the website itself is licensed under the [MIT License](https://github.com/justinhschaaf/justinschaaf.com/blob/master/LICENSE). 
+The source code for the website itself is licensed under the [zlib license](LICENSE.md). 
 
-I'm still not certain what I want to specifically license the banner images under at this time, so assume that they're All Rights Reserved with exceptions when used for reference or educational purposes with proper attribution provided. 
+I'm still not certain what I want to specifically license the banner images under at this time, so assume that they're All Rights Reserved with exceptions when used for reference or educational purposes with proper attribution provided.
 
-Third-party social icons are copyrighted trademarks of their resepctive owners (See [`README.md`](https://github.com/justinhschaaf/justinschaaf.com/blob/master/static/assets/socialicons/README.md) in the `static/assets/socialicons` folder of the project)
+Most icons are made by other artists and used under Creative Commons licenses (See [`README.md`](static/assets/icons/README.md) in the `static/assets/icons` folder of the project)
 
-[Major Mono Display](https://github.com/googlefonts/majormono) is licensed under the [SIL Open Font License](https://github.com/googlefonts/majormono/blob/master/OFL.txt), and [Overpass Mono](https://overpassfont.org) is licensed under the [SIL Open Font License](https://github.com/RedHatOfficial/Overpass/blob/master/LICENSE.md).
+Third-party social icons are copyrighted trademarks of their resepctive owners (See [`README.md`](static/assets/socialicons/README.md) in the `static/assets/socialicons` folder of the project)
+
+[Major Mono Display](https://github.com/googlefonts/majormono) is licensed under the [SIL Open Font License](https://github.com/googlefonts/majormono/blob/fae0bb9c728fe082097baedaf23604e290ddac16/OFL.txt), and [IBM Plex Mono](https://www.ibm.com/plex/) is licensed under the [SIL Open Font License](https://github.com/IBM/plex/blob/a4e292151ee177d98a370ae442895d10d79ccb2b/LICENSE.txt).

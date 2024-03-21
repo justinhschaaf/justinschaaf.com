@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Favicons. Trust me this isn't overkill whatsoever -->
+        <!-- My greatest secret: https://realfavicongenerator.net/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="/favicon.svg">
+        <link rel="icon" type="image/png" href="/favicon-48x48.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#111111">
+        <meta name="apple-mobile-web-app-title" content="justinschaaf.com">
+        <meta name="application-name" content="justinschaaf.com">
+        <meta name="msapplication-TileColor" content="#111111">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:600,600i,700,700i|major-mono-display:400" rel="stylesheet"/>
+
+        <!-- Fuck AI https://www.linkedin.com/pulse/how-block-ai-from-scraping-your-content-ken-freel-wu5jc/ -->
+        <meta name="robots" content="nocache">
+
+        <!-- For RSS https://www.rssboard.org/rss-autodiscovery -->
+        <link rel="alternate" type="application/rss+xml" title="All - RSS" href="https://justinschaaf.com/rss/all">
+        <link rel="alternate" type="application/rss+xml" title="Blog - RSS" href="https://justinschaaf.com/rss/blog">
+        <link rel="alternate" type="application/atom+xml" title="All - Atom" href="https://justinschaaf.com/rss/all?atom=true">
+        <link rel="alternate" type="application/atom+xml" title="Blog - Atom" href="https://justinschaaf.com/rss/blog?atom=true">
+        <link rel="alternate" type="application/feed+json" title="All - JSON" href="https://justinschaaf.com/rss/all?json=true">
+        <link rel="alternate" type="application/feed+json" title="Blog - JSON" href="https://justinschaaf.com/rss/blog?json=true">
+
+        <!-- For Mastodon Verification -->
+        <link rel="me" href="https://mastodon.online/@justinhschaaf">
+
+        <!-- For Analytics -->
+        <script src="https://cdn.counter.dev/script.js" data-id="155baa07-a845-4ea9-83bb-2ba258134d4a" data-utcoffset="-7"></script>
+
+        %sveltekit.head%
+
+    </head>
+
+    <!-- 
+        Actual website content. Remove margin around the body element because 
+        it's added by default for some reason
+    -->
+    <body data-sveltekit-preload-data="hover" style="margin: 0;">
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
+
+</html>
