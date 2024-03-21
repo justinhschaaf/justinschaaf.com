@@ -16,6 +16,7 @@
             devShells.default = pkgs.mkShell {
 
                 packages = with pkgs; [
+                    nodePackages.vercel
                     yarn-berry
                 ];
 
