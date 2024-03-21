@@ -25,10 +25,6 @@ jobs:
             # Vercel variables
             VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
             VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-            # Set repo env variables for footer info
-            PUBLIC_GITHUB_REPOSITORY: "${{ github.repository }}"
-            PUBLIC_GITHUB_REF_NAME: "${{ github.ref_name }}"
-            PUBLIC_GITHUB_SHA: "${{ github.sha }}"
         steps:
           - name: Checkout
             uses: actions/checkout@v3
@@ -42,7 +38,14 @@ jobs:
             # Manually installing Yarn dependencies should be unnecessary
           - name: Pull Vercel Environment Information
             run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+            # https://forrestcli.com/context/vercel/vercel:tldr:3af98
+          - name: Set Environment Variable Overrides
+            run: |
+                vercel --build-env PUBLIC_GITHUB_REPOSITORY=${{ github.repository }} --token=${{ secrets.VERCEL_TOKEN }}
+                vercel --build-env PUBLIC_GITHUB_REF_NAME=${{ github.ref_name }} --token=${{ secrets.VERCEL_TOKEN }}
+                vercel --build-env PUBLIC_GITHUB_SHA=${{ github.sha }} --token=${{ secrets.VERCEL_TOKEN }}
           - name: Build Project Artifacts
+            # Set repo env variables for footer info
             run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
             # Upload artifacts for deployment
           - name: Deploy Artifacts to Vercel
