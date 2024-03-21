@@ -1,6 +1,7 @@
 <script lang="ts">
 
     import { dev } from "$app/environment";
+    import { env } from "$env/dynamic/public";
 
     import type { SocialIcon } from "$lib/content";
     import { darkTheme } from "$lib/theme";
@@ -8,16 +9,18 @@
     /** An object containing the social icons to display */
     export let socials: {[index: string]: SocialIcon};
 
-    /** The name of the GitHub repository hosting the website's source code */
-    export let repo = "justinhschaaf/justinschaaf.com";
-
-    /** The branch the website is deployed from */
-    export let ref = "main";
-    
-    /** The SHA of the currently deployed commit */
-    export let sha = "8675309";
-
     let socialKeys: string[] = (socials != null) ? Object.keys(socials) : [];
+
+    // version info
+    let repo = ("PUBLIC_GITHUB_REPOSITORY" in env) 
+        ? env.PUBLIC_GITHUB_REPOSITORY 
+        : "justinhschaaf/justinschaaf.com";
+    let ref = ("PUBLIC_GITHUB_REF_NAME" in env) 
+        ? env.PUBLIC_GITHUB_REF_NAME 
+        : "main";
+    let sha = ("PUBLIC_GITHUB_SHA" in env)
+        ? env.PUBLIC_GITHUB_SHA
+        : "8675309";
 
     function toggleTheme(event: MouseEvent) {
         $darkTheme = !$darkTheme;

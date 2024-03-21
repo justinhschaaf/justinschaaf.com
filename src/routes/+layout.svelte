@@ -177,10 +177,7 @@
         <slot></slot>
     </main>
     
-    <Footer socials={$page.data.socials} 
-        repo={$page.data.repo} 
-        ref={$page.data.ref} 
-        sha={$page.data.sha}/>
+    <Footer socials={$page.data.socials}/>
 
 </div>
 
