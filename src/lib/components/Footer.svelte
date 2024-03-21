@@ -9,7 +9,7 @@
     /** An object containing the social icons to display */
     export let socials: {[index: string]: SocialIcon};
 
-    let socialKeys: string[] = Object.keys(socials);
+    let socialKeys: string[] = (socials != null) ? Object.keys(socials) : [];
 
     // version info
     let repo = ("PUBLIC_GITHUB_REPOSITORY" in env) 
