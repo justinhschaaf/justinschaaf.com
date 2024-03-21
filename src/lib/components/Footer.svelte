@@ -9,8 +9,6 @@
     /** An object containing the social icons to display */
     export let socials: {[index: string]: SocialIcon};
 
-    export let sha: string = "main";
-
     let socialKeys: string[] = (socials != null) ? Object.keys(socials) : [];
 
     // version info
@@ -20,6 +18,9 @@
     let ref = ("PUBLIC_GITHUB_REF_NAME" in env) 
         ? env.PUBLIC_GITHUB_REF_NAME 
         : "main";
+    let sha = ("PUBLIC_GITHUB_SHA" in env)
+        ? env.PUBLIC_GITHUB_SHA
+        : "8675309";
 
     function toggleTheme(event: MouseEvent) {
         $darkTheme = !$darkTheme;

@@ -42,11 +42,11 @@ jobs:
             # variable's value to the "env add" command. so we have this cursed
             # shit instead
             # https://vercel.com/docs/cli/env#extended-usage
-          #- name: Set Environment Variable Overrides
-          #  run: |
-          #      echo ${{ github.repository }} | vercel env add PUBLIC_GITHUB_REPOSITORY --token=${{ secrets.VERCEL_TOKEN }}
-          #      echo ${{ github.ref_name }} | vercel env add PUBLIC_GITHUB_REF_NAME --token=${{ secrets.VERCEL_TOKEN }}
-          #      echo ${{ github.sha }} | vercel env add PUBLIC_GITHUB_SHA --token=${{ secrets.VERCEL_TOKEN }}
+          - name: Set Environment Variable Overrides
+            run: |
+                echo ${{ github.repository }} | vercel env add PUBLIC_GITHUB_REPOSITORY --token=${{ secrets.VERCEL_TOKEN }}
+                echo ${{ github.ref_name }} | vercel env add PUBLIC_GITHUB_REF_NAME --token=${{ secrets.VERCEL_TOKEN }}
+                echo ${{ github.sha }} | vercel env add PUBLIC_GITHUB_SHA --token=${{ secrets.VERCEL_TOKEN }}
           - name: Build Project Artifacts
             # Set repo env variables for footer info
             run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}

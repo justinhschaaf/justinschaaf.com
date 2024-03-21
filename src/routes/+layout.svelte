@@ -177,7 +177,7 @@
         <slot></slot>
     </main>
     
-    <Footer socials={$page.data.socials} sha={$page.data.sha}/>
+    <Footer socials={$page.data.socials}/>
 
 </div>
 
