@@ -50,7 +50,7 @@ jobs:
                 PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
                 TARGET_PUBLIC_GITHUB_REPOSITORY: production,preview,deployment
                 TYPE_PUBLIC_GITHUB_REPOSITORY: plain
-                ENV_PUBLIC_GITHUB_REF_NAME: ${{ github.ref_name }}
+                PUBLIC_GITHUB_REF_NAME: ${{ github.ref_name }}
                 TARGET_ENV_PUBLIC_GITHUB_REF_NAME: production,preview,deployment
                 TYPE_ENV_PUBLIC_GITHUB_REF_NAME: plain
                 PUBLIC_GITHUB_SHA: ${{ github.sha }}
