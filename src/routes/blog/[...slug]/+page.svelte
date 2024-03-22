@@ -14,9 +14,10 @@
 <svelte:head>
 
     <title>{$page.data.post.data.title} // justinschaaf.com</title>
-    <meta name="description" property="og:description" content={$page.data.post.data.desc}>
+    <meta name="description" content={$page.data.post.data.desc}>
 
     <meta property="og:type" content="article">
+    <meta property="og:description" content={$page.data.post.data.desc}>
     <meta property="article:published_time" content={new Date(created * 1000).toISOString()}>
 
     {#if updated > -1}

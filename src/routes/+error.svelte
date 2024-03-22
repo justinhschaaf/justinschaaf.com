@@ -56,10 +56,11 @@
 <svelte:head>
 
     <title>{$page.status} // justinschaaf.com</title>
-    <meta name="description" property="og:description" content="A barren desert.">
+    <meta name="description" content="A barren desert.">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content={$page.status + ""}>
+    <meta property="og:description" content="A barren desert.">
     <meta property="og:image" content="/assets/images/404_banner.webp">
 
 </svelte:head>

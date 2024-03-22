@@ -32,10 +32,11 @@
 
     <title>Blog // justinschaaf.com</title>
     <meta name="description" 
-        property="og:description"
         content="The latest ramblings, opinions, and updates from Justin Schaaf's blog—featuring life, technology, and more.">
 
     <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="The latest ramblings, opinions, and updates from Justin Schaaf's blog—featuring life, technology, and more.">
 
 </svelte:head>
 

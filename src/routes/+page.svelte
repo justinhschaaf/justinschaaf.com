@@ -92,11 +92,13 @@
 <svelte:head>
 
     <title>Justin Schaaf // justinschaaf.com</title>
-    <meta name="description" property="og:description" content="A wonderful idiot raised by the internet. Online since 2011.">
+    <meta name="description" content="A wonderful idiot raised by the internet. Online since 2011.">
     <!-- yes, the description and og:description can be the same meta tag https://stackoverflow.com/a/6204025 -->
+    <!-- lmao no it doesn't actually work -->
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Homepage of Justin Schaaf">
+    <meta property="og:description" content="A wonderful idiot raised by the internet. Online since 2011.">
     <meta property="og:image" content="/assets/images/home_banner.webp">
 
 </svelte:head>
