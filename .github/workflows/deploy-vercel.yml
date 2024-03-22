@@ -38,17 +38,25 @@ jobs:
             # Manually installing Yarn dependencies should be unnecessary
           - name: Pull Vercel Environment Information
             run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-            # Apparently it's too hard to add an option for the environment
-            # variable's value to the "env add" command. so we have this cursed
-            # shit instead
-            # https://vercel.com/docs/cli/env#extended-usage
-          - name: Set Environment Variable Overrides
-            run: |
-                echo ${{ github.repository }} | vercel env add PUBLIC_GITHUB_REPOSITORY --token=${{ secrets.VERCEL_TOKEN }}
-                echo ${{ github.ref_name }} | vercel env add PUBLIC_GITHUB_REF_NAME --token=${{ secrets.VERCEL_TOKEN }}
-                echo ${{ github.sha }} | vercel env add PUBLIC_GITHUB_SHA --token=${{ secrets.VERCEL_TOKEN }}
+            # Set repo env variables for footer info. This is hell
+            # https://github.com/dkershner6/vercel-set-env-action/tree/main
+          - name: Set Vercel Environment Variables
+            uses: dkershner6/vercel-set-env-action@v3
+            with:
+                token: ${{ secrets.VERCEL_TOKEN }}
+                projectName: justinschaaf-com
+                envVariableKeys: PUBLIC_GITHUB_REPOSITORY,PUBLIC_GITHUB_REF_NAME,PUBLIC_GITHUB_SHA
+            env:
+                PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
+                TARGET_PUBLIC_GITHUB_REPOSITORY: production,preview,deployment
+                TYPE_PUBLIC_GITHUB_REPOSITORY: plain
+                ENV_PUBLIC_GITHUB_REF_NAME: ${{ github.ref_name }}
+                TARGET_ENV_PUBLIC_GITHUB_REF_NAME: production,preview,deployment
+                TYPE_ENV_PUBLIC_GITHUB_REF_NAME: plain
+                PUBLIC_GITHUB_SHA: ${{ github.sha }}
+                TARGET_PUBLIC_GITHUB_SHA: production,preview,deployment
+                TYPE_PUBLIC_GITHUB_SHA: plain
           - name: Build Project Artifacts
-            # Set repo env variables for footer info
             run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
             # Upload artifacts for deployment
           - name: Deploy Artifacts to Vercel
