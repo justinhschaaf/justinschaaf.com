@@ -35,6 +35,8 @@ To make sure the Yarn version doesn't change, the version is locked by the Nix p
 
 Once Nix is installed, enter the dev shell by running `nix develop` in the project directory. **Assume ALL commands hereafter are in this shell unless otherwise stated.**
 
+- Alternatively, you can enter the dev shell automatically when you `cd` into the project folder by installing [direnv](https://direnv.net/docs/installation.html).
+
 > [!TIP]
 > *For reference, a new Svelte project can be created here with `yarn create svelte`.*
 

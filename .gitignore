@@ -27,5 +27,8 @@ vite.config.ts.timestamp-*
 # Vercel
 .vercel
 
+# Direnv
+.direnv
+
 # Editor Config
 /.vscode/
