@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/private';
 import type { LayoutServerLoad } from './$types';
 import * as content from '$lib/content';
 
@@ -12,6 +13,11 @@ import * as content from '$lib/content';
 */
 export const load: LayoutServerLoad = async ({ fetch }) => {
     return {
-        socials: await content.fetchSocials(fetch)
+        socials: await content.fetchSocials(fetch),
+        git: {
+            repo: env.VERCEL_GIT_REPO_OWNER + "/" + env.VERCEL_GIT_REPO_SLUG,
+            ref: env.VERCEL_GIT_COMMIT_REF,
+            sha: env.VERCEL_GIT_COMMIT_SHA
+        }
     };
 };
