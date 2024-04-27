@@ -16,7 +16,7 @@ export const load: LayoutServerLoad = async ({ fetch }) => {
         socials: await content.fetchSocials(fetch),
         git: {
             repo: env.VERCEL_GIT_REPO_OWNER + "/" + env.VERCEL_GIT_REPO_SLUG,
-            ref: env.VERCEL_COMMIT_REF,
+            ref: env.VERCEL_GIT_COMMIT_REF,
             sha: env.VERCEL_GIT_COMMIT_SHA
         }
     };
