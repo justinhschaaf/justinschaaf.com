@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     import TwoPane from "$lib/layouts/TwoPane.svelte"
     import Section from "$lib/layouts/Section.svelte";
@@ -40,18 +40,18 @@
 
 <svelte:head>
 
-    <title>{$page.data.project.title} // justinschaaf.com</title>
-    <meta name="description" content={$page.data.project.tagline}>
+    <title>{page.data.project.title} // justinschaaf.com</title>
+    <meta name="description" content={page.data.project.tagline}>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content={$page.data.project.title}>
-    <meta property="og:description" content={$page.data.project.tagline}>
-    <meta property="og:image" content={$page.data.project.art.img}>
+    <meta property="og:title" content={page.data.project.title}>
+    <meta property="og:description" content={page.data.project.tagline}>
+    <meta property="og:image" content={page.data.project.art.img}>
 
 </svelte:head>
 
-<TwoPane background={$page.data.project.art.cover}
-    backgroundAlt={"A showcase of ".concat($page.data.project.title, "'s best features.")}>
+<TwoPane background={page.data.project.art.cover}
+    backgroundAlt={"A showcase of ".concat(page.data.project.title, "'s best features.")}>
 
     <div class="content">
 
@@ -59,13 +59,13 @@
 
             <Breadcrumbs/>
 
-            <Title text={$page.data.project.title}/>
+            <Title text={page.data.project.title}/>
 
-            <em class="tagline">{$page.data.project.tagline}</em>
+            <em class="tagline">{page.data.project.tagline}</em>
 
             <br>
     
-            <Markdown>{$page.data.project.desc_content}</Markdown>
+            <Markdown>{page.data.project.desc_content}</Markdown>
     
         </Section>
 

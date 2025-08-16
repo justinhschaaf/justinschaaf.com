@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { run } from 'svelte/legacy';
+
 
     import { page } from "$app/stores";
 
@@ -7,17 +9,22 @@
 
     import Nav from "$lib/components/Nav.svelte";
     import Title from "$lib/components/Title.svelte";
+    interface Props {
+        children?: import('svelte').Snippet;
+    }
+
+    let { children }: Props = $props();
 
     // The banner and nav to use. We're using a layout for this to avoid
     // repeating the same components and styles since banner and nav would be
     // on all blog pages
-    let background: string;
-    let title: string;
-    let post = undefined;
+    let background: string = $state();
+    let title: string = $state();
+    let post = $state(undefined);
 
     // All of this needs to be reactive because the layout usually doesn't
     // update when the page changes
-    $: {
+    run(() => {
 
         post = $page.data.post;
         background = "/assets/images/blog_banner.webp";
@@ -34,7 +41,7 @@
 
         }
 
-    }
+    });
 
 </script>
 
@@ -86,5 +93,5 @@
 <Nav/>
 
 <Section>
-    <slot></slot>
+    {@render children?.()}
 </Section>

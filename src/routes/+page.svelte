@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
     import { darkTheme } from "$lib/theme"
 
     import Banner from "$lib/layouts/Banner.svelte";
@@ -12,7 +12,7 @@
     import Title from "$lib/components/Title.svelte";
     import Typed from "$lib/components/Typed.svelte";
 
-    let projectKeys: string[] = Object.keys($page.data.projects);
+    let projectKeys: string[] = Object.keys(page.data.projects);
 
 </script>
 
@@ -113,7 +113,7 @@
         </div>
         
         <em class="splash">
-            <Typed strings={$page.data.splash}/>
+            <Typed strings={page.data.splash}/>
         </em>
 
     </div>
@@ -161,14 +161,14 @@
 
     {#each projectKeys as key}
 
-        {@const project = $page.data.projects[key]}
+        {@const project = page.data.projects[key]}
         {@const ascii = $darkTheme ? project.art.ascii_dark : project.art.ascii_light}
 
         {#if !project.disabled}
 
             <a class="project" href="/projects/{key}" target="_self">
                 <AsciiStack ascii={ascii} image={project.art.img}>
-                    <Fitty minSize={24} maxSize={40}><h1>{@html project.name }</h1></Fitty>
+                    <Fitty minSize={24} maxSize={40}><h1>{@html project.name}</h1></Fitty>
                 </AsciiStack>
             </a>
 

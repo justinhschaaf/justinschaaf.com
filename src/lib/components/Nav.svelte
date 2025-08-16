@@ -9,15 +9,20 @@
     import { page } from "$app/stores";
 
     // So we don't have to declare it every time, but can if we want to
-    /** 
+    
+    interface Props {
+        /** 
      * The current route used for whicht tab is active. 
      * Uses the current path by default. 
      */
-    export let currentRoute: string = $page.url.pathname;
+        currentRoute?: string;
+    }
+
+    let { currentRoute = $page.url.pathname }: Props = $props();
 
     // The order is inverted as to how it appears to the website to improve
     // style, see comment below
-    let routes = [
+    let routes = $state([
         {
             name: "Blog",
             url: "/blog",
@@ -28,7 +33,7 @@
             url: "/",
             active: false
         }
-    ];
+    ]);
 
     for (let i = 0; i < routes.length; i++) {
 

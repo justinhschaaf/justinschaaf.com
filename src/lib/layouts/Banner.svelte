@@ -1,13 +1,26 @@
 <script lang="ts">
 
-    /** The big background image */
-    export let background: string;
+    
 
-    /** How the background image should be aligned */
-    export let backgroundPosition: string = "center";
+    
 
-    /** Whether to darken and blur the background */
-    export let tinted: boolean = false;
+    
+    interface Props {
+        /** The big background image */
+        background: string;
+        /** How the background image should be aligned */
+        backgroundPosition?: string;
+        /** Whether to darken and blur the background */
+        tinted?: boolean;
+        children?: import('svelte').Snippet;
+    }
+
+    let {
+        background,
+        backgroundPosition = "center",
+        tinted = false,
+        children
+    }: Props = $props();
 
 </script>
 
@@ -104,7 +117,7 @@
 <section class="banner" class:tinted style="background-image: url({background}); background-position: {backgroundPosition};">
 
     <div class="banner-content">
-        <slot></slot>
+        {@render children?.()}
     </div>
     
 </section>

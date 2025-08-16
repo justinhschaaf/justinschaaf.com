@@ -1,12 +1,12 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
     import type { GrayMatterFile } from "gray-matter";
 
     import PubDate from "$lib/components/PubDate.svelte";
     
     // Sort posts newest first
-    let posts: GrayMatterFile<any>[] = $page.data.posts;
+    let posts: GrayMatterFile<any>[] = page.data.posts;
     posts.sort((a, b) => {
         return b.data.created - a.data.created;
     });
@@ -63,7 +63,7 @@
             <p>{post.data.desc}</p>
 
             <a href={"blog".concat(post.data.slug)}>
-                {$page.data.postLinkPrompts[Math.floor(Math.random() * $page.data.postLinkPrompts.length)]}
+                {page.data.postLinkPrompts[Math.floor(Math.random() * page.data.postLinkPrompts.length)]}
             </a>
 
         </div>

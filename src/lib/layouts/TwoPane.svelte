@@ -1,10 +1,17 @@
 <script lang="ts">
 
-    /** The background image to display in the lefthand column */
-    export let background: string;
+    
 
-    /** The alt text description of the background */
-    export let backgroundAlt: string;
+    
+    interface Props {
+        /** The background image to display in the lefthand column */
+        background: string;
+        /** The alt text description of the background */
+        backgroundAlt: string;
+        children?: import('svelte').Snippet;
+    }
+
+    let { background, backgroundAlt, children }: Props = $props();
 
 </script>
 
@@ -107,7 +114,7 @@
     </div>
 
     <div class="pane contentpane">
-        <slot></slot>
+        {@render children?.()}
     </div>
 
 </div>

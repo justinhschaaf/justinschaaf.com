@@ -1,23 +1,32 @@
 <script lang="ts">
+    import { run } from 'svelte/legacy';
 
-    /** Timestamp for when this post was created, in Unix Epoch seconds */
-    export let created: number;
 
-    /** Timestamp for when this post was last updated, in Unix Epoch seconds */
-    export let updated: number = -1;
+    
 
-    /** Whether to include the word "Published" before listing the dates */
-    export let includePublishedText: boolean = true;
+    
 
-    let createDate: Date;
-    let upDate: Date | undefined;
+    
+    interface Props {
+        /** Timestamp for when this post was created, in Unix Epoch seconds */
+        created: number;
+        /** Timestamp for when this post was last updated, in Unix Epoch seconds */
+        updated?: number;
+        /** Whether to include the word "Published" before listing the dates */
+        includePublishedText?: boolean;
+    }
 
-    $: {
+    let { created, updated = -1, includePublishedText = true }: Props = $props();
+
+    let createDate: Date = $state();
+    let upDate: Date | undefined = $state();
+
+    run(() => {
         createDate = new Date(created * 1000);
         upDate = (updated > -1) 
             ? new Date(updated * 1000)
             : undefined;
-    }
+    });
 
 </script>
 

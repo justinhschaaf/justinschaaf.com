@@ -5,19 +5,32 @@
     import type { SocialIcon } from "$lib/content";
     import { darkTheme } from "$lib/theme";
 
-    /** An object containing the social icons to display */
-    export let socials: {[index: string]: SocialIcon};
+    
 
     // version info
 
-    /** The repository the website's code is stored in */
-    export let repo = "justinhschaaf/justinschaaf.com";
+    
 
-    /** The current branch the website is deployed from */
-    export let ref = "main";
+    
 
-    /** The currently deployed commit version */
-    export let sha = "8675309";
+    
+    interface Props {
+        /** An object containing the social icons to display */
+        socials: {[index: string]: SocialIcon};
+        /** The repository the website's code is stored in */
+        repo?: string;
+        /** The current branch the website is deployed from */
+        ref?: string;
+        /** The currently deployed commit version */
+        sha?: string;
+    }
+
+    let {
+        socials,
+        repo = "justinhschaaf/justinschaaf.com",
+        ref = "main",
+        sha = "8675309"
+    }: Props = $props();
 
     let socialKeys: string[] = (socials != null) ? Object.keys(socials) : [];
 
@@ -194,7 +207,7 @@
         </svg>
 
         <!-- This has to be a button for accessibility -->
-        <button on:click={toggleTheme} class="bulb foothover">
+        <button onclick={toggleTheme} class="bulb foothover">
             <!-- That's Omori -->
             <img alt="A lightbulb used to change the website theme."
                 src={$darkTheme ? "/assets/icons/theme_dark.svg" : "/assets/icons/theme_light.svg"} 

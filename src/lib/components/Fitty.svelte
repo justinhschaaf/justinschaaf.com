@@ -1,3 +1,4 @@
+<!-- @migration-task Error while migrating Svelte code: Can't migrate code with afterUpdate. Please migrate by hand. -->
 <!--
     https://medium.com/ellacard/automatic-text-resizing-in-javascript-html-947669bbddb6
     https://css-tricks.com/fitting-text-to-a-container/

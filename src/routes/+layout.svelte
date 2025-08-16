@@ -3,10 +3,15 @@
     import { page } from "$app/stores";
     import { darkTheme } from "$lib/theme"
     import Footer from "$lib/components/Footer.svelte";
+    interface Props {
+        children?: import('svelte').Snippet;
+    }
+
+    let { children }: Props = $props();
 
     // Determine the cannonical url by removing query params and using https
-    let canonicalUrl: string;
-    $: canonicalUrl = "https://".concat($page.url.host, $page.url.pathname)
+    let canonicalUrl: string = $derived("https://".concat($page.url.host, $page.url.pathname));
+    
     
 </script>
 
@@ -174,7 +179,7 @@
 <div class:dark={$darkTheme} class:light={!$darkTheme}>
 
     <main>
-        <slot></slot>
+        {@render children?.()}
     </main>
     
     <Footer socials={$page.data.socials}

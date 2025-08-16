@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     import Banner from "$lib/layouts/Banner.svelte";
     import Title from "$lib/components/Title.svelte";
@@ -55,11 +55,11 @@
 
 <svelte:head>
 
-    <title>{$page.status} // justinschaaf.com</title>
+    <title>{page.status} // justinschaaf.com</title>
     <meta name="description" content="A barren desert.">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content={$page.status + ""}>
+    <meta property="og:title" content={page.status + ""}>
     <meta property="og:description" content="A barren desert.">
     <meta property="og:image" content="/assets/images/404_banner.webp">
 

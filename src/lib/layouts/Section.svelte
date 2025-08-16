@@ -1,10 +1,17 @@
 <script lang="ts">
 
-    /** A name for this section to set as the element's id */
-    export let anchor: string = "";
+    
 
-    /** Whether to enable top/bottom padding */
-    export let padding: boolean = true;
+    
+    interface Props {
+        /** A name for this section to set as the element's id */
+        anchor?: string;
+        /** Whether to enable top/bottom padding */
+        padding?: boolean;
+        children?: import('svelte').Snippet;
+    }
+
+    let { anchor = "", padding = true, children }: Props = $props();
 
 </script>
 
@@ -48,5 +55,5 @@
     ```
 -->
 <section id={anchor} class:padded={padding}>
-    <slot></slot>
+    {@render children?.()}
 </section>

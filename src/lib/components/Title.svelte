@@ -2,8 +2,13 @@
 
     import Typed from "$lib/components/Typed.svelte";
 
-    /** The text to display */
-    export let text: string;
+    
+    interface Props {
+        /** The text to display */
+        text: string;
+    }
+
+    let { text }: Props = $props();
 
 </script>
 

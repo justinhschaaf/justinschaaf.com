@@ -2,8 +2,13 @@
 
     import { page } from "$app/stores";
 
-    /** The path to display. Defaults to the current one */
-    export let pathname: string = $page.url.pathname;
+    
+    interface Props {
+        /** The path to display. Defaults to the current one */
+        pathname?: string;
+    }
+
+    let { pathname = $page.url.pathname }: Props = $props();
     
     // A matrix mapping a segment in a path to the parts before it
     // e.g. ["llama-steeds", "/projects"]
