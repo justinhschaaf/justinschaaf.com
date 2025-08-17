@@ -62,7 +62,7 @@
             <!-- This used to be a Markdown renderer, but that's unnecessary nowadays -->
             <p>{post.data.desc}</p>
 
-            <a href={"blog".concat(post.data.slug)}>
+            <a href={"blog".concat(post.data.slug)} data-sveltekit-reload>
                 {page.data.postLinkPrompts[Math.floor(Math.random() * page.data.postLinkPrompts.length)]}
             </a>
 

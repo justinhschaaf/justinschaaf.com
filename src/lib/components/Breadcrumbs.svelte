@@ -72,7 +72,7 @@
 -->
 <span class="breadcrumbs">
 
-    <a href="/">
+    <a href="/" data-sveltekit-reload>
         <img class="icon" src="/assets/icons/home.svg" alt="Home">
     </a>
 

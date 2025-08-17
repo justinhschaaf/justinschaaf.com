@@ -9,7 +9,6 @@
     import { page } from "$app/stores";
 
     // So we don't have to declare it every time, but can if we want to
-    
     interface Props {
         /** 
      * The current route used for whicht tab is active. 
@@ -143,7 +142,7 @@
 
     {#each routes as route}
 
-        <a class="tab" class:active={route.active} href="{route.url}">
+        <a class="tab" class:active={route.active} href="{route.url}" data-sveltekit-reload>
             <h2>{route.name}</h2>
         </a>
         
