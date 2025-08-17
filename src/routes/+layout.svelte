@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
     import { darkTheme } from "$lib/theme"
     import Footer from "$lib/components/Footer.svelte";
     interface Props {
@@ -10,9 +10,8 @@
     let { children }: Props = $props();
 
     // Determine the cannonical url by removing query params and using https
-    let canonicalUrl: string = $derived("https://".concat($page.url.host, $page.url.pathname));
-    
-    
+    let canonicalUrl: string = $derived("https://".concat(page.url.host, page.url.pathname));
+
 </script>
 
 <style lang="scss">
@@ -181,11 +180,11 @@
     <main>
         {@render children?.()}
     </main>
-    
-    <Footer socials={$page.data.socials}
-        repo={$page.data.git.repo} 
-        ref={$page.data.git.ref} 
-        sha={$page.data.git.sha}/>
+
+    <Footer socials={page.data.socials}
+        repo={page.data.git.repo}
+        ref={page.data.git.ref}
+        sha={page.data.git.sha}/>
 
 </div>
 

@@ -1,12 +1,5 @@
 <script lang="ts">
-    import { run } from 'svelte/legacy';
 
-
-    
-
-    
-
-    
     interface Props {
         /** Timestamp for when this post was created, in Unix Epoch seconds */
         created: number;
@@ -18,15 +11,10 @@
 
     let { created, updated = -1, includePublishedText = true }: Props = $props();
 
-    let createDate: Date = $state();
-    let upDate: Date | undefined = $state();
-
-    run(() => {
-        createDate = new Date(created * 1000);
-        upDate = (updated > -1) 
-            ? new Date(updated * 1000)
-            : undefined;
-    });
+    let createDate: Date = $state(new Date(created * 1000));
+    let upDate: Date | undefined = $state((updated > -1)
+        ? new Date(updated * 1000)
+        : undefined);
 
 </script>
 
@@ -49,7 +37,7 @@
 
     {createDate.toDateString()}
 
-    {#if upDate != undefined}
+    {#if upDate !== undefined}
         <b>// Updated {upDate.toDateString()}</b>
     {/if}
 

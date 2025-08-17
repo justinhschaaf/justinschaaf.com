@@ -1,8 +1,5 @@
 <script lang="ts">
 
-    
-
-    
     interface Props {
         /** The background image to display in the lefthand column */
         background: string;

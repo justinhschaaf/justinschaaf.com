@@ -1,8 +1,5 @@
 <script lang="ts">
 
-    
-
-    
     interface Props {
         /** A name for this section to set as the element's id */
         anchor?: string;

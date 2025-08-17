@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     
     interface Props {
@@ -8,7 +8,7 @@
         pathname?: string;
     }
 
-    let { pathname = $page.url.pathname }: Props = $props();
+    let { pathname = page.url.pathname }: Props = $props();
     
     // A matrix mapping a segment in a path to the parts before it
     // e.g. ["llama-steeds", "/projects"]

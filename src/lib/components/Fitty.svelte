@@ -7,24 +7,29 @@
 
 <script lang="ts">
 
-    import { afterUpdate } from "svelte";
     import fitty from "fitty";
 
-    /** The minimum possible font size, in px */
-    export let minSize: number = 16;
+    interface Props {
+        /** The minimum possible font size, in px */
+        minSize: number;
 
-    /** The maximum possible font size, in px */
-    export let maxSize: number = 512;
+        /** The maximum possible font size, in px */
+        maxSize: number;
 
-    /** 
-     * Whether to let lines wrap if the minimum size has been reached and the 
-     * line doesn't fit 
-     */
-    export let multiLine: boolean = true;
+        /**
+         * Whether to let lines wrap if the minimum size has been reached and the
+         * line doesn't fit
+         */
+        multiLine: boolean;
+
+        children?: import('svelte').Snippet;
+    }
+
+    let {minSize = 16, maxSize = 512, multiLine = true, children}: Props = $props();
 
     let fittyDiv: HTMLDivElement;
 
-    afterUpdate(() => {
+    $effect(() => {
         fitty(fittyDiv, { 
             minSize: minSize, 
             maxSize: maxSize,
@@ -45,5 +50,5 @@
     ```
 -->
 <div bind:this={fittyDiv}>
-    <slot></slot>
+    {@render children?.()}
 </div>

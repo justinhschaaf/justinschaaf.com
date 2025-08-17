@@ -6,18 +6,15 @@
     // I'll be honest the routerLinkActive behavior wasn't too hard to replicate
     // just inconvenient that I had to implement it myself at all
 
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     // So we don't have to declare it every time, but can if we want to
-    interface Props {
-        /** 
-     * The current route used for whicht tab is active. 
-     * Uses the current path by default. 
-     */
-        currentRoute?: string;
-    }
 
-    let { currentRoute = $page.url.pathname }: Props = $props();
+    /**
+     * The current route used for which tab is active.
+     * Uses the current path by default.
+     */
+    let { currentRoute = page.url.pathname } = $props();
 
     // The order is inverted as to how it appears to the website to improve
     // style, see comment below

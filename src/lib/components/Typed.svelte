@@ -1,17 +1,20 @@
 <!-- @migration-task Error while migrating Svelte code: Can't migrate code with afterUpdate. Please migrate by hand. -->
 <script lang="ts">
 
-    import { afterUpdate } from "svelte";
     import Typed  from "typed.js";
 
-    /** Overrides on the default typed.js configuration */
-    export let overrides: object = {};
+    interface Props {
+        /** Overrides on the default typed.js configuration */
+        overrides: object;
 
-    /** A single line of text to be displayed */
-    export let text: string = ""; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
+        /** A single line of text to be displayed */
+        text: string; // of all the shit that's reactive in Svelte, <slot> isn't one of them...
 
-    /** An array of strings to be shown, one after another. */
-    export let strings: string[] = [text];
+        /** An array of strings to be shown, one after another. */
+        strings: string[];
+    }
+
+    let {overrides = {}, text = "", strings = [text]}: Props = $props();
 
     let oldText = text;
 
@@ -20,7 +23,7 @@
     let options: object;
     let observer: IntersectionObserver;
 
-    afterUpdate(() => {
+    $effect(() => {
 
         // check if the text input was changed and update [strings] accordingly
         // oldText gets set at creation, not every update, so that's why this works

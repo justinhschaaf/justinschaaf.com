@@ -1,15 +1,18 @@
 <!-- @migration-task Error while migrating Svelte code: Can't migrate code with afterUpdate. Please migrate by hand. -->
 <script lang="ts">
 
-    import { afterUpdate } from "svelte";
     import { marked } from "$lib/marked";
     import { darkTheme } from "$lib/theme"
 
-    /** A string URL to the Markdown file to fetch the content from */
-    export let src: string | undefined = undefined;
+    interface Props {
+        /** A string URL to the Markdown file to fetch the content from */
+        src: string | undefined;
 
-    /** The Markdown content to parse, as a string */
-    export let content: string = "";
+        /** The Markdown content to parse, as a string */
+        content: string;
+    }
+
+    let {src = undefined, content = ""}: Props = $props();
 
     let inputDiv: HTMLDivElement;
     let mdDiv: HTMLDivElement;
@@ -26,20 +29,16 @@
     }
 
     // Code block theming
-    let hljsTheme: string;
-    $: {
-        if ($darkTheme) {
-            hljsTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css";
-        } else {
-            hljsTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow.min.css";
-        }
-    }
+    let hljsTheme: string = $state("");
 
     // If we try to render the Markdown in onMount after fetching from src, it
     // won't update because fetch takes a bit. Once fetch comes back with the
     // data, the assignment runs an update and therefore this
-    afterUpdate(() => {
+    $effect(() => {
         mdDiv.innerHTML = marked.parse(inputDiv.innerText).toString();
+        hljsTheme = $darkTheme ?
+            "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css" :
+            "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow.min.css";
     });
 
 </script>

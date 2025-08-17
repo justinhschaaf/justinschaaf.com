@@ -1,8 +1,5 @@
 <script lang="ts">
-    import { run } from 'svelte/legacy';
-
-
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     import Banner from "$lib/layouts/Banner.svelte";
     import Section from "$lib/layouts/Section.svelte";
@@ -24,9 +21,9 @@
 
     // All of this needs to be reactive because the layout usually doesn't
     // update when the page changes
-    run(() => {
+    $effect.pre(() => {
 
-        post = $page.data.post;
+        post = page.data.post;
         background = "/assets/images/blog_banner.webp";
         title = "Ramblings";
     

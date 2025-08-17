@@ -1,10 +1,5 @@
 <script lang="ts">
 
-    
-
-    
-
-    
     interface Props {
         /** The big background image */
         background: string;
