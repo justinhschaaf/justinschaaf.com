@@ -32,3 +32,4 @@ vite.config.ts.timestamp-*
 
 # Editor Config
 /.vscode/
+.idea
