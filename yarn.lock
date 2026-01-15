@@ -684,6 +684,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@standard-schema/spec@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "@standard-schema/spec@npm:1.1.0"
+  checksum: 6245ebef5e698bb04752a22e996a7cc40406a404d9f68a9d4e1a7a10f2422da287247508e7b495a2f32bb38f3d57b4daf2c9ab4bf22d9bca13e20a3dc5ec575e
+  languageName: node
+  linkType: hard
+
 "@sveltejs/acorn-typescript@npm:^1.0.5":
   version: 1.0.5
   resolution: "@sveltejs/acorn-typescript@npm:1.0.5"
@@ -705,28 +712,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^2.20.6":
-  version: 2.20.6
-  resolution: "@sveltejs/kit@npm:2.20.6"
+"@sveltejs/kit@npm:^2.49.5":
+  version: 2.49.5
+  resolution: "@sveltejs/kit@npm:2.49.5"
   dependencies:
-    "@types/cookie": "npm:^0.6.0"
-    cookie: "npm:^0.6.0"
-    devalue: "npm:^5.1.0"
-    esm-env: "npm:^1.2.2"
-    import-meta-resolve: "npm:^4.1.0"
-    kleur: "npm:^4.1.5"
-    magic-string: "npm:^0.30.5"
-    mrmime: "npm:^2.0.0"
-    sade: "npm:^1.8.1"
-    set-cookie-parser: "npm:^2.6.0"
-    sirv: "npm:^3.0.0"
+    "@standard-schema/spec": ^1.0.0
+    "@sveltejs/acorn-typescript": ^1.0.5
+    "@types/cookie": ^0.6.0
+    acorn: ^8.14.1
+    cookie: ^0.6.0
+    devalue: ^5.6.2
+    esm-env: ^1.2.2
+    kleur: ^4.1.5
+    magic-string: ^0.30.5
+    mrmime: ^2.0.0
+    sade: ^1.8.1
+    set-cookie-parser: ^2.6.0
+    sirv: ^3.0.0
   peerDependencies:
-    "@sveltejs/vite-plugin-svelte": ^3.0.0 || ^4.0.0-next.1 || ^5.0.0
+    "@opentelemetry/api": ^1.0.0
+    "@sveltejs/vite-plugin-svelte": ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0
     svelte: ^4.0.0 || ^5.0.0-next.0
-    vite: ^5.0.3 || ^6.0.0
+    typescript: ^5.3.3
+    vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0
+  peerDependenciesMeta:
+    "@opentelemetry/api":
+      optional: true
+    typescript:
+      optional: true
   bin:
     svelte-kit: svelte-kit.js
-  checksum: 08ca03f9609ea25e2110f3da398eb00dbae107b3d8d9c11ff7ce29db110be26c499b42f8e85dd832f61735d0602470ca404e1de9e3d907f0a8124039fc63f4b1
+  checksum: a575d67df666a3fdddf76e71e5a28d080324b6327848cf8de86f0178b2b8741b28a5cb30c98f73ef746db735bcb5e63bd8f050ef6cf1feec2f737a5e75b81f98
   languageName: node
   linkType: hard
 
@@ -996,7 +1012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.12.1":
+"acorn@npm:^8.12.1, acorn@npm:^8.14.1":
   version: 8.15.0
   resolution: "acorn@npm:8.15.0"
   bin:
@@ -1410,10 +1426,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devalue@npm:^5.1.0":
-  version: 5.3.2
-  resolution: "devalue@npm:5.3.2"
-  checksum: 626930c8baa9b435cf1a72ca715dd3c2fc4ef5be88ad729892474b0a4742849112c362b7b572de60745ed7ed00835fdaf0516a912635dc3772197a2912f8ed49
+"devalue@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "devalue@npm:5.6.2"
+  checksum: 9d031092e3a6ff3a98820261375826ae88846c006857713816b7c1c007224982bdf94abc93b0f33218baff40f4b9d635001d1dfef0860a9e4074d8b7eac4f476
   languageName: node
   linkType: hard
 
@@ -2235,13 +2251,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-meta-resolve@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "import-meta-resolve@npm:4.1.0"
-  checksum: 6497af27bf3ee384ad4efd4e0ec3facf9a114863f35a7b35f248659f32faa5e1ae07baa74d603069f35734ae3718a78b3f66926f98dc9a62e261e7df37854a62
-  languageName: node
-  linkType: hard
-
 "imurmurhash@npm:^0.1.4":
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
@@ -2435,7 +2444,7 @@ __metadata:
   resolution: "justinschaaf.com@workspace:."
   dependencies:
     "@sveltejs/adapter-vercel": ^5.2.0
-    "@sveltejs/kit": ^2.20.6
+    "@sveltejs/kit": ^2.49.5
     "@sveltejs/vite-plugin-svelte": ^4.0.0
     "@types/eslint": 8.56.0
     "@typescript-eslint/eslint-plugin": ^6.0.0
