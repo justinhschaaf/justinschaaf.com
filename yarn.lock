@@ -761,29 +761,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^2.49.5":
-  version: 2.49.5
-  resolution: "@sveltejs/kit@npm:2.49.5"
+"@sveltejs/kit@npm:^2.53.3":
+  version: 2.53.4
+  resolution: "@sveltejs/kit@npm:2.53.4"
   dependencies:
     "@standard-schema/spec": ^1.0.0
     "@sveltejs/acorn-typescript": ^1.0.5
     "@types/cookie": ^0.6.0
     acorn: ^8.14.1
     cookie: ^0.6.0
-    devalue: ^5.6.2
+    devalue: ^5.6.3
     esm-env: ^1.2.2
     kleur: ^4.1.5
     magic-string: ^0.30.5
     mrmime: ^2.0.0
-    sade: ^1.8.1
-    set-cookie-parser: ^2.6.0
+    set-cookie-parser: ^3.0.0
     sirv: ^3.0.0
   peerDependencies:
     "@opentelemetry/api": ^1.0.0
-    "@sveltejs/vite-plugin-svelte": ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0
+    "@sveltejs/vite-plugin-svelte": ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0 || ^7.0.0
     svelte: ^4.0.0 || ^5.0.0-next.0
     typescript: ^5.3.3
-    vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0
+    vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0
   peerDependenciesMeta:
     "@opentelemetry/api":
       optional: true
@@ -791,7 +790,7 @@ __metadata:
       optional: true
   bin:
     svelte-kit: svelte-kit.js
-  checksum: a575d67df666a3fdddf76e71e5a28d080324b6327848cf8de86f0178b2b8741b28a5cb30c98f73ef746db735bcb5e63bd8f050ef6cf1feec2f737a5e75b81f98
+  checksum: 05259f0cd35f7be272d607aaca53cc2a2dce98362311022628d4d62c809842dda4be6ee68a3c0a200d6504d6541aca115dc8f1637feb7a45650e3d5b1715a5bb
   languageName: node
   linkType: hard
 
@@ -1472,13 +1471,6 @@ __metadata:
   version: 2.0.3
   resolution: "detect-libc@npm:2.0.3"
   checksum: 2ba6a939ae55f189aea996ac67afceb650413c7a34726ee92c40fb0deb2400d57ef94631a8a3f052055eea7efb0f99a9b5e6ce923415daa3e68221f963cfc27d
-  languageName: node
-  linkType: hard
-
-"devalue@npm:^5.6.2":
-  version: 5.6.2
-  resolution: "devalue@npm:5.6.2"
-  checksum: 9d031092e3a6ff3a98820261375826ae88846c006857713816b7c1c007224982bdf94abc93b0f33218baff40f4b9d635001d1dfef0860a9e4074d8b7eac4f476
   languageName: node
   linkType: hard
 
@@ -2500,7 +2492,7 @@ __metadata:
   resolution: "justinschaaf.com@workspace:."
   dependencies:
     "@sveltejs/adapter-vercel": ^5.2.0
-    "@sveltejs/kit": ^2.49.5
+    "@sveltejs/kit": ^2.53.3
     "@sveltejs/vite-plugin-svelte": ^4.0.0
     "@types/eslint": 8.56.0
     "@typescript-eslint/eslint-plugin": ^6.0.0
@@ -3384,7 +3376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sade@npm:^1.7.4, sade@npm:^1.8.1":
+"sade@npm:^1.7.4":
   version: 1.8.1
   resolution: "sade@npm:1.8.1"
   dependencies:
@@ -3473,10 +3465,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "set-cookie-parser@npm:2.6.0"
-  checksum: bf11ebc594c53d84588f1b4c04f1b8ce14e0498b1c011b3d76b5c6d5aac481bbc3f7c5260ec4ce99bdc1d9aed19f9fc315e73166a36ca74d0f12349a73f6bdc9
+"set-cookie-parser@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "set-cookie-parser@npm:3.0.1"
+  checksum: 925a812721610ad1822e475a88acbbb82d9496a3c3a551e0c9f07a2f9600a219bfad0ef3837076bfaef4f30a360a2101da5a6b123991e7b9963622cee376973a
   languageName: node
   linkType: hard
 
