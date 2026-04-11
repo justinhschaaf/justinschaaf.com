@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- load special styles -->
+{% block head %}
+<link rel="stylesheet" href="/index.css">
+{% endblock head %}
+
+{% block content %}
+<!-- logo + splash -->
+<div class="titlebox">
+    <div class="logo-holder">
+        <img class="logo" src="/assets/logos/js-fullname-light.svg" alt="Justin Schaaf">
+    </div>
+    <em id="splash" class="splash subtitle">Whoops, sorry about that.</em>
+</div>
+
+<!-- actual body is in .md for easier editing -->
+{{ section.content | safe }}
+
+<ul>
+    <!-- we have to do this to sort the subsections alphabetically, zola does whatever it wants by default -->
+    {% for subsection in section.subsections | sort %}
+        <!-- don't show the subsection if it's hidden, used for "redirects" -->
+        {% set subsection_obj = get_section(path=subsection) %}
+        {% if not subsection_obj.extra.hidden %}
+            {% set subsection_path = subsection | split(pat="/") | first %}
+            <!-- use get_url to remove trailing slash on the permalink -->
+            <li>[ <a href="{{ get_url(path=subsection_path) }}">{{ subsection_path }}</a> ]</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<!-- this has to run after the splash element is added to the dom -->
+<script src="/scripts/splash.js"></script>
+{% endblock content %}
