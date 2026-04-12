@@ -13,7 +13,7 @@
 <ul>
     {% for page in section.pages %}
     <!-- show date if we have it, use get_url to remove trailing slash on the permalink -->
-    <li>{% if page.date %}{{ page.date | date(format="%a %b %d %Y", timezone="America/Los_Angeles") }} - {% endif %}<a href="{{ get_url(path=page.path) }}">{{ page.title }}</a></li>
+    <li>{% if page.date %}{{ page.date | date(format="%a %b %d %Y", timezone="America/Los_Angeles") }} - {% endif %}<a href="{{ page.path | trim_end_matches(pat="/") }}">{{ page.title }}</a></li>
     {% endfor %}
 </ul>
 
