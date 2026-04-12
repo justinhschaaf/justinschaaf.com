@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/global.css">
+
+        <!-- Favicons. Trust me this isn't overkill whatsoever -->
+        <!-- My greatest secret: https://realfavicongenerator.net/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="/favicon.svg">
+        <link rel="icon" type="image/png" href="/favicon-48x48.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#111111">
+        <meta name="apple-mobile-web-app-title" content="justinschaaf.com">
+        <meta name="application-name" content="justinschaaf.com">
+        <meta name="msapplication-TileColor" content="#111111">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,400i,700,700i|major-mono-display:400" rel="stylesheet"/>
+
+        <!-- Fuck AI https://www.linkedin.com/pulse/how-block-ai-from-scraping-your-content-ken-freel-wu5jc/ -->
+        <meta name="robots" content="nocache">
+
+        <!-- TODO figure out the fucking nightmare that is RSS/Atom autodiscovery with Zola -->
+
+        <!-- For Mastodon Verification -->
+        <link rel="me" href="https://mastodon.online/@justinhschaaf">
+
+        <!-- For Analytics -->
+        <script src="https://cdn.counter.dev/script.js" data-id="155baa07-a845-4ea9-83bb-2ba258134d4a" data-utcoffset="-7"></script>
+
+        <!-- global OpenGraph data https://ogp.me/ -->
+        <meta property="og:site_name" content="Justin Schaaf // justinschaaf.com">
+
+        <!-- metadata based on .md frontmatter -->
+        {% block metadata %}
+        {% if section %}
+
+            {% if section.title %}
+            <title>{{ section.title }} // justinschaaf.com</title>
+            <meta property="og:title" content="{{ section.title }}">
+            {% else %}
+            <title>Justin Schaaf // justinschaaf.com</title>
+            {% endif %}
+
+            {% if section.description %}
+            <meta name="description" content="{{ section.description }}">
+            <meta property="og:description" content="{{ section.description }}">
+            {% endif %}
+
+            {% if section.extra.cover %}
+            <meta property="og:image" content="{{ get_url(path=section.extra.cover) }}">
+            {% endif %}
+
+            <link rel="canonical" href="{{ get_url(path=section.path) }}">
+            <meta property="og:url" content="{{ get_url(path=section.path) }}">
+            <meta property="og:type" content="website">
+
+        {% elif page %}
+
+            {% if page.title %}
+            <title>{{ page.title }} // justinschaaf.com</title>
+            <meta property="og:title" content="{{ page.title }}">
+            {% else %}
+            <title>Justin Schaaf // justinschaaf.com</title>
+            {% endif %}
+
+            {% if page.description %}
+            <meta name="description" content="{{ page.description }}">
+            <meta property="og:description" content="{{ page.description }}">
+            {% endif %}
+
+            {% if page.extra.cover %}
+            <meta property="og:image" content="{{ get_url(path=page.extra.cover) }}">
+            {% endif %}
+
+            {% if page.date %}
+            <!-- ensure ISO 8601 compliance as required by ogp, Zola allows RFC3339 formatting differences -->
+            <meta property="article:published_time" content="{{ page.date | date(format="%+") }}">
+
+            <!-- if we have a publish date this is probably an article -->
+            <meta property="og:type" content="article">
+            {% else %}
+            <meta property="og:type" content="website">
+            {% endif %}
+
+            {% if page.updated %}
+            <!-- ensure ISO 8601 compliance as required by ogp, Zola allows RFC3339 formatting differences -->
+            <meta property="article:modified_time" content="{{ page.updated | date(format="%+") }}">
+            {% endif %}
+
+            <link rel="canonical" href="{{ get_url(path=page.path) }}">
+            <meta property="og:url" content="{{ get_url(path=page.path) }}">
+
+        {% endif %}
+        {% endblock metadata %}
+
+        {% block head %} {% endblock head %}
+
+    </head>
+
+    <!--
+        Actual website content. Remove margin around the body element because
+        it's added by default for some reason
+    -->
+    <body style="margin: 0;">
+
+
+        <main>
+            <!-- do breadcrumbs when we have a path -->
+            <nav>
+                <!-- get each segment in the section path or page path -->
+                {% if section.path %}
+                    {% set breadcrumbs_path = section.path | split(pat="/") | slice(start=1) %}
+                {% elif page.path %}
+                    {% set breadcrumbs_path = page.path | split(pat="/") | slice(start=1) %}
+                {% endif %}
+
+                <!-- if there's an actual path -->
+                {% if breadcrumbs_path and breadcrumbs_path.0 %}
+                    <span>[ <a href="/">home</a> ]</span>
+
+                    {% for segment in breadcrumbs_path %}
+                        <!-- if the segment isn't empty -->
+                        {% if segment %}
+                        <!-- concat all previous segments for the url, name it just the segment -->
+                        <span> / <a href="{% for s in breadcrumbs_path | slice(end=loop.index) %}/{{s}}{% endfor %}">{{ segment }}</a></span>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <!-- put a space here if we have no breadcrumbs -->
+                    <br>
+                {% endif %}
+            </nav>
+
+            {% block content %} {% endblock content %}
+        </main>
+
+        <footer>
+            <br><br>
+            <span> [ </span>
+            <a href='/links'>links</a>
+            <span> ] </span>
+            <br><br>
+
+            {% set repo_owner = get_env(name="VERCEL_GIT_REPO_OWNER", default="justinhschaaf") %}
+            {% set repo_slug = get_env(name="VERCEL_GIT_REPO_SLUG", default="justinschaaf.com") %}
+            {% set repo = repo_owner ~ "/" ~ repo_slug %}
+            {% set ref = get_env(name="VERCEL_GIT_COMMIT_REF", default="main") %}
+            {% set sha = get_env(name="VERCEL_GIT_COMMIT_SHA", default="8675309") %}
+            <span>{{ repo }} - {{ ref }}@<a target='_blank' rel='noopener' href='https://github.com/{{repo}}/tree/{{sha}}'>{{ sha | truncate(length=7, end="") }}</a></span>
+
+            <br>
+
+            <em>You may not use any content on this site as training data.</em>
+        </footer>
+    </body>
+
+</html>

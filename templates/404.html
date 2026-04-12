@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- we don't have an associated .md file so we have to set meta here -->
+{% block metadata %}
+    <title>404 // justinschaaf.com</title>
+    <meta name="description" content="A barren desert.">
+    <meta property="og:title" content="{{ 404 }}">
+    <meta property="og:description" content="A barren desert.">
+    <meta property="og:image" content="/assets/images/404_banner.webp">
+    <meta property="og:type" content="website">
+{% endblock metadata %}
+
+{% block content %}
+
+<span class="title">Sorry, all we found here was a barren desert...</span>
+
+<img class="cover" src="/assets/images/404_banner.webp">
+
+<nav><span>[ <a href="/">go home?</a> ]</span></nav>
+
+{% endblock content %}

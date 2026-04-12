@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if page.extra.redirect_dest %}
+
+<script>
+window.location.replace("{{page.extra.redirect_dest}}");
+</script>
+
+{% elif section.extra.redirect_dest %}
+
+<script>
+window.location.replace("{{section.extra.redirect_dest}}");
+</script>
+
+{% else %}
+
+<nav>
+    <span>Whoops, sorry about that.</span>
+    <br><br>
+    <span>[ <a href="/">go home?</a> ]</span>
+</nav>
+
+{% endif %}
+
+{% endblock content %}

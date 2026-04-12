@@ -1,0 +1,226 @@
+:root {
+    --padding-large: 48px;
+    --padding-small: 8px;
+
+    --color-dark: #111111;
+    --color-light: #ffffff;
+
+    /* justinschaaf.com colors */
+    --color-fjord: #80aabd;
+    --color-lucky: #777777;
+    --color-splash: #ffff55;
+
+    /* colors.justinschaaf.com, used for alerts */
+    --color-ocean: #336699;
+    --color-jalapeno: #669933;
+    --color-eggplant: #993399;
+    --color-sunflower: #ff9933;
+    --color-cinnabar: #bb2233;
+
+    --font-head: 'Major Mono Display', 'Courier New', monospace;
+    --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    font-family: var(--font-body);
+    font-size: 17px; /* juuuuuuuust right */
+}
+
+/* invert highlight on headers to make them stand out more */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    font-family: var(--font-head) !important;
+
+    /* nicer alignment */
+    padding: 0.1em;
+    margin-left: -0.2em;
+    width: fit-content;
+
+    /* make sure header anchors are also dark */
+    a {
+        color: var(--color-dark) !important;
+    }
+}
+
+/* make links blue by defaut, underline upon hover */
+a {
+    color: var(--color-fjord);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Image formatting is fucked if we don't do this */
+img {
+    width: 100%;
+}
+
+p {
+    text-align: justify;
+}
+
+nav, footer {
+    padding: var(--padding-small) var(--padding-large);
+    text-align: center;
+}
+
+main {
+    /* WAI suggests line should be ~80 characters long. 800 is it on desktop */
+    /* As an example, these two lines are 80 characters long with the indent */
+
+    /* https://www.w3.org/WAI/tutorials/page-structure/styling/#line-length */
+    min-width: 300px;
+    max-width: 800px;
+    min-height: 100vh;
+
+    margin: auto;
+    padding: 0 var(--padding-large);
+}
+
+/* use hyphens for bullets */
+ul {
+    list-style-type: "- ";
+}
+
+.title {
+    margin: var(--padding-large) 0;
+    padding-bottom: var(--padding-small);
+    display: block;
+    width: 100%;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/clamp */
+    font-family: var(--font-head) !important;
+    font-size: clamp(2em, 5vw, 3em);
+    text-align: center;
+}
+
+/* TODO if this isn't used in the future merge into splash styles */
+.subtitle {
+    margin: var(--padding-small) auto;
+
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* cover image when one is defined, usually blog posts */
+.cover {
+    height: 240px;
+    object-position: center;
+    object-fit: cover;
+    padding-bottom: var(--padding-small);
+    margin-bottom: var(--padding-large);
+}
+
+/* blockquote styling, also the base for gfm alerts */
+/* repeating borders https://www.tobymackenzie.com/blog/2026/01/18/css-repeating-character-borders/ */
+blockquote {
+    margin: 1.2em;
+}
+
+blockquote p {
+    padding-left: 1.2em;
+    position: relative;
+}
+
+blockquote p:before {
+    width: 1em;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    overflow: hidden;
+    white-space: normal;
+    font-weight: bold;
+    content: "> > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ";
+}
+
+/* gfm alert colors and headers */
+.markdown-alert-note:before {
+    background-color: var(--color-ocean);
+    font-weight: bold;
+    content: "> [ NOTE ] >";
+}
+
+.markdown-alert-note p:before {
+    background-color: var(--color-ocean);
+}
+
+.markdown-alert-tip:before {
+    background-color: var(--color-jalapeno);
+    font-weight: bold;
+    content: "> [ TIP ] >";
+}
+
+.markdown-alert-tip p:before {
+    background-color: var(--color-jalapeno);
+}
+
+.markdown-alert-important:before {
+    background-color: var(--color-eggplant);
+    font-weight: bold;
+    content: "> !!! [ IMPORTANT ] !!!";
+}
+
+.markdown-alert-important p:before {
+    background-color: var(--color-eggplant);
+}
+
+.markdown-alert-warning:before {
+    background-color: var(--color-sunflower);
+    font-weight: bold;
+    content: "> !!! [ WARNING ] !!!";
+}
+
+.markdown-alert-warning p:before {
+    background-color: var(--color-sunflower);
+}
+
+.markdown-alert-caution:before {
+    background-color: var(--color-cinnabar);
+    font-weight: bold;
+    content: "> !!! [ CAUTION ] !!!";
+}
+
+.markdown-alert-caution p:before {
+    background-color: var(--color-cinnabar);
+}
+
+/* needed for syntax highlighting */
+/* https://www.getzola.org/documentation/content/syntax-highlighting/ */
+/* repeating borders https://www.tobymackenzie.com/blog/2026/01/18/css-repeating-character-borders/ */
+.giallo {
+    margin: 1.2em;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.giallo:before {
+    width: 1em;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    overflow: hidden;
+    white-space: normal;
+    font-weight: bold;
+    content: "| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ";
+}
+
+.giallo-l {
+    display: inline-block;
+    width: 100%;
+}
+
+.giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+}

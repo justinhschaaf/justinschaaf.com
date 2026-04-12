@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<span class="title">{{ section.title }}</span>
+
+{% if section.extra.cover %}
+<img class="cover" src="{{ section.extra.cover }}">
+{% endif %}
+
+{{ section.content | safe }}
+
+<ul>
+    {% for page in section.pages %}
+    <!-- show date if we have it, use get_url to remove trailing slash on the permalink -->
+    <li>{% if page.date %}{{ page.date | date(format="%a %b %d %Y", timezone="America/Los_Angeles") }} - {% endif %}<a href="{{ page.path | trim_end_matches(pat="/") }}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

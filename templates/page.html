@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<span class="title">{{ page.title }}</span>
+
+{% if page.extra.cover %}
+<img class="cover" src="{{ page.extra.cover }}">
+{% endif %}
+
+{% if page.date %}
+<em><u>Published {{ page.date | date(format="%a %b %d %Y", timezone="America/Los_Angeles") }}, {{ page.reading_time }} min read</u></em>
+{% endif %}
+<br>
+
+{{ page.content | safe }}
+
+{% endblock content %}
