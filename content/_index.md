@@ -6,7 +6,7 @@ description = "Some insignificant fuck raised by the internet. Online since 2011
 
 ## Who are you? {#about}
 
-Some insignificant fuck raised by the internet. Lover of all things [computers](/stuff/tech), food, and [gay manga](https://anilist.co/user/justinhs). Not a big fan of describing myself.
+Some insignificant fuck raised by the internet. Lover of all things [computers](/stuff/tech), food, and [BL](https://anilist.co/user/justinhs). Not a big fan of describing myself.
 
 ## What are you doing? {#now}
 
